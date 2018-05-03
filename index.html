@@ -263,6 +263,147 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/implement、api 指令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="来世成石">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://lc-gdctdkyx.cn-n1.lcfile.com/4073a0785ac6e54b2ff8.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="来世成石">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/implement、api 指令/" itemprop="url">implement、api 指令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T16:38:43+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/03/implement、api 指令/" class="leancloud_visitors" data-flag-title="implement、api 指令">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><h4 id="Android-studio-版本更新至3-0，同时也出现了两个新的依赖指令：implement-和api。"><a href="#Android-studio-版本更新至3-0，同时也出现了两个新的依赖指令：implement-和api。" class="headerlink" title="Android studio 版本更新至3.0，同时也出现了两个新的依赖指令：implement 和api。"></a>Android studio 版本更新至3.0，同时也出现了两个新的依赖指令：implement 和api。</h4><h4 id="在com-android-tools-build-gradle-3-0-以下版本依赖在gradle-中的声明写法："><a href="#在com-android-tools-build-gradle-3-0-以下版本依赖在gradle-中的声明写法：" class="headerlink" title="在com.android.tools.build:gradle 3.0 以下版本依赖在gradle 中的声明写法："></a>在com.android.tools.build:gradle 3.0 以下版本依赖在gradle 中的声明写法：</h4><pre><code>compile fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])
+</code></pre><h4 id="3-0后的写法为"><a href="#3-0后的写法为" class="headerlink" title="3.0后的写法为"></a>3.0后的写法为</h4><pre><code>implementation fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])
+或
+api fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])
+</code></pre><h3 id="新增两个指令的区别"><a href="#新增两个指令的区别" class="headerlink" title="新增两个指令的区别"></a>新增两个指令的区别</h3><h4 id="api-指令完全等同于compile指令，没区别"><a href="#api-指令完全等同于compile指令，没区别" class="headerlink" title="api 指令完全等同于compile指令，没区别"></a>api 指令完全等同于compile指令，没区别</h4><h4 id="implement指令的特点是，对于使用了该命令编译的依赖，对该项目有依赖的项目将无法访问到使用该命令编译的依赖中的任何程序，也就是将该依赖隐藏在内部，而不对外部公开。"><a href="#implement指令的特点是，对于使用了该命令编译的依赖，对该项目有依赖的项目将无法访问到使用该命令编译的依赖中的任何程序，也就是将该依赖隐藏在内部，而不对外部公开。" class="headerlink" title="implement指令的特点是，对于使用了该命令编译的依赖，对该项目有依赖的项目将无法访问到使用该命令编译的依赖中的任何程序，也就是将该依赖隐藏在内部，而不对外部公开。"></a>implement指令的特点是，对于使用了该命令编译的依赖，对该项目有依赖的项目将无法访问到使用该命令编译的依赖中的任何程序，也就是将该依赖隐藏在内部，而不对外部公开。</h4><p>###图片解释</p>
+<h4 id="用api指令编译，Glide依赖对app-Module-是可见的"><a href="#用api指令编译，Glide依赖对app-Module-是可见的" class="headerlink" title="用api指令编译，Glide依赖对app Module 是可见的"></a>用api指令编译，Glide依赖对app Module 是可见的</h4><p><img src="https://i.imgur.com/tyJji9L.png" alt=""></p>
+<h4 id="用implement指令编译依赖对app-Module-是不可见的"><a href="#用implement指令编译依赖对app-Module-是不可见的" class="headerlink" title="用implement指令编译依赖对app Module 是不可见的"></a>用implement指令编译依赖对app Module 是不可见的</h4><p><img src="https://i.imgur.com/WEtdJg8.png" alt=""></p>
+<h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><h4 id="在Google-IO-相关话题的中提到了一个建议，就是依赖首先应该设置为implement的，如果没有错，那就用implement，如果有错，那么使用api指令，这样会使编译速度有所增快。"><a href="#在Google-IO-相关话题的中提到了一个建议，就是依赖首先应该设置为implement的，如果没有错，那就用implement，如果有错，那么使用api指令，这样会使编译速度有所增快。" class="headerlink" title="在Google IO 相关话题的中提到了一个建议，就是依赖首先应该设置为implement的，如果没有错，那就用implement，如果有错，那么使用api指令，这样会使编译速度有所增快。"></a>在Google IO 相关话题的中提到了一个建议，就是依赖首先应该设置为implement的，如果没有错，那就用implement，如果有错，那么使用api指令，这样会使编译速度有所增快。</h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <div>
+      
+    </div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/你好Hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -577,7 +718,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -654,7 +795,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">|&nbsp;&nbsp;<i class="fa fa-pencil"></i>&nbsp;博客全站共93字</span>
+  <span class="post-count">|&nbsp;&nbsp;<i class="fa fa-pencil"></i>&nbsp;博客全站共360字</span>
 </div>
 
 
