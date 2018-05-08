@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="自定义View," />
 
 
 
@@ -89,17 +89,21 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="###最终效果预览 ###这次实现的是第一步效果 原理解析：通过对控件添加动画来实现仿抖音底部导航的效果 ###一.首先编写布局文件（这里是用TextView作为底部的指示横线）    &amp;lt;?xml version=”1.0” encoding=”utf-8”?&amp;gt;                                             ###二.创建NavItemView">
+<meta name="keywords" content="自定义View">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/05/03/hello-world/index.html">
+<meta property="og:title" content="仿抖音底部导航（（一）">
+<meta property="og:url" content="http://yoursite.com/2018/05/08/仿抖音底部导航（一）/index.html">
 <meta property="og:site_name" content="来世成石">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="###最终效果预览 ###这次实现的是第一步效果 原理解析：通过对控件添加动画来实现仿抖音底部导航的效果 ###一.首先编写布局文件（这里是用TextView作为底部的指示横线）    &amp;lt;?xml version=”1.0” encoding=”utf-8”?&amp;gt;                                             ###二.创建NavItemView">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-03T01:51:14.222Z">
+<meta property="og:image" content="https://i.imgur.com/FN1Vch2.gif">
+<meta property="og:image" content="https://i.imgur.com/PUf8TjP.gif">
+<meta property="og:updated_time" content="2018-05-08T09:26:59.945Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="仿抖音底部导航（（一）">
+<meta name="twitter:description" content="###最终效果预览 ###这次实现的是第一步效果 原理解析：通过对控件添加动画来实现仿抖音底部导航的效果 ###一.首先编写布局文件（这里是用TextView作为底部的指示横线）    &amp;lt;?xml version=”1.0” encoding=”utf-8”?&amp;gt;                                             ###二.创建NavItemView">
+<meta name="twitter:image" content="https://i.imgur.com/FN1Vch2.gif">
 
 
 
@@ -129,14 +133,14 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/03/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/08/仿抖音底部导航（一）/"/>
 
 
 
 
 
 
-  <title>Hello World | 来世成石</title>
+  <title>仿抖音底部导航（（一） | 来世成石</title>
   
 
 
@@ -263,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/08/仿抖音底部导航（一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="来世成石">
@@ -280,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">仿抖音底部导航（（一）</h1>
         
 
         <div class="post-meta">
@@ -292,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T09:51:14+08:00">
-                2018-05-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T17:24:35+08:00">
+                2018-05-08
               </time>
             
 
@@ -303,6 +307,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -310,7 +336,7 @@
 
           
           
-             <span id="/2018/05/03/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2018/05/08/仿抖音底部导航（一）/" class="leancloud_visitors" data-flag-title="仿抖音底部导航（（一）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -342,16 +368,53 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>###最终效果预览<br><img src="https://i.imgur.com/FN1Vch2.gif" alt="最终效果"></p>
+<p>###这次实现的是第一步效果<br><img src="https://i.imgur.com/PUf8TjP.gif" alt=""></p>
+<p></p><h3 style="color:blue">原理解析：通过对控件添加动画来实现仿抖音底部导航的效果</h3><p></p>
+<p>###一.首先编写布局文件（这里是用TextView作为底部的指示横线）<br>    &lt;?xml version=”1.0” encoding=”utf-8”?&gt;<br>    <relativelayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent"><br>        <linearlayout android:layout_width="wrap_content" android:orientation="vertical" android:id="@+id/nav_top" android:layout_centerinparent="true" android:layout_height="wrap_content"><br>            <textview android:layout_width="wrap_content" android:text="标题" android:id="@+id/nav_item_tv_title" android:textcolor="#F1F1F1" android:textsize="16sp" android:layout_height="wrap_content"><br>        </textview></linearlayout><br>        <textview android:layout_width="wrap_content" android:id="@+id/nav_item_tv_line" android:layout_below="@id/nav_top" android:layout_margintop="2dp" android:layout_alignright="@id/nav_top" android:layout_alignleft="@id/nav_top" android:background="#fff" android:alpha="0" android:layout_centerinparent="true" android:layout_height="2dp"><br>    </textview></relativelayout></p>
+<p>###二.创建NavItemView类继承RelativeLayout（这是最终代码展示，接下来讲解各种方法的效果【除了自定义属性】）<br>    public class NavItemView extends RelativeLayout {<br>        TextView textView_title;<br>        TextView textView_line;<br>        private View mView;<br>        public NavItemView(Context context) {<br>            this(context,null);<br>        }<br>        public NavItemView(Context context, AttributeSet attrs) {<br>            this(context, attrs,0);<br>        }<br>        @SuppressLint(“ResourceType”)<br>        public NavItemView(Context context, AttributeSet attrs, int defStyleAttr) {<br>            super(context, attrs, defStyleAttr);<br>            mView = View.inflate(context, R.layout.view_navitem, this);<br>            textView_line=mView.findViewById(R.id.nav_item_tv_line);<br>            textView_title=mView.findViewById(R.id.nav_item_tv_title);<br>    //        获取自定义属性<br>            TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.NavItem);<br>            if(ta!=null){<br>                String navtext = ta.getString(R.styleable.NavItem_navtext);<br>                textView_title.setText(navtext);<br>            }<br>        }<br>    //    选中状态<br>        public void startActive(){<br>            textView_title.setTextColor(Color.WHITE);<br>            textView_title.setTextSize(18);<br>            textView_line.animate().alpha(1).setDuration(200).start();<br>        }<br>    //    取消选中<br>        public void cancelActive(){<br>            textView_title.setTextColor(Color.parseColor(“#F1F1F1”));<br>            textView_title.setTextSize(16);<br>            textView_line.animate().alpha(0).setDuration(200).start();<br>        }<br>    }</p>
+<p>###三.startActive()方法作用：设置TextView的颜色为白色，并通过动画的方式显示底部指示线，达到选中状态。</p>
+<p>###四.cancelActive()方法作用:与startActive()方法的作用相反。</p>
+<p>###五.Activity调用<br>    public class MainActivity extends AppCompatActivity implements View.OnClickListener{<br>        NavItemView navItemView1,navItemView2,navItemView3,navItemView4,navItemView_Temp;<br>        @Override<br>        protected void onCreate(Bundle savedInstanceState) {<br>            super.onCreate(savedInstanceState);<br>            setContentView(R.layout.activity_main);<br>            navItemView1=findViewById(R.id.one);<br>            navItemView2=findViewById(R.id.two);<br>            navItemView3=findViewById(R.id.three);<br>            navItemView4=findViewById(R.id.four);<br>            navItemView1.setOnClickListener(this);<br>            navItemView2.setOnClickListener(this);<br>            navItemView3.setOnClickListener(this);<br>            navItemView4.setOnClickListener(this);<br>        }<br>        @Override<br>        public void onClick(View v) {<br>            if(navItemView_Temp!=null){<br>                navItemView_Temp.cancelActive();<br>            }<br>            switch (v.getId()){<br>                case R.id.one:<br>                    navItemView1.startActive();<br>                    navItemView_Temp=navItemView1;<br>                    break;<br>                case R.id.two:<br>                    navItemView2.startActive();<br>                    navItemView_Temp=navItemView2;<br>                    break;<br>                case R.id.three:<br>                    navItemView3.startActive();<br>                    navItemView_Temp=navItemView3;<br>                    break;<br>                case R.id.four:<br>                    navItemView4.startActive();<br>                    navItemView_Temp=navItemView4;<br>                    break;<br>            }<br>        }<br>    }</p>
+<p>###六.自定义属性文件展示<br>    &lt;?xml version=”1.0” encoding=”utf-8”?&gt;<br>    <resources><br>        <declare-styleable name="NavItem"><br>            <attr name="navtext" format="string"><br>        </attr></declare-styleable><br>    </resources></p>
+<p>###七.Activity布局文件展示<br>    &lt;?xml version=”1.0” encoding=”utf-8”?&gt;<br>    <relativelayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#000" tools:context="com.example.douyin.MainActivity"></relativelayout></p>
+<pre><code>    &lt;LinearLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:orientation=&quot;horizontal&quot;
+        android:layout_alignParentBottom=&quot;true&quot;
+        android:layout_height=&quot;40dp&quot;&gt;
+        &lt;com.example.douyin.NavItemView
+            android:layout_width=&quot;0dp&quot;
+            android:id=&quot;@+id/one&quot;
+            app:navtext=&quot;首页&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot;&gt;
+        &lt;/com.example.douyin.NavItemView&gt;
+        &lt;com.example.douyin.NavItemView
+            android:layout_width=&quot;0dp&quot;
+            android:id=&quot;@+id/two&quot;
+            app:navtext=&quot;关注&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot;&gt;
+        &lt;/com.example.douyin.NavItemView&gt;
+        &lt;com.example.douyin.NavItemView
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:id=&quot;@+id/three&quot;
+            app:navtext=&quot;消息&quot;
+            android:layout_height=&quot;wrap_content&quot;&gt;
+        &lt;/com.example.douyin.NavItemView&gt;
+        &lt;com.example.douyin.NavItemView
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:id=&quot;@+id/four&quot;
+            app:navtext=&quot;我&quot;
+            android:layout_height=&quot;wrap_content&quot;&gt;
+        &lt;/com.example.douyin.NavItemView&gt;
+    &lt;/LinearLayout&gt;
 
+&lt;/RelativeLayout&gt;
+</code></pre>
       
     </div>
     
@@ -400,6 +463,12 @@
     </div>
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/自定义View/" <i class="fa fa-tag"></i> 自定义View</a>
+          
+        </div>
+      
 
       
       
@@ -409,15 +478,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/05/04/Gllide缓存配置/" rel="next" title="Gllide缓存配置">
+                <i class="fa fa-chevron-left"></i> Gllide缓存配置
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/03/implement、api 指令/" rel="prev" title="implement、api 指令">
-                implement、api 指令 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -574,7 +643,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">原理解析：通过对控件添加动画来实现仿抖音底部导航的效果</span></a></li></ol></div>
             
 
           </div>
