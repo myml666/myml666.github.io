@@ -89,21 +89,21 @@
 
 
 
-<meta name="description" content="继续实现仿抖音底部导航今天要实现效果如下图 首先在原基础的布局中加入一个ImageView&amp;lt;LinearLayout     android:layout_width=&amp;quot;wrap_content&amp;quot;     android:orientation=&amp;quot;vertical&amp;quot;     android:id=&amp;quot;@+id/nav_top&amp;quot;">
+<meta name="description" content="PorterDuffXfermode是Android中用来对图层进行操作的类，类似于数学中的交集、并集，将上层（src）和下层（dst)进行特定的方式进行混合显示。构造方法：PorterDuffXfermode(PorterDuff.Mode mode)下图显示对应的PorterDuff.Mode所对应的效果（详细参考英勇青铜5大神的简书） 这次实现的图片文字是用的SrcIn模式，也就是先画文字然">
 <meta name="keywords" content="自定义View">
 <meta property="og:type" content="article">
-<meta property="og:title" content="仿抖音底部导航效果（二）">
-<meta property="og:url" content="http://yoursite.com/2018/05/09/仿抖音底部导航效果（二）/index.html">
+<meta property="og:title" content="利用PorterDuffXfermode绘制图片文字">
+<meta property="og:url" content="http://yoursite.com/2018/06/01/利用PorterDuffXfermode绘制图片文字/index.html">
 <meta property="og:site_name" content="来世成石">
-<meta property="og:description" content="继续实现仿抖音底部导航今天要实现效果如下图 首先在原基础的布局中加入一个ImageView&amp;lt;LinearLayout     android:layout_width=&amp;quot;wrap_content&amp;quot;     android:orientation=&amp;quot;vertical&amp;quot;     android:id=&amp;quot;@+id/nav_top&amp;quot;">
+<meta property="og:description" content="PorterDuffXfermode是Android中用来对图层进行操作的类，类似于数学中的交集、并集，将上层（src）和下层（dst)进行特定的方式进行混合显示。构造方法：PorterDuffXfermode(PorterDuff.Mode mode)下图显示对应的PorterDuff.Mode所对应的效果（详细参考英勇青铜5大神的简书） 这次实现的图片文字是用的SrcIn模式，也就是先画文字然">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/33dsNYW.gif">
-<meta property="og:image" content="https://i.imgur.com/ZCuXk9N.png">
-<meta property="og:updated_time" content="2018-05-09T02:54:33.139Z">
+<meta property="og:image" content="https://i.imgur.com/UZ4GrjA.png">
+<meta property="og:image" content="https://i.imgur.com/HqcP8eK.png">
+<meta property="og:updated_time" content="2018-06-01T06:24:21.619Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="仿抖音底部导航效果（二）">
-<meta name="twitter:description" content="继续实现仿抖音底部导航今天要实现效果如下图 首先在原基础的布局中加入一个ImageView&amp;lt;LinearLayout     android:layout_width=&amp;quot;wrap_content&amp;quot;     android:orientation=&amp;quot;vertical&amp;quot;     android:id=&amp;quot;@+id/nav_top&amp;quot;">
-<meta name="twitter:image" content="https://i.imgur.com/33dsNYW.gif">
+<meta name="twitter:title" content="利用PorterDuffXfermode绘制图片文字">
+<meta name="twitter:description" content="PorterDuffXfermode是Android中用来对图层进行操作的类，类似于数学中的交集、并集，将上层（src）和下层（dst)进行特定的方式进行混合显示。构造方法：PorterDuffXfermode(PorterDuff.Mode mode)下图显示对应的PorterDuff.Mode所对应的效果（详细参考英勇青铜5大神的简书） 这次实现的图片文字是用的SrcIn模式，也就是先画文字然">
+<meta name="twitter:image" content="https://i.imgur.com/UZ4GrjA.png">
 
 
 
@@ -133,14 +133,14 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/09/仿抖音底部导航效果（二）/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/01/利用PorterDuffXfermode绘制图片文字/"/>
 
 
 
 
 
 
-  <title>仿抖音底部导航效果（二） | 来世成石</title>
+  <title>利用PorterDuffXfermode绘制图片文字 | 来世成石</title>
   
 
 
@@ -267,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/09/仿抖音底部导航效果（二）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/利用PorterDuffXfermode绘制图片文字/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="来世成石">
@@ -284,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">仿抖音底部导航效果（二）</h1>
+          <h1 class="post-title" itemprop="name headline">利用PorterDuffXfermode绘制图片文字</h1>
         
 
         <div class="post-meta">
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-09T10:54:01+08:00">
-                2018-05-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T14:23:44+08:00">
+                2018-06-01
               </time>
             
 
@@ -336,7 +336,7 @@
 
           
           
-             <span id="/2018/05/09/仿抖音底部导航效果（二）/" class="leancloud_visitors" data-flag-title="仿抖音底部导航效果（二）">
+             <span id="/2018/06/01/利用PorterDuffXfermode绘制图片文字/" class="leancloud_visitors" data-flag-title="利用PorterDuffXfermode绘制图片文字">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -368,91 +368,80 @@
       
 
       
-        <h3 id="继续实现仿抖音底部导航"><a href="#继续实现仿抖音底部导航" class="headerlink" title="继续实现仿抖音底部导航"></a>继续实现仿抖音底部导航</h3><h3 id="今天要实现效果如下图"><a href="#今天要实现效果如下图" class="headerlink" title="今天要实现效果如下图"></a>今天要实现效果如下图</h3><p><img src="https://i.imgur.com/33dsNYW.gif" alt=""></p>
-<h3 id="首先在原基础的布局中加入一个ImageView"><a href="#首先在原基础的布局中加入一个ImageView" class="headerlink" title="首先在原基础的布局中加入一个ImageView"></a>首先在原基础的布局中加入一个ImageView</h3><pre><code>&lt;LinearLayout
-    android:layout_width=&quot;wrap_content&quot;
-    android:orientation=&quot;vertical&quot;
-    android:id=&quot;@+id/nav_top&quot;
-    android:layout_centerInParent=&quot;true&quot;
-    android:layout_height=&quot;wrap_content&quot;&gt;
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:text=&quot;标题&quot;
-        android:id=&quot;@+id/nav_item_tv_title&quot;
-        android:textColor=&quot;#F1F1F1&quot;
-        android:textSize=&quot;16sp&quot;
-        android:layout_height=&quot;wrap_content&quot; /&gt;
-    &lt;!--新加入的--&gt;
-    &lt;ImageView
-        android:id=&quot;@+id/reflash&quot;
-        android:layout_width=&quot;25dp&quot;
-        android:src=&quot;@mipmap/shuaxin&quot;
-        android:visibility=&quot;gone&quot;
-        android:layout_centerInParent=&quot;true&quot;
-        android:layout_height=&quot;25dp&quot; /&gt;
-&lt;/LinearLayout&gt;
-</code></pre><h4 id="这里附上刷新的图片素材"><a href="#这里附上刷新的图片素材" class="headerlink" title="这里附上刷新的图片素材"></a>这里附上刷新的图片素材</h4><p><img src="https://i.imgur.com/ZCuXk9N.png" alt=""></p>
-<h3 id="然后在原代码中进行修改以实现导航的动画及刷新功能"><a href="#然后在原代码中进行修改以实现导航的动画及刷新功能" class="headerlink" title="然后在原代码中进行修改以实现导航的动画及刷新功能"></a>然后在原代码中进行修改以实现导航的动画及刷新功能</h3><h4 id="1-添加是否显示刷新图片的标记"><a href="#1-添加是否显示刷新图片的标记" class="headerlink" title="1.添加是否显示刷新图片的标记"></a>1.添加是否显示刷新图片的标记</h4><pre><code>//默认设为flase
-private boolean isShowReflashImage=false;
-//并添加set方法
-public void setShowReflashImage(boolean showReflashImage) {
-    isShowReflashImage = showReflashImage;
-}
-</code></pre><h4 id="2-然后修改激活和取消激活的方法"><a href="#2-然后修改激活和取消激活的方法" class="headerlink" title="2.然后修改激活和取消激活的方法"></a>2.然后修改激活和取消激活的方法</h4><pre><code>public void startActive(){
-    //根据上一步添加的标记来判断是否显示ImageView
-    if(isShowReflashImage){
-        textView_title.setVisibility(GONE);
-        imageView_Shuaxin.setVisibility(VISIBLE);
-    }else {
-        textView_title.setTextColor(Color.WHITE);
-        textView_title.setTextSize(18);
+        <h3 id="PorterDuffXfermode是Android中用来对图层进行操作的类，类似于数学中的交集、并集，将上层（src）和下层（dst-进行特定的方式进行混合显示。"><a href="#PorterDuffXfermode是Android中用来对图层进行操作的类，类似于数学中的交集、并集，将上层（src）和下层（dst-进行特定的方式进行混合显示。" class="headerlink" title="PorterDuffXfermode是Android中用来对图层进行操作的类，类似于数学中的交集、并集，将上层（src）和下层（dst)进行特定的方式进行混合显示。"></a>PorterDuffXfermode是Android中用来对图层进行操作的类，类似于数学中的交集、并集，将上层（src）和下层（dst)进行特定的方式进行混合显示。</h3><h4 id="构造方法：PorterDuffXfermode-PorterDuff-Mode-mode"><a href="#构造方法：PorterDuffXfermode-PorterDuff-Mode-mode" class="headerlink" title="构造方法：PorterDuffXfermode(PorterDuff.Mode mode)"></a>构造方法：PorterDuffXfermode(PorterDuff.Mode mode)</h4><h4 id="下图显示对应的PorterDuff-Mode所对应的效果（详细参考英勇青铜5大神的简书）"><a href="#下图显示对应的PorterDuff-Mode所对应的效果（详细参考英勇青铜5大神的简书）" class="headerlink" title="下图显示对应的PorterDuff.Mode所对应的效果（详细参考英勇青铜5大神的简书）"></a>下图显示对应的PorterDuff.Mode所对应的效果（详细参考英<a href="https://www.jianshu.com/p/0f64daf202f2" target="_blank" rel="noopener">勇青铜5大神的简书</a>）</h4><p><img src="https://i.imgur.com/UZ4GrjA.png" alt=""></p>
+<h3 id="这次实现的图片文字是用的SrcIn模式，也就是先画文字然后画图，取其交集区域显示上层图层"><a href="#这次实现的图片文字是用的SrcIn模式，也就是先画文字然后画图，取其交集区域显示上层图层" class="headerlink" title="这次实现的图片文字是用的SrcIn模式，也就是先画文字然后画图，取其交集区域显示上层图层"></a>这次实现的图片文字是用的SrcIn模式，也就是先画文字然后画图，取其交集区域显示上层图层</h3><h3 id="完整代码展示"><a href="#完整代码展示" class="headerlink" title="完整代码展示"></a>完整代码展示</h3><pre><code>package com.yuyigufen.customview;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.support.annotation.Nullable;
+import android.util.AttributeSet;
+import android.view.View;
+
+/**
+ * Created by Administrator on 2018/6/1 0001.
+ */
+
+public class MyTextImageView extends View {
+
+    private Paint paint;
+
+    public MyTextImageView(Context context) {
+        this(context,null);
     }
-    textView_line.animate().alpha(1).setDuration(200).start();
-}
-public void cancelActive(){
-    if(isShowReflashImage){
-        textView_title.setVisibility(VISIBLE);
-        imageView_Shuaxin.setVisibility(GONE);
-        textView_line.setAlpha(0);
-    }else {
-        textView_title.setTextColor(Color.parseColor(&quot;#F1F1F1&quot;));
-        textView_title.setTextSize(16);
+
+    public MyTextImageView(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+        paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     }
-    textView_line.animate().alpha(0).setDuration(200).start();
-}
-</code></pre><h4 id="3-给负责刷新的ImageView添加旋转动画"><a href="#3-给负责刷新的ImageView添加旋转动画" class="headerlink" title="3.给负责刷新的ImageView添加旋转动画"></a>3.给负责刷新的ImageView添加旋转动画</h4><pre><code>private void initListener() {
-    final Animation rotateAnimation = new RotateAnimation(0,-360,Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
-    rotateAnimation.setDuration(300);
-    imageView_Shuaxin.setOnClickListener(new OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            imageView_Shuaxin.startAnimation(rotateAnimation);
-        }
-    });
-}
-</code></pre><h4 id="4-最后加上刷新事件"><a href="#4-最后加上刷新事件" class="headerlink" title="4.最后加上刷新事件"></a>4.最后加上刷新事件</h4><h5 id="1）新建NavItemReflashListener"><a href="#1）新建NavItemReflashListener" class="headerlink" title="1）新建NavItemReflashListener"></a>1）新建NavItemReflashListener</h5><pre><code>public interface NavItemReflashListener {
-    void onReflash(View v);
-}
-</code></pre><h5 id="2）给NavItemView加上NavItemReflashListener属性并设置set方法"><a href="#2）给NavItemView加上NavItemReflashListener属性并设置set方法" class="headerlink" title="2）给NavItemView加上NavItemReflashListener属性并设置set方法"></a>2）给NavItemView加上NavItemReflashListener属性并设置set方法</h5><pre><code>public void setNavItemReflashListener(NavItemReflashListener navItemReflashListener) {
-    this.navItemReflashListener = navItemReflashListener;
-}
-</code></pre><h5 id="3）在imageView-Shuaxin的点击事件中调用onReflash-View-v-方法"><a href="#3）在imageView-Shuaxin的点击事件中调用onReflash-View-v-方法" class="headerlink" title="3）在imageView_Shuaxin的点击事件中调用onReflash(View v)方法"></a>3）在imageView_Shuaxin的点击事件中调用onReflash(View v)方法</h5><pre><code>imageView_Shuaxin.setOnClickListener(new OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            imageView_Shuaxin.startAnimation(rotateAnimation);
-            if(navItemReflashListener!=null){
-                navItemReflashListener.onReflash(v);
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        setMeasuredDimension(measureWidth(widthMeasureSpec),measureWidth(heightMeasureSpec));
+    }
+    private int measureWidth(int width){
+        int size = MeasureSpec.getSize(width);
+        int mode = MeasureSpec.getMode(width);
+        if(MeasureSpec.EXACTLY==mode){
+            return size;
+        }else {
+            if(MeasureSpec.AT_MOST==mode){
+                return size&lt;200?size:200;
             }
+            return 200;
         }
-});
-</code></pre><h4 id="5-在MainActivity中将想要显示刷新控件的NavItemView设置ShowReflashImagewei为true并加上刷新事件"><a href="#5-在MainActivity中将想要显示刷新控件的NavItemView设置ShowReflashImagewei为true并加上刷新事件" class="headerlink" title="5.在MainActivity中将想要显示刷新控件的NavItemView设置ShowReflashImagewei为true并加上刷新事件"></a>5.在MainActivity中将想要显示刷新控件的NavItemView设置ShowReflashImagewei为true并加上刷新事件</h4><pre><code>navItemView1.setShowReflashImage(true);
-    navItemView1.setNavItemReflashListener(new NavItemReflashListener() {
-        @Override
-        public void onReflash(View v) {
-            Toast.makeText(MainActivity.this, &quot;刷新&quot;, Toast.LENGTH_SHORT).show();
-        }
-});
-</code></pre><h3 id="最后附上完整代码https-gitee-com-itfittnesss-DouYin"><a href="#最后附上完整代码https-gitee-com-itfittnesss-DouYin" class="headerlink" title="最后附上完整代码https://gitee.com/itfittnesss/DouYin"></a>最后附上完整代码<a href="https://gitee.com/itfittnesss/DouYin" target="_blank" rel="noopener">https://gitee.com/itfittnesss/DouYin</a></h3>
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+    //        创建一个新画布，然后在新画布上进行绘制
+        int layerId = canvas.saveLayer(0, 0, getWidth(),getHeight() , null, Canvas.ALL_SAVE_FLAG);
+        paint.setTextSize(100);
+    //    这里使用STROKE模式通过设置StrokeWidth增加文字的宽度
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(8);
+        float i = paint.measureText(&quot;图片文字&quot;);
+        canvas.drawText(&quot;图片文字&quot;,(getWidth()-i)/2,getHeight()/2,paint);
+    //        设置取交集显示
+        PorterDuffXfermode porterDuffXfermode = new PorterDuffXfermode(PorterDuff.Mode.SRC_IN);
+        paint.setXfermode(porterDuffXfermode);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.fff);
+    //        将图片缩放为控件大小
+        Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, getWidth(), getHeight(), true);
+        canvas.drawBitmap(scaledBitmap,5,5,paint);
+        paint.setXfermode(null);
+    //        将绘制完的画布贴到控件上
+        canvas.restoreToCount(layerId);
+    }
+}
+</code></pre><h3 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h3><p><img src="https://i.imgur.com/HqcP8eK.png" alt=""></p>
+
       
     </div>
     
@@ -516,8 +505,8 @@ public void cancelActive(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/08/热搜View/" rel="next" title="热搜View">
-                <i class="fa fa-chevron-left"></i> 热搜View
+              <a href="/2018/05/31/图像的色调、亮度、饱和度调节/" rel="next" title="图像的色调、亮度、饱和度调节">
+                <i class="fa fa-chevron-left"></i> 图像的色调、亮度、饱和度调节
               </a>
             
           </div>
@@ -525,10 +514,6 @@ public void cancelActive(){
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/09/仿抖音“我的”界面设计图制作/" rel="prev" title="仿抖音“我的”界面设计图制作">
-                仿抖音“我的”界面设计图制作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -685,7 +670,7 @@ public void cancelActive(){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#继续实现仿抖音底部导航"><span class="nav-number">1.</span> <span class="nav-text">继续实现仿抖音底部导航</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#今天要实现效果如下图"><span class="nav-number">2.</span> <span class="nav-text">今天要实现效果如下图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首先在原基础的布局中加入一个ImageView"><span class="nav-number">3.</span> <span class="nav-text">首先在原基础的布局中加入一个ImageView</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#这里附上刷新的图片素材"><span class="nav-number">3.1.</span> <span class="nav-text">这里附上刷新的图片素材</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#然后在原代码中进行修改以实现导航的动画及刷新功能"><span class="nav-number">4.</span> <span class="nav-text">然后在原代码中进行修改以实现导航的动画及刷新功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-添加是否显示刷新图片的标记"><span class="nav-number">4.1.</span> <span class="nav-text">1.添加是否显示刷新图片的标记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-然后修改激活和取消激活的方法"><span class="nav-number">4.2.</span> <span class="nav-text">2.然后修改激活和取消激活的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-给负责刷新的ImageView添加旋转动画"><span class="nav-number">4.3.</span> <span class="nav-text">3.给负责刷新的ImageView添加旋转动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-最后加上刷新事件"><span class="nav-number">4.4.</span> <span class="nav-text">4.最后加上刷新事件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1）新建NavItemReflashListener"><span class="nav-number">4.4.1.</span> <span class="nav-text">1）新建NavItemReflashListener</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2）给NavItemView加上NavItemReflashListener属性并设置set方法"><span class="nav-number">4.4.2.</span> <span class="nav-text">2）给NavItemView加上NavItemReflashListener属性并设置set方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3）在imageView-Shuaxin的点击事件中调用onReflash-View-v-方法"><span class="nav-number">4.4.3.</span> <span class="nav-text">3）在imageView_Shuaxin的点击事件中调用onReflash(View v)方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-在MainActivity中将想要显示刷新控件的NavItemView设置ShowReflashImagewei为true并加上刷新事件"><span class="nav-number">4.5.</span> <span class="nav-text">5.在MainActivity中将想要显示刷新控件的NavItemView设置ShowReflashImagewei为true并加上刷新事件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后附上完整代码https-gitee-com-itfittnesss-DouYin"><span class="nav-number">5.</span> <span class="nav-text">最后附上完整代码https://gitee.com/itfittnesss/DouYin</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#PorterDuffXfermode是Android中用来对图层进行操作的类，类似于数学中的交集、并集，将上层（src）和下层（dst-进行特定的方式进行混合显示。"><span class="nav-number">1.</span> <span class="nav-text">PorterDuffXfermode是Android中用来对图层进行操作的类，类似于数学中的交集、并集，将上层（src）和下层（dst)进行特定的方式进行混合显示。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#构造方法：PorterDuffXfermode-PorterDuff-Mode-mode"><span class="nav-number">1.1.</span> <span class="nav-text">构造方法：PorterDuffXfermode(PorterDuff.Mode mode)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下图显示对应的PorterDuff-Mode所对应的效果（详细参考英勇青铜5大神的简书）"><span class="nav-number">1.2.</span> <span class="nav-text">下图显示对应的PorterDuff.Mode所对应的效果（详细参考英勇青铜5大神的简书）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这次实现的图片文字是用的SrcIn模式，也就是先画文字然后画图，取其交集区域显示上层图层"><span class="nav-number">2.</span> <span class="nav-text">这次实现的图片文字是用的SrcIn模式，也就是先画文字然后画图，取其交集区域显示上层图层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整代码展示"><span class="nav-number">3.</span> <span class="nav-text">完整代码展示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果展示"><span class="nav-number">4.</span> <span class="nav-text">效果展示</span></a></li></ol></div>
             
 
           </div>
