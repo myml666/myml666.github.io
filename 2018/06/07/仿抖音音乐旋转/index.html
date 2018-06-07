@@ -89,20 +89,26 @@
 
 
 
-<meta name="description" content="对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改●setRotate(int axis, float degrees) 设置色调参数一（axis）：颜色编号1（红）,2（绿）,3（蓝）参数二（degrees）：修改的值（这里为角度值0~360）方法调用ColorMatrix colorMatrixS=new ColorMatrix(); colorMatrix">
+<meta name="description" content="这次是实现一个仿抖音的音乐旋转自定义View,先看一下效果 实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。 先看下概念图 ●音符动画音符动画这里是利用贝塞尔曲线+PathMeasure+ValueAnimator来实现的 1.贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲">
 <meta name="keywords" content="自定义View">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图像的色调、亮度、饱和度调节">
-<meta property="og:url" content="http://yoursite.com/2018/05/31/图像的色调、亮度、饱和度调节/index.html">
+<meta property="og:title" content="仿抖音音乐旋转">
+<meta property="og:url" content="http://yoursite.com/2018/06/07/仿抖音音乐旋转/index.html">
 <meta property="og:site_name" content="来世成石">
-<meta property="og:description" content="对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改●setRotate(int axis, float degrees) 设置色调参数一（axis）：颜色编号1（红）,2（绿）,3（蓝）参数二（degrees）：修改的值（这里为角度值0~360）方法调用ColorMatrix colorMatrixS=new ColorMatrix(); colorMatrix">
+<meta property="og:description" content="这次是实现一个仿抖音的音乐旋转自定义View,先看一下效果 实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。 先看下概念图 ●音符动画音符动画这里是利用贝塞尔曲线+PathMeasure+ValueAnimator来实现的 1.贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/ujrx5ti.gif">
-<meta property="og:updated_time" content="2018-05-31T06:49:01.373Z">
+<meta property="og:image" content="https://i.imgur.com/FPpxZNv.gif">
+<meta property="og:image" content="https://i.imgur.com/MYSJjzr.png">
+<meta property="og:image" content="https://i.imgur.com/pAdQpI1.png">
+<meta property="og:image" content="https://i.imgur.com/q9frqBK.png">
+<meta property="og:image" content="https://i.imgur.com/Wo1eQ2y.gif">
+<meta property="og:image" content="https://i.imgur.com/7WlOPPc.gif">
+<meta property="og:image" content="https://i.imgur.com/303JZJ6.gif">
+<meta property="og:updated_time" content="2018-06-07T09:37:41.189Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="图像的色调、亮度、饱和度调节">
-<meta name="twitter:description" content="对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改●setRotate(int axis, float degrees) 设置色调参数一（axis）：颜色编号1（红）,2（绿）,3（蓝）参数二（degrees）：修改的值（这里为角度值0~360）方法调用ColorMatrix colorMatrixS=new ColorMatrix(); colorMatrix">
-<meta name="twitter:image" content="https://i.imgur.com/ujrx5ti.gif">
+<meta name="twitter:title" content="仿抖音音乐旋转">
+<meta name="twitter:description" content="这次是实现一个仿抖音的音乐旋转自定义View,先看一下效果 实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。 先看下概念图 ●音符动画音符动画这里是利用贝塞尔曲线+PathMeasure+ValueAnimator来实现的 1.贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲">
+<meta name="twitter:image" content="https://i.imgur.com/FPpxZNv.gif">
 
 
 
@@ -132,14 +138,14 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/31/图像的色调、亮度、饱和度调节/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/07/仿抖音音乐旋转/"/>
 
 
 
 
 
 
-  <title>图像的色调、亮度、饱和度调节 | 来世成石</title>
+  <title>仿抖音音乐旋转 | 来世成石</title>
   
 
 
@@ -266,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/31/图像的色调、亮度、饱和度调节/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/07/仿抖音音乐旋转/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="来世成石">
@@ -283,7 +289,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">图像的色调、亮度、饱和度调节</h1>
+          <h1 class="post-title" itemprop="name headline">仿抖音音乐旋转</h1>
         
 
         <div class="post-meta">
@@ -295,8 +301,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T14:45:11+08:00">
-                2018-05-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-07T17:36:47+08:00">
+                2018-06-07
               </time>
             
 
@@ -335,7 +341,7 @@
 
           
           
-             <span id="/2018/05/31/图像的色调、亮度、饱和度调节/" class="leancloud_visitors" data-flag-title="图像的色调、亮度、饱和度调节">
+             <span id="/2018/06/07/仿抖音音乐旋转/" class="leancloud_visitors" data-flag-title="仿抖音音乐旋转">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -367,129 +373,68 @@
       
 
       
-        <h3 id="对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改"><a href="#对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改" class="headerlink" title="对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改"></a>对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改</h3><h4 id="●setRotate-int-axis-float-degrees-设置色调"><a href="#●setRotate-int-axis-float-degrees-设置色调" class="headerlink" title="●setRotate(int axis, float degrees) 设置色调"></a>●setRotate(int axis, float degrees) 设置色调</h4><h4 id="参数一（axis）：颜色编号1（红）-2（绿）-3（蓝）"><a href="#参数一（axis）：颜色编号1（红）-2（绿）-3（蓝）" class="headerlink" title="参数一（axis）：颜色编号1（红）,2（绿）,3（蓝）"></a>参数一（axis）：颜色编号1（红）,2（绿）,3（蓝）</h4><h4 id="参数二（degrees）：修改的值（这里为角度值0-360）"><a href="#参数二（degrees）：修改的值（这里为角度值0-360）" class="headerlink" title="参数二（degrees）：修改的值（这里为角度值0~360）"></a>参数二（degrees）：修改的值（这里为角度值0~360）</h4><h4 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h4><pre><code>ColorMatrix colorMatrixS=new ColorMatrix();
-colorMatrixS.setRotate(0,one);//红
-colorMatrixS.setRotate(1,one);//绿
-colorMatrixS.setRotate(2,one);//蓝
-</code></pre><h4 id="●setSaturation-float-sat-设置饱和度"><a href="#●setSaturation-float-sat-设置饱和度" class="headerlink" title="●setSaturation(float sat) 设置饱和度"></a>●setSaturation(float sat) 设置饱和度</h4><h4 id="参数（sat）：值为1时是原图，大于1饱和度增加，小于1时饱和度减少，值为0时图像为灰色"><a href="#参数（sat）：值为1时是原图，大于1饱和度增加，小于1时饱和度减少，值为0时图像为灰色" class="headerlink" title="参数（sat）：值为1时是原图，大于1饱和度增加，小于1时饱和度减少，值为0时图像为灰色"></a>参数（sat）：值为1时是原图，大于1饱和度增加，小于1时饱和度减少，值为0时图像为灰色</h4><h4 id="方法调用-1"><a href="#方法调用-1" class="headerlink" title="方法调用"></a>方法调用</h4><pre><code>colorMatrixB.setSaturation(three);
-</code></pre><h4 id="●setScale-float-rScale-float-gScale-float-bScale-float-aScale-设置亮度"><a href="#●setScale-float-rScale-float-gScale-float-bScale-float-aScale-设置亮度" class="headerlink" title="●setScale(float rScale, float gScale, float bScale, float aScale)设置亮度"></a>●setScale(float rScale, float gScale, float bScale, float aScale)设置亮度</h4><h4 id="参数一（rScale）：红色"><a href="#参数一（rScale）：红色" class="headerlink" title="参数一（rScale）：红色"></a>参数一（rScale）：红色</h4><h4 id="参数二（gScale）：绿色"><a href="#参数二（gScale）：绿色" class="headerlink" title="参数二（gScale）：绿色"></a>参数二（gScale）：绿色</h4><h4 id="参数三（bScale）：蓝色"><a href="#参数三（bScale）：蓝色" class="headerlink" title="参数三（bScale）：蓝色"></a>参数三（bScale）：蓝色</h4><h4 id="参数四（aScale）：透明度"><a href="#参数四（aScale）：透明度" class="headerlink" title="参数四（aScale）：透明度"></a>参数四（aScale）：透明度</h4><h4 id="各个参数的值对应调节各个颜色的亮度，0代表全黑1代表原图，一般将透明度的值固定设置为1（原图效果），通过调节三元色的值来调节亮度。"><a href="#各个参数的值对应调节各个颜色的亮度，0代表全黑1代表原图，一般将透明度的值固定设置为1（原图效果），通过调节三元色的值来调节亮度。" class="headerlink" title="各个参数的值对应调节各个颜色的亮度，0代表全黑1代表原图，一般将透明度的值固定设置为1（原图效果），通过调节三元色的值来调节亮度。"></a>各个参数的值对应调节各个颜色的亮度，0代表全黑1代表原图，一般将透明度的值固定设置为1（原图效果），通过调节三元色的值来调节亮度。</h4><h4 id="方法调用-2"><a href="#方法调用-2" class="headerlink" title="方法调用"></a>方法调用</h4><pre><code>colorMatrixL.setScale(two,two,two,1);
-</code></pre><h3 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h3><p><img src="https://i.imgur.com/ujrx5ti.gif" alt=""></p>
-<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><h4 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h4><pre><code>public class MainActivity extends AppCompatActivity     implements SeekBar.OnSeekBarChangeListener{
-    SeekBar seekBarone,seekbartwo,seekbarthree;
-    ImageView imageView;
-    float one=1,two=1,three=1;
-    private Bitmap baseBitmap,copyBitmap;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        imageView = findViewById(R.id.img);
-        seekBarone=findViewById(R.id.one);
-        seekbartwo=findViewById(R.id.two);
-        seekbarthree=findViewById(R.id.three);
-        seekBarone.setOnSeekBarChangeListener(this);
-        seekbartwo.setOnSeekBarChangeListener(this);
-        seekbarthree.setOnSeekBarChangeListener(this);
-        baseBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.aaa);
-        //既然是复制一张与原图一模一样的图片那么这张复制图片的画纸的宽度和高度以及分辨率都要与原图一样,copyBitmap就为一张与原图相同尺寸分辨率的空白画纸
-        copyBitmap=Bitmap.createBitmap(baseBitmap.getWidth(), baseBitmap.getHeight(), baseBitmap.getConfig());
-    }
-    @Override
-    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        switch (seekBar.getId()){
-            case R.id.one:
-                one=progress*1.0f/seekBar.getMax()*360;
-                break;
-            case R.id.two:
-                two=progress*1.0f/(seekBar.getMax()-50);
-                break;
-            case R.id.three:
-                three=progress*1.0f/(seekBar.getMax()-50);
-                break;
+        <h3 id="这次是实现一个仿抖音的音乐旋转自定义View-先看一下效果"><a href="#这次是实现一个仿抖音的音乐旋转自定义View-先看一下效果" class="headerlink" title="这次是实现一个仿抖音的音乐旋转自定义View,先看一下效果"></a>这次是实现一个仿抖音的音乐旋转自定义View,先看一下效果</h3><p><img src="https://i.imgur.com/FPpxZNv.gif" alt=""></p>
+<h3 id="实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。"><a href="#实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。" class="headerlink" title="实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。"></a>实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。</h3><p><img src="https://i.imgur.com/MYSJjzr.png" alt=""></p>
+<h3 id="先看下概念图"><a href="#先看下概念图" class="headerlink" title="先看下概念图"></a>先看下概念图</h3><p><img src="https://i.imgur.com/pAdQpI1.png" alt=""></p>
+<h3 id="●音符动画"><a href="#●音符动画" class="headerlink" title="●音符动画"></a>●音符动画</h3><h4 id="音符动画这里是利用贝塞尔曲线-PathMeasure-ValueAnimator来实现的"><a href="#音符动画这里是利用贝塞尔曲线-PathMeasure-ValueAnimator来实现的" class="headerlink" title="音符动画这里是利用贝塞尔曲线+PathMeasure+ValueAnimator来实现的"></a>音符动画这里是利用贝塞尔曲线+PathMeasure+ValueAnimator来实现的</h4><p><img src="https://i.imgur.com/q9frqBK.png" alt=""></p>
+<h4 id="1-贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲线。"><a href="#1-贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲线。" class="headerlink" title="1.贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲线。"></a>1.贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲线。</h4><pre><code>path = new Path();
+//将起点移到右下角
+path.moveTo(getWidth(),getHeight()-getWidth()/6);
+//绘制自下而上的贝塞尔曲线
+path.quadTo(0,getHeight(),getWidth()/4,0);
+</code></pre><p><img src="https://i.imgur.com/Wo1eQ2y.gif" alt=""></p>
+<h4 id="2-PathMeasure-ValueAnimator实现音符沿轨迹运动"><a href="#2-PathMeasure-ValueAnimator实现音符沿轨迹运动" class="headerlink" title="2.PathMeasure+ValueAnimator实现音符沿轨迹运动"></a>2.PathMeasure+ValueAnimator实现音符沿轨迹运动</h4><pre><code>private void initPath() {
+    //新建两个float数组pos用来存储每个轨迹点的坐标，tan用来存储正切值
+    pos = new float[2];
+    tan = new float[2];
+    path = new Path();
+    path.moveTo(getWidth(),getHeight()-getWidth()/6);
+    path.quadTo(0,getHeight(),getWidth()/4,0);
+    pathMeasure = new PathMeasure(path,false);
+    length = pathMeasure.getLength();
+    valueAnimator = ValueAnimator.ofFloat(0,2f);
+    valueAnimator.setDuration(3000);
+    //设置重复执行动画
+    valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
+    //设置为匀速运动
+    valueAnimator.setInterpolator(new LinearInterpolator());
+    valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        @Override
+        public void onAnimationUpdate(ValueAnimator animation) {
+            float temp=(float) animation.getAnimatedValue();
+            val= temp/2;
+            //这里实现音符的透明度从0~1~0的效果
+            if(temp&gt;1){
+                Music3.this.setAlpha(Math.abs(temp-2f));
+            }else {
+                Music3.this.setAlpha(temp);
+            }
+            //更新界面
+            invalidate();
         }
-        Paint paint=new Paint();
-        Canvas canvas=new Canvas(copyBitmap);
-        ColorMatrix colorMatrixS=new ColorMatrix();
-        colorMatrixS.setRotate(0,one);
-        colorMatrixS.setRotate(1,one);
-        colorMatrixS.setRotate(2,one);
-        ColorMatrix colorMatrixL=new ColorMatrix();
-        colorMatrixL.setScale(two,two,two,1);
-        ColorMatrix colorMatrixB=new ColorMatrix();
-        colorMatrixB.setSaturation(three);
-        ColorMatrix colorMatriximg=new ColorMatrix();
-    //        通过postConcat()方法可以将以上效果叠加到一起
-        colorMatriximg.postConcat(colorMatrixB);
-        colorMatriximg.postConcat(colorMatrixL);
-        colorMatriximg.postConcat(colorMatrixS);
-        ColorMatrixColorFilter colorMatrixColorFilter=new ColorMatrixColorFilter(colorMatriximg);
-        paint.setColorFilter(colorMatrixColorFilter);
-        canvas.drawBitmap(baseBitmap,new Matrix(),paint);
-        imageView.setImageBitmap(copyBitmap);
-    }
-
-    @Override
-    public void onStartTrackingTouch(SeekBar seekBar) {
-
-    }
-
-    @Override
-    public void onStopTrackingTouch(SeekBar seekBar) {
-
-    }
+    });
+    valueAnimator.start();
 }
-</code></pre><h4 id="布局代码"><a href="#布局代码" class="headerlink" title="布局代码"></a>布局代码</h4><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-    &lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-        xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-        xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot;
-        android:orientation=&quot;vertical&quot;
-        tools:context=&quot;com.yuyigufen.customview.MainActivity&quot;&gt;
-
-        &lt;ImageView
-            android:layout_width=&quot;match_parent&quot;
-            android:src=&quot;@mipmap/aaa&quot;
-            android:id=&quot;@+id/img&quot;
-            android:layout_height=&quot;200dp&quot; /&gt;
-        &lt;TextView
-            android:layout_width=&quot;wrap_content&quot;
-            android:text=&quot;色调&quot;
-            android:layout_marginTop=&quot;20dp&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;android.support.v7.widget.AppCompatSeekBar
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_marginLeft=&quot;10dp&quot;
-            android:id=&quot;@+id/one&quot;
-            android:layout_marginRight=&quot;10dp&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;TextView
-            android:layout_width=&quot;wrap_content&quot;
-            android:text=&quot;亮度&quot;
-            android:layout_marginTop=&quot;20dp&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;android.support.v7.widget.AppCompatSeekBar
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_marginLeft=&quot;10dp&quot;
-            android:id=&quot;@+id/two&quot;
-            android:progress=&quot;50&quot;
-            android:layout_marginRight=&quot;10dp&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;TextView
-            android:layout_width=&quot;wrap_content&quot;
-            android:text=&quot;饱和度&quot;
-            android:layout_marginTop=&quot;20dp&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;android.support.v7.widget.AppCompatSeekBar
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_marginLeft=&quot;10dp&quot;
-            android:id=&quot;@+id/three&quot;
-            android:progress=&quot;50&quot;
-            android:layout_marginRight=&quot;10dp&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-
-&lt;/LinearLayout&gt;
-</code></pre>
+@Override
+protected void onDraw(Canvas canvas) {
+    super.onDraw(canvas);
+    //获取每个点对应的坐标
+    pathMeasure.getPosTan(length*val,pos,tan);
+    //创建音符BitMap宽高是逐渐放大的
+    scaledBitmap = Bitmap.createScaledBitmap(bitmap, (int)(getWidth()/5*val)+4, (int)(getWidth()/5*val)+4, true);
+    canvas.drawPath(path,paint);
+    canvas.drawBitmap(scaledBitmap,pos[0],pos[1],paint);
+}
+</code></pre><p><img src="https://i.imgur.com/7WlOPPc.gif" alt=""></p>
+<h3 id="●图片旋转"><a href="#●图片旋转" class="headerlink" title="●图片旋转"></a>●图片旋转</h3><h4 id="这里我引用的一个第三方的圆形图片库"><a href="#这里我引用的一个第三方的圆形图片库" class="headerlink" title="这里我引用的一个第三方的圆形图片库"></a>这里我引用的一个第三方的圆形图片库</h4><pre><code>implementation &apos;de.hdodenhof:circleimageview:2.2.0&apos;
+</code></pre><h4 id="实现图片旋转"><a href="#实现图片旋转" class="headerlink" title="实现图片旋转"></a>实现图片旋转</h4><pre><code>circleImageView = findViewById(R.id.mm);
+RotateAnimation rotateAnimation = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+rotateAnimation.setInterpolator(new LinearInterpolator());
+rotateAnimation.setDuration(4000);
+rotateAnimation.setRepeatCount(Animation.INFINITE);
+circleImageView.startAnimation(rotateAnimation);
+</code></pre><p><img src="https://i.imgur.com/303JZJ6.gif" alt=""></p>
+<h3 id="最后附上源码https-gitee-com-itfittnesss-DouYinMusic"><a href="#最后附上源码https-gitee-com-itfittnesss-DouYinMusic" class="headerlink" title="最后附上源码https://gitee.com/itfittnesss/DouYinMusic"></a>最后附上源码<a href="https://gitee.com/itfittnesss/DouYinMusic" target="_blank" rel="noopener">https://gitee.com/itfittnesss/DouYinMusic</a></h3>
       
     </div>
     
@@ -553,8 +498,8 @@ colorMatrixS.setRotate(2,one);//蓝
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/10/vue如何编写组件可以通过Vue-use-使用/" rel="next" title="vue如何编写组件可以通过Vue.use()使用">
-                <i class="fa fa-chevron-left"></i> vue如何编写组件可以通过Vue.use()使用
+              <a href="/2018/06/01/利用PorterDuffXfermode绘制图片文字/" rel="next" title="利用PorterDuffXfermode绘制图片文字">
+                <i class="fa fa-chevron-left"></i> 利用PorterDuffXfermode绘制图片文字
               </a>
             
           </div>
@@ -562,10 +507,6 @@ colorMatrixS.setRotate(2,one);//蓝
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/01/利用PorterDuffXfermode绘制图片文字/" rel="prev" title="利用PorterDuffXfermode绘制图片文字">
-                利用PorterDuffXfermode绘制图片文字 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -722,7 +663,7 @@ colorMatrixS.setRotate(2,one);//蓝
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改"><span class="nav-number">1.</span> <span class="nav-text">对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#●setRotate-int-axis-float-degrees-设置色调"><span class="nav-number">1.1.</span> <span class="nav-text">●setRotate(int axis, float degrees) 设置色调</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数一（axis）：颜色编号1（红）-2（绿）-3（蓝）"><span class="nav-number">1.2.</span> <span class="nav-text">参数一（axis）：颜色编号1（红）,2（绿）,3（蓝）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数二（degrees）：修改的值（这里为角度值0-360）"><span class="nav-number">1.3.</span> <span class="nav-text">参数二（degrees）：修改的值（这里为角度值0~360）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法调用"><span class="nav-number">1.4.</span> <span class="nav-text">方法调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#●setSaturation-float-sat-设置饱和度"><span class="nav-number">1.5.</span> <span class="nav-text">●setSaturation(float sat) 设置饱和度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数（sat）：值为1时是原图，大于1饱和度增加，小于1时饱和度减少，值为0时图像为灰色"><span class="nav-number">1.6.</span> <span class="nav-text">参数（sat）：值为1时是原图，大于1饱和度增加，小于1时饱和度减少，值为0时图像为灰色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法调用-1"><span class="nav-number">1.7.</span> <span class="nav-text">方法调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#●setScale-float-rScale-float-gScale-float-bScale-float-aScale-设置亮度"><span class="nav-number">1.8.</span> <span class="nav-text">●setScale(float rScale, float gScale, float bScale, float aScale)设置亮度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数一（rScale）：红色"><span class="nav-number">1.9.</span> <span class="nav-text">参数一（rScale）：红色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数二（gScale）：绿色"><span class="nav-number">1.10.</span> <span class="nav-text">参数二（gScale）：绿色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数三（bScale）：蓝色"><span class="nav-number">1.11.</span> <span class="nav-text">参数三（bScale）：蓝色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数四（aScale）：透明度"><span class="nav-number">1.12.</span> <span class="nav-text">参数四（aScale）：透明度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各个参数的值对应调节各个颜色的亮度，0代表全黑1代表原图，一般将透明度的值固定设置为1（原图效果），通过调节三元色的值来调节亮度。"><span class="nav-number">1.13.</span> <span class="nav-text">各个参数的值对应调节各个颜色的亮度，0代表全黑1代表原图，一般将透明度的值固定设置为1（原图效果），通过调节三元色的值来调节亮度。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法调用-2"><span class="nav-number">1.14.</span> <span class="nav-text">方法调用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果展示"><span class="nav-number">2.</span> <span class="nav-text">效果展示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整代码"><span class="nav-number">3.</span> <span class="nav-text">完整代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Activity"><span class="nav-number">3.1.</span> <span class="nav-text">Activity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#布局代码"><span class="nav-number">3.2.</span> <span class="nav-text">布局代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#这次是实现一个仿抖音的音乐旋转自定义View-先看一下效果"><span class="nav-number">1.</span> <span class="nav-text">这次是实现一个仿抖音的音乐旋转自定义View,先看一下效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。"><span class="nav-number">2.</span> <span class="nav-text">实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#先看下概念图"><span class="nav-number">3.</span> <span class="nav-text">先看下概念图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#●音符动画"><span class="nav-number">4.</span> <span class="nav-text">●音符动画</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#音符动画这里是利用贝塞尔曲线-PathMeasure-ValueAnimator来实现的"><span class="nav-number">4.1.</span> <span class="nav-text">音符动画这里是利用贝塞尔曲线+PathMeasure+ValueAnimator来实现的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲线。"><span class="nav-number">4.2.</span> <span class="nav-text">1.贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲线。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-PathMeasure-ValueAnimator实现音符沿轨迹运动"><span class="nav-number">4.3.</span> <span class="nav-text">2.PathMeasure+ValueAnimator实现音符沿轨迹运动</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#●图片旋转"><span class="nav-number">5.</span> <span class="nav-text">●图片旋转</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#这里我引用的一个第三方的圆形图片库"><span class="nav-number">5.1.</span> <span class="nav-text">这里我引用的一个第三方的圆形图片库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现图片旋转"><span class="nav-number">5.2.</span> <span class="nav-text">实现图片旋转</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后附上源码https-gitee-com-itfittnesss-DouYinMusic"><span class="nav-number">6.</span> <span class="nav-text">最后附上源码https://gitee.com/itfittnesss/DouYinMusic</span></a></li></ol></div>
             
 
           </div>
