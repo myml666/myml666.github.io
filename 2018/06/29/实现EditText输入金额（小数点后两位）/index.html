@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="gradle," />
+  <meta name="keywords" content="随笔," />
 
 
 
@@ -89,21 +89,18 @@
 
 
 
-<meta name="description" content="前言Android studio 版本更新至3.0，同时也出现了两个新的依赖指令：implement 和api。在com.android.tools.build:gradle 3.0 以下版本依赖在gradle 中的声明写法：compile fileTree(dir: &amp;apos;libs&amp;apos;, include: [&amp;apos;*.jar&amp;apos;]) 3.0后的写法为implement">
-<meta name="keywords" content="gradle">
+<meta name="description" content="通过设置过滤器（Filter）实现EditText输入金额（小数点后两位）。布局文件&amp;lt;!--inputType设置为numberDecimal--&amp;gt; &amp;lt;EditText     android:hint=&amp;quot;请填写最新价格&amp;quot;     android:inputType=&amp;quot;numberDecimal&amp;quot;/&amp;gt; java代码editText_p">
+<meta name="keywords" content="随笔">
 <meta property="og:type" content="article">
-<meta property="og:title" content="implement、api 指令">
-<meta property="og:url" content="http://yoursite.com/2018/05/03/implement、api 指令/index.html">
+<meta property="og:title" content="实现EditText输入金额（小数点后两位）">
+<meta property="og:url" content="http://yoursite.com/2018/06/29/实现EditText输入金额（小数点后两位）/index.html">
 <meta property="og:site_name" content="来世成石">
-<meta property="og:description" content="前言Android studio 版本更新至3.0，同时也出现了两个新的依赖指令：implement 和api。在com.android.tools.build:gradle 3.0 以下版本依赖在gradle 中的声明写法：compile fileTree(dir: &amp;apos;libs&amp;apos;, include: [&amp;apos;*.jar&amp;apos;]) 3.0后的写法为implement">
+<meta property="og:description" content="通过设置过滤器（Filter）实现EditText输入金额（小数点后两位）。布局文件&amp;lt;!--inputType设置为numberDecimal--&amp;gt; &amp;lt;EditText     android:hint=&amp;quot;请填写最新价格&amp;quot;     android:inputType=&amp;quot;numberDecimal&amp;quot;/&amp;gt; java代码editText_p">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/tyJji9L.png">
-<meta property="og:image" content="https://i.imgur.com/WEtdJg8.png">
-<meta property="og:updated_time" content="2018-05-03T09:15:14.137Z">
+<meta property="og:updated_time" content="2018-06-29T08:12:50.406Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="implement、api 指令">
-<meta name="twitter:description" content="前言Android studio 版本更新至3.0，同时也出现了两个新的依赖指令：implement 和api。在com.android.tools.build:gradle 3.0 以下版本依赖在gradle 中的声明写法：compile fileTree(dir: &amp;apos;libs&amp;apos;, include: [&amp;apos;*.jar&amp;apos;]) 3.0后的写法为implement">
-<meta name="twitter:image" content="https://i.imgur.com/tyJji9L.png">
+<meta name="twitter:title" content="实现EditText输入金额（小数点后两位）">
+<meta name="twitter:description" content="通过设置过滤器（Filter）实现EditText输入金额（小数点后两位）。布局文件&amp;lt;!--inputType设置为numberDecimal--&amp;gt; &amp;lt;EditText     android:hint=&amp;quot;请填写最新价格&amp;quot;     android:inputType=&amp;quot;numberDecimal&amp;quot;/&amp;gt; java代码editText_p">
 
 
 
@@ -133,14 +130,14 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/03/implement、api 指令/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/29/实现EditText输入金额（小数点后两位）/"/>
 
 
 
 
 
 
-  <title>implement、api 指令 | 来世成石</title>
+  <title>实现EditText输入金额（小数点后两位） | 来世成石</title>
   
 
 
@@ -267,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/implement、api 指令/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/29/实现EditText输入金额（小数点后两位）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="来世成石">
@@ -284,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">implement、api 指令</h1>
+          <h1 class="post-title" itemprop="name headline">实现EditText输入金额（小数点后两位）</h1>
         
 
         <div class="post-meta">
@@ -296,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T16:38:43+08:00">
-                2018-05-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-29T16:10:09+08:00">
+                2018-06-29
               </time>
             
 
@@ -336,7 +333,7 @@
 
           
           
-             <span id="/2018/05/03/implement、api 指令/" class="leancloud_visitors" data-flag-title="implement、api 指令">
+             <span id="/2018/06/29/实现EditText输入金额（小数点后两位）/" class="leancloud_visitors" data-flag-title="实现EditText输入金额（小数点后两位）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -368,14 +365,27 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><h4 id="Android-studio-版本更新至3-0，同时也出现了两个新的依赖指令：implement-和api。"><a href="#Android-studio-版本更新至3-0，同时也出现了两个新的依赖指令：implement-和api。" class="headerlink" title="Android studio 版本更新至3.0，同时也出现了两个新的依赖指令：implement 和api。"></a>Android studio 版本更新至3.0，同时也出现了两个新的依赖指令：implement 和api。</h4><h4 id="在com-android-tools-build-gradle-3-0-以下版本依赖在gradle-中的声明写法："><a href="#在com-android-tools-build-gradle-3-0-以下版本依赖在gradle-中的声明写法：" class="headerlink" title="在com.android.tools.build:gradle 3.0 以下版本依赖在gradle 中的声明写法："></a>在com.android.tools.build:gradle 3.0 以下版本依赖在gradle 中的声明写法：</h4><pre><code>compile fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])
-</code></pre><h4 id="3-0后的写法为"><a href="#3-0后的写法为" class="headerlink" title="3.0后的写法为"></a>3.0后的写法为</h4><pre><code>implementation fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])
-或
-api fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])
-</code></pre><h3 id="新增两个指令的区别"><a href="#新增两个指令的区别" class="headerlink" title="新增两个指令的区别"></a>新增两个指令的区别</h3><h4 id="api-指令完全等同于compile指令，没区别"><a href="#api-指令完全等同于compile指令，没区别" class="headerlink" title="api 指令完全等同于compile指令，没区别"></a>api 指令完全等同于compile指令，没区别</h4><h4 id="implement指令的特点是，对于使用了该命令编译的依赖，对该项目有依赖的项目将无法访问到使用该命令编译的依赖中的任何程序，也就是将该依赖隐藏在内部，而不对外部公开。"><a href="#implement指令的特点是，对于使用了该命令编译的依赖，对该项目有依赖的项目将无法访问到使用该命令编译的依赖中的任何程序，也就是将该依赖隐藏在内部，而不对外部公开。" class="headerlink" title="implement指令的特点是，对于使用了该命令编译的依赖，对该项目有依赖的项目将无法访问到使用该命令编译的依赖中的任何程序，也就是将该依赖隐藏在内部，而不对外部公开。"></a>implement指令的特点是，对于使用了该命令编译的依赖，对该项目有依赖的项目将无法访问到使用该命令编译的依赖中的任何程序，也就是将该依赖隐藏在内部，而不对外部公开。</h4><p>###图片解释</p>
-<h4 id="用api指令编译，Glide依赖对app-Module-是可见的"><a href="#用api指令编译，Glide依赖对app-Module-是可见的" class="headerlink" title="用api指令编译，Glide依赖对app Module 是可见的"></a>用api指令编译，Glide依赖对app Module 是可见的</h4><p><img src="https://i.imgur.com/tyJji9L.png" alt=""></p>
-<h4 id="用implement指令编译依赖对app-Module-是不可见的"><a href="#用implement指令编译依赖对app-Module-是不可见的" class="headerlink" title="用implement指令编译依赖对app Module 是不可见的"></a>用implement指令编译依赖对app Module 是不可见的</h4><p><img src="https://i.imgur.com/WEtdJg8.png" alt=""></p>
-<h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><h4 id="在Google-IO-相关话题的中提到了一个建议，就是依赖首先应该设置为implement的，如果没有错，那就用implement，如果有错，那么使用api指令，这样会使编译速度有所增快。"><a href="#在Google-IO-相关话题的中提到了一个建议，就是依赖首先应该设置为implement的，如果没有错，那就用implement，如果有错，那么使用api指令，这样会使编译速度有所增快。" class="headerlink" title="在Google IO 相关话题的中提到了一个建议，就是依赖首先应该设置为implement的，如果没有错，那就用implement，如果有错，那么使用api指令，这样会使编译速度有所增快。"></a>在Google IO 相关话题的中提到了一个建议，就是依赖首先应该设置为implement的，如果没有错，那就用implement，如果有错，那么使用api指令，这样会使编译速度有所增快。</h4>
+        <h3 id="通过设置过滤器（Filter）实现EditText输入金额（小数点后两位）。"><a href="#通过设置过滤器（Filter）实现EditText输入金额（小数点后两位）。" class="headerlink" title="通过设置过滤器（Filter）实现EditText输入金额（小数点后两位）。"></a>通过设置过滤器（Filter）实现EditText输入金额（小数点后两位）。</h3><h4 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h4><pre><code>&lt;!--inputType设置为numberDecimal--&gt;
+&lt;EditText
+    android:hint=&quot;请填写最新价格&quot;
+    android:inputType=&quot;numberDecimal&quot;/&gt;
+</code></pre><h4 id="java代码"><a href="#java代码" class="headerlink" title="java代码"></a>java代码</h4><pre><code>editText_price.setFilters(new InputFilter[]{new InputFilter() {
+     @Override
+     public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+                     if(source.equals(&quot;.&quot;) &amp;&amp; dest.toString().length() == 0){
+                             return &quot;0.&quot;;
+                         }
+                     if(dest.toString().contains(&quot;.&quot;)){
+                             int index = dest.toString().indexOf(&quot;.&quot;);
+                            int length = dest.toString().substring(index).length();
+                             if(length == 3){
+                                    return &quot;&quot;;
+                                 }
+                         }
+                     return null;
+                 }
+    }});
+</code></pre>
       
     </div>
     
@@ -426,7 +436,7 @@ api fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])
       
         <div class="post-tags">
           
-            <a href="/tags/gradle/" <i class="fa fa-tag"></i> gradle</a>
+            <a href="/tags/随笔/" <i class="fa fa-tag"></i> 随笔</a>
           
         </div>
       
@@ -439,8 +449,8 @@ api fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/03/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/06/29/Retrofit-RxJava联网/" rel="next" title="Retrofit+RxJava联网">
+                <i class="fa fa-chevron-left"></i> Retrofit+RxJava联网
               </a>
             
           </div>
@@ -448,10 +458,6 @@ api fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/04/Gllide缓存配置/" rel="prev" title="Gllide缓存配置">
-                Gllide缓存配置 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -608,7 +614,7 @@ api fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Android-studio-版本更新至3-0，同时也出现了两个新的依赖指令：implement-和api。"><span class="nav-number">1.1.</span> <span class="nav-text">Android studio 版本更新至3.0，同时也出现了两个新的依赖指令：implement 和api。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在com-android-tools-build-gradle-3-0-以下版本依赖在gradle-中的声明写法："><span class="nav-number">1.2.</span> <span class="nav-text">在com.android.tools.build:gradle 3.0 以下版本依赖在gradle 中的声明写法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-0后的写法为"><span class="nav-number">1.3.</span> <span class="nav-text">3.0后的写法为</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增两个指令的区别"><span class="nav-number">2.</span> <span class="nav-text">新增两个指令的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#api-指令完全等同于compile指令，没区别"><span class="nav-number">2.1.</span> <span class="nav-text">api 指令完全等同于compile指令，没区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#implement指令的特点是，对于使用了该命令编译的依赖，对该项目有依赖的项目将无法访问到使用该命令编译的依赖中的任何程序，也就是将该依赖隐藏在内部，而不对外部公开。"><span class="nav-number">2.2.</span> <span class="nav-text">implement指令的特点是，对于使用了该命令编译的依赖，对该项目有依赖的项目将无法访问到使用该命令编译的依赖中的任何程序，也就是将该依赖隐藏在内部，而不对外部公开。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用api指令编译，Glide依赖对app-Module-是可见的"><span class="nav-number">2.3.</span> <span class="nav-text">用api指令编译，Glide依赖对app Module 是可见的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用implement指令编译依赖对app-Module-是不可见的"><span class="nav-number">2.4.</span> <span class="nav-text">用implement指令编译依赖对app Module 是不可见的</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建议"><span class="nav-number">3.</span> <span class="nav-text">建议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在Google-IO-相关话题的中提到了一个建议，就是依赖首先应该设置为implement的，如果没有错，那就用implement，如果有错，那么使用api指令，这样会使编译速度有所增快。"><span class="nav-number">3.1.</span> <span class="nav-text">在Google IO 相关话题的中提到了一个建议，就是依赖首先应该设置为implement的，如果没有错，那就用implement，如果有错，那么使用api指令，这样会使编译速度有所增快。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过设置过滤器（Filter）实现EditText输入金额（小数点后两位）。"><span class="nav-number">1.</span> <span class="nav-text">通过设置过滤器（Filter）实现EditText输入金额（小数点后两位）。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#布局文件"><span class="nav-number">1.1.</span> <span class="nav-text">布局文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java代码"><span class="nav-number">1.2.</span> <span class="nav-text">java代码</span></a></li></ol></li></ol></div>
             
 
           </div>
