@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="自定义View," />
+  <meta name="keywords" content="联网," />
 
 
 
@@ -89,26 +89,18 @@
 
 
 
-<meta name="description" content="这次是实现一个仿抖音的音乐旋转自定义View,先看一下效果 实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。 先看下概念图 ●音符动画音符动画这里是利用贝塞尔曲线+PathMeasure+ValueAnimator来实现的 1.贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲">
-<meta name="keywords" content="自定义View">
+<meta name="description" content="这次介绍下如何使用Retrofit+rxjava上传图片和文字接口的写法public interface MarketApiService {     @Multipart//这里一定要加这个     @POST(&amp;quot;market/addNewOrder&amp;quot;)     Observable&amp;lt;ResultBean&amp;gt; addNewOrder(@QueryMap Map&amp;lt">
+<meta name="keywords" content="联网">
 <meta property="og:type" content="article">
-<meta property="og:title" content="仿抖音音乐旋转">
-<meta property="og:url" content="http://yoursite.com/2018/06/07/仿抖音音乐旋转/index.html">
+<meta property="og:title" content="Android图文上传">
+<meta property="og:url" content="http://yoursite.com/2018/07/03/Android图文上传/index.html">
 <meta property="og:site_name" content="来世成石">
-<meta property="og:description" content="这次是实现一个仿抖音的音乐旋转自定义View,先看一下效果 实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。 先看下概念图 ●音符动画音符动画这里是利用贝塞尔曲线+PathMeasure+ValueAnimator来实现的 1.贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲">
+<meta property="og:description" content="这次介绍下如何使用Retrofit+rxjava上传图片和文字接口的写法public interface MarketApiService {     @Multipart//这里一定要加这个     @POST(&amp;quot;market/addNewOrder&amp;quot;)     Observable&amp;lt;ResultBean&amp;gt; addNewOrder(@QueryMap Map&amp;lt">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/FPpxZNv.gif">
-<meta property="og:image" content="https://i.imgur.com/MYSJjzr.png">
-<meta property="og:image" content="https://i.imgur.com/pAdQpI1.png">
-<meta property="og:image" content="https://i.imgur.com/q9frqBK.png">
-<meta property="og:image" content="https://i.imgur.com/Wo1eQ2y.gif">
-<meta property="og:image" content="https://i.imgur.com/7WlOPPc.gif">
-<meta property="og:image" content="https://i.imgur.com/303JZJ6.gif">
-<meta property="og:updated_time" content="2018-06-07T09:37:41.189Z">
+<meta property="og:updated_time" content="2018-07-03T07:31:53.048Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="仿抖音音乐旋转">
-<meta name="twitter:description" content="这次是实现一个仿抖音的音乐旋转自定义View,先看一下效果 实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。 先看下概念图 ●音符动画音符动画这里是利用贝塞尔曲线+PathMeasure+ValueAnimator来实现的 1.贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲">
-<meta name="twitter:image" content="https://i.imgur.com/FPpxZNv.gif">
+<meta name="twitter:title" content="Android图文上传">
+<meta name="twitter:description" content="这次介绍下如何使用Retrofit+rxjava上传图片和文字接口的写法public interface MarketApiService {     @Multipart//这里一定要加这个     @POST(&amp;quot;market/addNewOrder&amp;quot;)     Observable&amp;lt;ResultBean&amp;gt; addNewOrder(@QueryMap Map&amp;lt">
 
 
 
@@ -138,14 +130,14 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/07/仿抖音音乐旋转/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/03/Android图文上传/"/>
 
 
 
 
 
 
-  <title>仿抖音音乐旋转 | 来世成石</title>
+  <title>Android图文上传 | 来世成石</title>
   
 
 
@@ -272,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/07/仿抖音音乐旋转/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/03/Android图文上传/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="来世成石">
@@ -289,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">仿抖音音乐旋转</h1>
+          <h1 class="post-title" itemprop="name headline">Android图文上传</h1>
         
 
         <div class="post-meta">
@@ -301,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-07T17:36:47+08:00">
-                2018-06-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-03T15:31:14+08:00">
+                2018-07-03
               </time>
             
 
@@ -341,7 +333,7 @@
 
           
           
-             <span id="/2018/06/07/仿抖音音乐旋转/" class="leancloud_visitors" data-flag-title="仿抖音音乐旋转">
+             <span id="/2018/07/03/Android图文上传/" class="leancloud_visitors" data-flag-title="Android图文上传">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -373,68 +365,79 @@
       
 
       
-        <h3 id="这次是实现一个仿抖音的音乐旋转自定义View-先看一下效果"><a href="#这次是实现一个仿抖音的音乐旋转自定义View-先看一下效果" class="headerlink" title="这次是实现一个仿抖音的音乐旋转自定义View,先看一下效果"></a>这次是实现一个仿抖音的音乐旋转自定义View,先看一下效果</h3><p><img src="https://i.imgur.com/FPpxZNv.gif" alt=""></p>
-<h3 id="实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。"><a href="#实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。" class="headerlink" title="实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。"></a>实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。</h3><p><img src="https://i.imgur.com/MYSJjzr.png" alt=""></p>
-<h3 id="先看下概念图"><a href="#先看下概念图" class="headerlink" title="先看下概念图"></a>先看下概念图</h3><p><img src="https://i.imgur.com/pAdQpI1.png" alt=""></p>
-<h3 id="●音符动画"><a href="#●音符动画" class="headerlink" title="●音符动画"></a>●音符动画</h3><h4 id="音符动画这里是利用贝塞尔曲线-PathMeasure-ValueAnimator来实现的"><a href="#音符动画这里是利用贝塞尔曲线-PathMeasure-ValueAnimator来实现的" class="headerlink" title="音符动画这里是利用贝塞尔曲线+PathMeasure+ValueAnimator来实现的"></a>音符动画这里是利用贝塞尔曲线+PathMeasure+ValueAnimator来实现的</h4><p><img src="https://i.imgur.com/q9frqBK.png" alt=""></p>
-<h4 id="1-贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲线。"><a href="#1-贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲线。" class="headerlink" title="1.贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲线。"></a>1.贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲线。</h4><pre><code>path = new Path();
-//将起点移到右下角
-path.moveTo(getWidth(),getHeight()-getWidth()/6);
-//绘制自下而上的贝塞尔曲线
-path.quadTo(0,getHeight(),getWidth()/4,0);
-</code></pre><p><img src="https://i.imgur.com/Wo1eQ2y.gif" alt=""></p>
-<h4 id="2-PathMeasure-ValueAnimator实现音符沿轨迹运动"><a href="#2-PathMeasure-ValueAnimator实现音符沿轨迹运动" class="headerlink" title="2.PathMeasure+ValueAnimator实现音符沿轨迹运动"></a>2.PathMeasure+ValueAnimator实现音符沿轨迹运动</h4><pre><code>private void initPath() {
-    //新建两个float数组pos用来存储每个轨迹点的坐标，tan用来存储正切值
-    pos = new float[2];
-    tan = new float[2];
-    path = new Path();
-    path.moveTo(getWidth(),getHeight()-getWidth()/6);
-    path.quadTo(0,getHeight(),getWidth()/4,0);
-    pathMeasure = new PathMeasure(path,false);
-    length = pathMeasure.getLength();
-    valueAnimator = ValueAnimator.ofFloat(0,2f);
-    valueAnimator.setDuration(3000);
-    //设置重复执行动画
-    valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
-    //设置为匀速运动
-    valueAnimator.setInterpolator(new LinearInterpolator());
-    valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-        @Override
-        public void onAnimationUpdate(ValueAnimator animation) {
-            float temp=(float) animation.getAnimatedValue();
-            val= temp/2;
-            //这里实现音符的透明度从0~1~0的效果
-            if(temp&gt;1){
-                Music3.this.setAlpha(Math.abs(temp-2f));
-            }else {
-                Music3.this.setAlpha(temp);
+        <h3 id="这次介绍下如何使用Retrofit-rxjava上传图片和文字"><a href="#这次介绍下如何使用Retrofit-rxjava上传图片和文字" class="headerlink" title="这次介绍下如何使用Retrofit+rxjava上传图片和文字"></a>这次介绍下如何使用Retrofit+rxjava上传图片和文字</h3><h5 id="接口的写法"><a href="#接口的写法" class="headerlink" title="接口的写法"></a>接口的写法</h5><pre><code>public interface MarketApiService {
+    @Multipart//这里一定要加这个
+    @POST(&quot;market/addNewOrder&quot;)
+    Observable&lt;ResultBean&gt; addNewOrder(@QueryMap Map&lt;String, String&gt; map, @Part MultipartBody.Part pic);
+}
+</code></pre><h5 id="上传的代码"><a href="#上传的代码" class="headerlink" title="上传的代码"></a>上传的代码</h5><pre><code>Map&lt;String, String&gt; params = new HashMap&lt;String, String&gt;();
+params.put(&quot;ship_type_id&quot;, type);
+params.put(&quot;cons_number&quot;, consNumber);
+params.put(&quot;note&quot;, beizhu);
+File fileByUri = FileUtil.getFileByUri(imagepath, this);
+//这里最好写成MediaType.parse(&quot;image/*&quot;)，之前写成MediaType.parse(&quot;image/png&quot;)上传失败
+RequestBody photoRequestBody = RequestBody.create(MediaType.parse(&quot;image/*&quot;), fileByUri);
+MultipartBody.Part photo = MultipartBody.Part.createFormData(&quot;file&quot;, fileByUri.getName(), photoRequestBody);
+RetrofitUtils.getInstance().getApiServier(MarketApiService.class)
+                    .addNewOrder(params,photo)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Consumer&lt;ResultBean&gt;() {
+                        @Override
+                        public void accept(ResultBean resultBean) throws Exception {
+
+                        }
+                    }, new Consumer&lt;Throwable&gt;() {
+                        @Override
+                        public void accept(Throwable throwable) throws Exception {
+
+                        }
+                    });
+</code></pre><h5 id="这里的图片选择器使用的是知乎的图片选择器https-github-com-zhihu-Matisse"><a href="#这里的图片选择器使用的是知乎的图片选择器https-github-com-zhihu-Matisse" class="headerlink" title="这里的图片选择器使用的是知乎的图片选择器https://github.com/zhihu/Matisse"></a>这里的图片选择器使用的是知乎的图片选择器<a href="https://github.com/zhihu/Matisse" target="_blank" rel="noopener">https://github.com/zhihu/Matisse</a></h5><h5 id="另外这里还有将Uri转换为File的工具类（因为知乎图片选择器返回的是Uri）"><a href="#另外这里还有将Uri转换为File的工具类（因为知乎图片选择器返回的是Uri）" class="headerlink" title="另外这里还有将Uri转换为File的工具类（因为知乎图片选择器返回的是Uri）"></a>另外这里还有将Uri转换为File的工具类（因为知乎图片选择器返回的是Uri）</h5><pre><code>public static File getFileByUri(Uri uri, Context context) {
+    String path = null;
+    if (&quot;file&quot;.equals(uri.getScheme())) {
+        path = uri.getEncodedPath();
+        if (path != null) {
+            path = Uri.decode(path);
+            ContentResolver cr = context.getContentResolver();
+            StringBuffer buff = new StringBuffer();
+            buff.append(&quot;(&quot;).append(MediaStore.Images.ImageColumns.DATA).append(&quot;=&quot;).append(&quot;&apos;&quot; + path + &quot;&apos;&quot;).append(&quot;)&quot;);
+            Cursor cur = cr.query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, new String[] { MediaStore.Images.ImageColumns._ID, MediaStore.Images.ImageColumns.DATA }, buff.toString(), null, null);
+            int index = 0;
+            int dataIdx = 0;
+            for (cur.moveToFirst(); !cur.isAfterLast(); cur.moveToNext()) {
+                index = cur.getColumnIndex(MediaStore.Images.ImageColumns._ID);
+                index = cur.getInt(index);
+                dataIdx = cur.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+                path = cur.getString(dataIdx);
             }
-            //更新界面
-            invalidate();
+            cur.close();
+            if (index == 0) {
+            } else {
+                Uri u = Uri.parse(&quot;content://media/external/images/media/&quot; + index);
+                System.out.println(&quot;temp uri is :&quot; + u);
+            }
         }
-    });
-    valueAnimator.start();
+        if (path != null) {
+            return new File(path);
+        }
+    } else if (&quot;content&quot;.equals(uri.getScheme())) {
+        // 4.2.2以后
+        String[] proj = { MediaStore.Images.Media.DATA };
+        Cursor cursor = context.getContentResolver().query(uri, proj, null, null, null);
+        if (cursor.moveToFirst()) {
+            int columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            path = cursor.getString(columnIndex);
+        }
+        cursor.close();
+
+        return new File(path);
+    } else {
+        //Log.i(TAG, &quot;Uri Scheme:&quot; + uri.getScheme());
+    }
+    return null;
 }
-@Override
-protected void onDraw(Canvas canvas) {
-    super.onDraw(canvas);
-    //获取每个点对应的坐标
-    pathMeasure.getPosTan(length*val,pos,tan);
-    //创建音符BitMap宽高是逐渐放大的
-    scaledBitmap = Bitmap.createScaledBitmap(bitmap, (int)(getWidth()/5*val)+4, (int)(getWidth()/5*val)+4, true);
-    canvas.drawPath(path,paint);
-    canvas.drawBitmap(scaledBitmap,pos[0],pos[1],paint);
-}
-</code></pre><p><img src="https://i.imgur.com/7WlOPPc.gif" alt=""></p>
-<h3 id="●图片旋转"><a href="#●图片旋转" class="headerlink" title="●图片旋转"></a>●图片旋转</h3><h4 id="这里我引用的一个第三方的圆形图片库"><a href="#这里我引用的一个第三方的圆形图片库" class="headerlink" title="这里我引用的一个第三方的圆形图片库"></a>这里我引用的一个第三方的圆形图片库</h4><pre><code>implementation &apos;de.hdodenhof:circleimageview:2.2.0&apos;
-</code></pre><h4 id="实现图片旋转"><a href="#实现图片旋转" class="headerlink" title="实现图片旋转"></a>实现图片旋转</h4><pre><code>circleImageView = findViewById(R.id.mm);
-RotateAnimation rotateAnimation = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-rotateAnimation.setInterpolator(new LinearInterpolator());
-rotateAnimation.setDuration(4000);
-rotateAnimation.setRepeatCount(Animation.INFINITE);
-circleImageView.startAnimation(rotateAnimation);
-</code></pre><p><img src="https://i.imgur.com/303JZJ6.gif" alt=""></p>
-<h3 id="最后附上源码https-gitee-com-itfittnesss-DouYinMusic"><a href="#最后附上源码https-gitee-com-itfittnesss-DouYinMusic" class="headerlink" title="最后附上源码https://gitee.com/itfittnesss/DouYinMusic"></a>最后附上源码<a href="https://gitee.com/itfittnesss/DouYinMusic" target="_blank" rel="noopener">https://gitee.com/itfittnesss/DouYinMusic</a></h3>
+</code></pre>
       
     </div>
     
@@ -485,7 +488,7 @@ circleImageView.startAnimation(rotateAnimation);
       
         <div class="post-tags">
           
-            <a href="/tags/自定义View/" <i class="fa fa-tag"></i> 自定义View</a>
+            <a href="/tags/联网/" <i class="fa fa-tag"></i> 联网</a>
           
         </div>
       
@@ -498,8 +501,8 @@ circleImageView.startAnimation(rotateAnimation);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/01/利用PorterDuffXfermode绘制图片文字/" rel="next" title="利用PorterDuffXfermode绘制图片文字">
-                <i class="fa fa-chevron-left"></i> 利用PorterDuffXfermode绘制图片文字
+              <a href="/2018/06/29/实现EditText输入金额（小数点后两位）/" rel="next" title="实现EditText输入金额（小数点后两位）">
+                <i class="fa fa-chevron-left"></i> 实现EditText输入金额（小数点后两位）
               </a>
             
           </div>
@@ -507,10 +510,6 @@ circleImageView.startAnimation(rotateAnimation);
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/12/自定义View-画板/" rel="prev" title="自定义View-画板">
-                自定义View-画板 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -667,7 +666,7 @@ circleImageView.startAnimation(rotateAnimation);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#这次是实现一个仿抖音的音乐旋转自定义View-先看一下效果"><span class="nav-number">1.</span> <span class="nav-text">这次是实现一个仿抖音的音乐旋转自定义View,先看一下效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。"><span class="nav-number">2.</span> <span class="nav-text">实现这个效果主要是采用的拼凑的方法，即先实现音符动画再实现图片旋转动画然后将两个效果合并到一起。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#先看下概念图"><span class="nav-number">3.</span> <span class="nav-text">先看下概念图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#●音符动画"><span class="nav-number">4.</span> <span class="nav-text">●音符动画</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#音符动画这里是利用贝塞尔曲线-PathMeasure-ValueAnimator来实现的"><span class="nav-number">4.1.</span> <span class="nav-text">音符动画这里是利用贝塞尔曲线+PathMeasure+ValueAnimator来实现的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲线。"><span class="nav-number">4.2.</span> <span class="nav-text">1.贝塞尔曲线的绘制：因为音符的运动轨迹是自下而上的，因此我们在添加Path路径的时候需要先将起点移到右下角，然后再绘制贝塞尔曲线。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-PathMeasure-ValueAnimator实现音符沿轨迹运动"><span class="nav-number">4.3.</span> <span class="nav-text">2.PathMeasure+ValueAnimator实现音符沿轨迹运动</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#●图片旋转"><span class="nav-number">5.</span> <span class="nav-text">●图片旋转</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#这里我引用的一个第三方的圆形图片库"><span class="nav-number">5.1.</span> <span class="nav-text">这里我引用的一个第三方的圆形图片库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现图片旋转"><span class="nav-number">5.2.</span> <span class="nav-text">实现图片旋转</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后附上源码https-gitee-com-itfittnesss-DouYinMusic"><span class="nav-number">6.</span> <span class="nav-text">最后附上源码https://gitee.com/itfittnesss/DouYinMusic</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#这次介绍下如何使用Retrofit-rxjava上传图片和文字"><span class="nav-number">1.</span> <span class="nav-text">这次介绍下如何使用Retrofit+rxjava上传图片和文字</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#接口的写法"><span class="nav-number">1.0.1.</span> <span class="nav-text">接口的写法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#上传的代码"><span class="nav-number">1.0.2.</span> <span class="nav-text">上传的代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#这里的图片选择器使用的是知乎的图片选择器https-github-com-zhihu-Matisse"><span class="nav-number">1.0.3.</span> <span class="nav-text">这里的图片选择器使用的是知乎的图片选择器https://github.com/zhihu/Matisse</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#另外这里还有将Uri转换为File的工具类（因为知乎图片选择器返回的是Uri）"><span class="nav-number">1.0.4.</span> <span class="nav-text">另外这里还有将Uri转换为File的工具类（因为知乎图片选择器返回的是Uri）</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
