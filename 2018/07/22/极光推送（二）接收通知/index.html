@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="联网," />
+  <meta name="keywords" content="极光推送," />
 
 
 
@@ -89,18 +89,24 @@
 
 
 
-<meta name="description" content="Retrofit+RxJava联网public class RetrofitUtils {     private static final String  BASE_URL=&amp;quot;http:www.baidu.com/&amp;quot;;     private volatile static RetrofitUtils mRetrofitUtils;     private Retrofit">
-<meta name="keywords" content="联网">
+<meta name="description" content="步骤（分为两步） 一.设置通知栏样式（如果不设置则默认使用自带的），这里官方给了三种方式：1.基础（定制声音、震动、闪灯等 Notification 样式）：BasicPushNotificationBuilder builder = new BasicPushNotificationBuilder(MainActivity.this); builder.statusBarDrawable = R">
+<meta name="keywords" content="极光推送">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Retrofit+RxJava联网">
-<meta property="og:url" content="http://yoursite.com/2018/06/29/Retrofit-RxJava联网/index.html">
+<meta property="og:title" content="极光推送（二）接收通知">
+<meta property="og:url" content="http://yoursite.com/2018/07/22/极光推送（二）接收通知/index.html">
 <meta property="og:site_name" content="来世成石">
-<meta property="og:description" content="Retrofit+RxJava联网public class RetrofitUtils {     private static final String  BASE_URL=&amp;quot;http:www.baidu.com/&amp;quot;;     private volatile static RetrofitUtils mRetrofitUtils;     private Retrofit">
+<meta property="og:description" content="步骤（分为两步） 一.设置通知栏样式（如果不设置则默认使用自带的），这里官方给了三种方式：1.基础（定制声音、震动、闪灯等 Notification 样式）：BasicPushNotificationBuilder builder = new BasicPushNotificationBuilder(MainActivity.this); builder.statusBarDrawable = R">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-29T08:11:14.793Z">
+<meta property="og:image" content="https://i.imgur.com/LSzHE7u.png">
+<meta property="og:image" content="https://i.imgur.com/yKEpmzj.png">
+<meta property="og:image" content="https://i.imgur.com/d9Ekec9.png">
+<meta property="og:image" content="https://i.imgur.com/gf2XREe.png">
+<meta property="og:image" content="https://i.imgur.com/o0Jq5pL.gif">
+<meta property="og:updated_time" content="2018-07-22T09:59:01.681Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Retrofit+RxJava联网">
-<meta name="twitter:description" content="Retrofit+RxJava联网public class RetrofitUtils {     private static final String  BASE_URL=&amp;quot;http:www.baidu.com/&amp;quot;;     private volatile static RetrofitUtils mRetrofitUtils;     private Retrofit">
+<meta name="twitter:title" content="极光推送（二）接收通知">
+<meta name="twitter:description" content="步骤（分为两步） 一.设置通知栏样式（如果不设置则默认使用自带的），这里官方给了三种方式：1.基础（定制声音、震动、闪灯等 Notification 样式）：BasicPushNotificationBuilder builder = new BasicPushNotificationBuilder(MainActivity.this); builder.statusBarDrawable = R">
+<meta name="twitter:image" content="https://i.imgur.com/LSzHE7u.png">
 
 
 
@@ -130,14 +136,14 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/29/Retrofit-RxJava联网/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/22/极光推送（二）接收通知/"/>
 
 
 
 
 
 
-  <title>Retrofit+RxJava联网 | 来世成石</title>
+  <title>极光推送（二）接收通知 | 来世成石</title>
   
 
 
@@ -264,7 +270,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/29/Retrofit-RxJava联网/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/22/极光推送（二）接收通知/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="来世成石">
@@ -281,7 +287,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Retrofit+RxJava联网</h1>
+          <h1 class="post-title" itemprop="name headline">极光推送（二）接收通知</h1>
         
 
         <div class="post-meta">
@@ -293,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-29T16:09:53+08:00">
-                2018-06-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-22T17:58:15+08:00">
+                2018-07-22
               </time>
             
 
@@ -333,7 +339,7 @@
 
           
           
-             <span id="/2018/06/29/Retrofit-RxJava联网/" class="leancloud_visitors" data-flag-title="Retrofit+RxJava联网">
+             <span id="/2018/07/22/极光推送（二）接收通知/" class="leancloud_visitors" data-flag-title="极光推送（二）接收通知">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -365,98 +371,97 @@
       
 
       
-        <h3 id="Retrofit-RxJava联网"><a href="#Retrofit-RxJava联网" class="headerlink" title="Retrofit+RxJava联网"></a>Retrofit+RxJava联网</h3><pre><code>public class RetrofitUtils {
-    private static final String  BASE_URL=&quot;http:www.baidu.com/&quot;;
-    private volatile static RetrofitUtils mRetrofitUtils;
-    private Retrofit mRetrofit;
-
-    private RetrofitUtils(){
-
-        initRetrofit();
-    }
-
-   public static RetrofitUtils getInstance(){
-        if(mRetrofitUtils==null){
-            synchronized (RetrofitUtils.class){
-                if(mRetrofitUtils==null){
-                    mRetrofitUtils=new RetrofitUtils();
-                }
-            }
+        <h3 id="步骤（分为两步）"><a href="#步骤（分为两步）" class="headerlink" title="步骤（分为两步）"></a>步骤（分为两步）</h3><p><img src="https://i.imgur.com/LSzHE7u.png" alt=""></p>
+<h3 id="一-设置通知栏样式（如果不设置则默认使用自带的），这里官方给了三种方式："><a href="#一-设置通知栏样式（如果不设置则默认使用自带的），这里官方给了三种方式：" class="headerlink" title="一.设置通知栏样式（如果不设置则默认使用自带的），这里官方给了三种方式："></a>一.设置通知栏样式（如果不设置则默认使用自带的），这里官方给了三种方式：</h3><h4 id="1-基础（定制声音、震动、闪灯等-Notification-样式）："><a href="#1-基础（定制声音、震动、闪灯等-Notification-样式）：" class="headerlink" title="1.基础（定制声音、震动、闪灯等 Notification 样式）："></a>1.基础（定制声音、震动、闪灯等 Notification 样式）：</h4><pre><code>BasicPushNotificationBuilder builder = new BasicPushNotificationBuilder(MainActivity.this);
+builder.statusBarDrawable = R.drawable.jpush_notification_icon;
+builder.notificationFlags = Notification.FLAG_AUTO_CANCEL
+    | Notification.FLAG_SHOW_LIGHTS;  //设置为自动消失和呼吸灯闪烁
+builder.notificationDefaults = Notification.DEFAULT_SOUND
+    | Notification.DEFAULT_VIBRATE
+    | Notification.DEFAULT_LIGHTS;  // 设置为铃声、震动、呼吸灯闪烁都要
+//注意这里的 1 ，以后会有用
+JPushInterface.setPushNotificationBuilder(1, builder);
+</code></pre><h4 id="2-定制带按钮的Notification样式-3-0-0及以上版本sdk才支持该样式，且该样式在某些与Android原生系统有差异的机型上无法正常显示-："><a href="#2-定制带按钮的Notification样式-3-0-0及以上版本sdk才支持该样式，且该样式在某些与Android原生系统有差异的机型上无法正常显示-：" class="headerlink" title="2.定制带按钮的Notification样式(3.0.0及以上版本sdk才支持该样式，且该样式在某些与Android原生系统有差异的机型上无法正常显示)："></a>2.定制带按钮的Notification样式(3.0.0及以上版本sdk才支持该样式，且该样式在某些与Android原生系统有差异的机型上无法正常显示)：</h4><pre><code>MultiActionsNotificationBuilder builder = new MultiActionsNotificationBuilder(PushSetActivity.this);
+//添加按钮，参数(按钮图片、按钮文字、扩展数据)
+builder.addJPushAction(R.drawable.jpush_ic_richpush_actionbar_back, &quot;first&quot;, &quot;my_extra1&quot;);
+builder.addJPushAction(R.drawable.jpush_ic_richpush_actionbar_back, &quot;second&quot;, &quot;my_extra2&quot;);
+builder.addJPushAction(R.drawable.jpush_ic_richpush_actionbar_back, &quot;third&quot;, &quot;my_extra3&quot;);
+//注意这里设置的2，以后会有用
+JPushInterface.setPushNotificationBuilder(2, builder);
+</code></pre><h4 id="3-高级自定义："><a href="#3-高级自定义：" class="headerlink" title="3.高级自定义："></a>3.高级自定义：</h4><pre><code>CustomPushNotificationBuilder builder = new
+            CustomPushNotificationBuilder(this,
+            R.layout.customer_notitfication_layout,
+            R.id.icon,
+            R.id.title,
+            R.id.text);
+    // 指定定制的 Notification Layout
+    builder.statusBarDrawable = R.mipmap.ic_launcher;
+    // 指定最顶层状态栏小图标
+    builder.layoutIconDrawable = R.mipmap.flag;
+    // 指定下拉状态栏时显示的通知图标，同时也注意这里的3，因为能否显示自定义的这些通知样式全靠这些标记
+    JPushInterface.setPushNotificationBuilder(3, builder);
+</code></pre><h3 id="二-如何显示你所设置的通知："><a href="#二-如何显示你所设置的通知：" class="headerlink" title="二.如何显示你所设置的通知："></a>二.如何显示你所设置的通知：</h3><h4 id="通过极光推送的后台发送通知你会发现你所设置的样式不起作用，那么如何让它起作用呢？这里有两种方式可以实现："><a href="#通过极光推送的后台发送通知你会发现你所设置的样式不起作用，那么如何让它起作用呢？这里有两种方式可以实现：" class="headerlink" title="通过极光推送的后台发送通知你会发现你所设置的样式不起作用，那么如何让它起作用呢？这里有两种方式可以实现："></a>通过极光推送的后台发送通知你会发现你所设置的样式不起作用，那么如何让它起作用呢？这里有两种方式可以实现：</h4><h4 id="1-通过配置后台数据："><a href="#1-通过配置后台数据：" class="headerlink" title="1.通过配置后台数据："></a>1.通过配置后台数据：</h4><h5 id="1）-在极光推送后台发送通知时点击可选设置按钮"><a href="#1）-在极光推送后台发送通知时点击可选设置按钮" class="headerlink" title="1）.在极光推送后台发送通知时点击可选设置按钮"></a>1）.在极光推送后台发送通知时点击可选设置按钮</h5><p><img src="https://i.imgur.com/yKEpmzj.png" alt=""></p>
+<h5 id="2）-在通知栏样式编号那里填写上面我所强调需要注意的标记，即可显示你设置的通知栏样式"><a href="#2）-在通知栏样式编号那里填写上面我所强调需要注意的标记，即可显示你设置的通知栏样式" class="headerlink" title="2）.在通知栏样式编号那里填写上面我所强调需要注意的标记，即可显示你设置的通知栏样式"></a>2）.在通知栏样式编号那里填写上面我所强调需要注意的标记，即可显示你设置的通知栏样式</h5><p><img src="https://i.imgur.com/d9Ekec9.png" alt=""></p>
+<h4 id="2-通过代码修改默认通知栏样式："><a href="#2-通过代码修改默认通知栏样式：" class="headerlink" title="2.通过代码修改默认通知栏样式："></a>2.通过代码修改默认通知栏样式：</h4><pre><code>CustomPushNotificationBuilder builder = new
+            CustomPushNotificationBuilder(this,
+            R.layout.customer_notitfication_layout,
+            R.id.icon,
+            R.id.title,
+            R.id.text);
+    // 指定定制的 Notification Layout
+    builder.statusBarDrawable = R.mipmap.ic_launcher;
+    // 指定最顶层状态栏小图标
+    builder.layoutIconDrawable = R.mipmap.flag;
+    // 指定下拉状态栏时显示的通知图标
+    JPushInterface.setPushNotificationBuilder(1, builder);
+    JPushInterface.setDefaultPushNotificationBuilder(builder);
+</code></pre><h3 id="三-获取通知的信息"><a href="#三-获取通知的信息" class="headerlink" title="三.获取通知的信息"></a>三.获取通知的信息</h3><h4 id="1-编写接收消息的Receiver"><a href="#1-编写接收消息的Receiver" class="headerlink" title="1.编写接收消息的Receiver"></a>1.编写接收消息的Receiver</h4><pre><code>public class JiguangReceiver extends BroadcastReceiver {
+    private NotificationManager nm;
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        if (null == nm) {
+            nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         }
-        return mRetrofitUtils;
-   }
-
-
-    private void initRetrofit() {
-
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
-            @Override
-            public void log(String message) {
-                try {
-                    String msg = URLDecoder.decode(message, &quot;utf-8&quot;);
-                    Log.i(&quot;OkHttpInterceptor-----&quot;, msg);
-
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                    Log.i(&quot;OkHttpInterceptor-----&quot;, message);
-                }
-            }
-        });
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        /**okhttp默认时间10秒 请求时间较长时，重新设置下  **/
-        OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        builder.connectTimeout(15, TimeUnit.SECONDS);
-        builder.readTimeout(20, TimeUnit.SECONDS);
-        builder.writeTimeout(20, TimeUnit.SECONDS);
-        builder.retryOnConnectionFailure(true);
-        OkHttpClient client = builder.build();
-        mRetrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .client(client)
-                .build();
+        Bundle bundle = intent.getExtras();
+        if (JPushInterface.ACTION_NOTIFICATION_OPENED.equals(intent.getAction())) {
+            openNotification(context,bundle);
+        }
     }
-
-    public &lt;T&gt; T getApiServier(Class&lt;T&gt; reqServer){
-        return mRetrofit.create(reqServer);
+    //    点击通知栏信息启动Activity
+    private void openNotification(Context context, Bundle bundle) {
+        Intent mIntent = new Intent(context, Test1Activity.class);
+        mIntent.putExtras(bundle);
+        mIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(mIntent);
     }
 }
-</code></pre><h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><pre><code>implementation &apos;com.squareup.okhttp3:logging-interceptor:3.5.0&apos;
-implementation &apos;io.reactivex.rxjava2:rxjava:2.1.14&apos;
-implementation &apos;io.reactivex.rxjava2:rxandroid:2.0.2&apos;
-implementation &apos;com.squareup.retrofit2:retrofit:2.4.0&apos;
-implementation &apos;com.squareup.retrofit2:converter-gson:2.4.0&apos;
-implementation &apos;com.squareup.retrofit2:adapter-rxjava2:2.4.0&apos;
-</code></pre><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><h5 id="FinanceApiService-class"><a href="#FinanceApiService-class" class="headerlink" title="FinanceApiService.class"></a>FinanceApiService.class</h5><pre><code>public interface FinanceApiService {
-    //POST请求
-    @FormUrlEncoded
-    @POST(&quot;acc/incomeAccounting&quot;)
-    Observable&lt;ResultBean&gt; incomeAccounting(@Field(&quot;incTime&quot;) String incTime, @Field(&quot;operator&quot;) String operator, @Field(&quot;paymentMethod&quot;) String paymentMethod,
-                                            @Field(&quot;incomeReason &quot;) String incomeReason , @Field(&quot;incMoney&quot;) int incMoney, @Field(&quot;paymentUnit&quot;) String paymentUnit,
-                                            @Field(&quot;consNumber&quot;) String consNumber, @Field(&quot;note&quot;) String note);
-    //GET请求
-    @GET(&quot;acc/incomeAccounting&quot;)
-    Observable&lt;ResultBean&gt; incomeAccounting2(@Query(&quot;incTime&quot;) String incTime, @Query(&quot;operator&quot;) String operator, @Query(&quot;paymentMethod&quot;) String paymentMethod,
-                                             @Query(&quot;incomeReason &quot;) String incomeReason , @Query(&quot;incMoney&quot;) int incMoney, @Query(&quot;paymentUnit&quot;) String paymentUnit,
-                                             @Query(&quot;consNumber&quot;) String consNumber, @Query(&quot;note&quot;) String note);
+</code></pre><h4 id="2-在AndroidManifest-xml文件中注册Receiver"><a href="#2-在AndroidManifest-xml文件中注册Receiver" class="headerlink" title="2.在AndroidManifest.xml文件中注册Receiver"></a>2.在AndroidManifest.xml文件中注册Receiver</h4><pre><code>&lt;receiver
+       android:name=&quot;.JiguangReceiver&quot;
+       android:enabled=&quot;true&quot;&gt;
+       &lt;intent-filter&gt;
+           &lt;action android:name=&quot;cn.jpush.android.intent.NOTIFICATION_RECEIVED&quot; /&gt;
+           &lt;action android:name=&quot;cn.jpush.android.intent.NOTIFICATION_OPENED&quot; /&gt;
+           &lt;action android:name=&quot;cn.jpush.android.intent.NOTIFICATION_CLICK_ACTION&quot; /&gt;
+           &lt;action android:name=&quot;cn.jpush.android.intent.CONNECTION&quot; /&gt;
+           &lt;category android:name=&quot;com.itfitness.jiguang&quot; /&gt;
+       &lt;/intent-filter&gt;
+   &lt;/receiver&gt;
+</code></pre><h4 id="3-在点击通知打开的Activity中展示信息"><a href="#3-在点击通知打开的Activity中展示信息" class="headerlink" title="3.在点击通知打开的Activity中展示信息"></a>3.在点击通知打开的Activity中展示信息</h4><pre><code>public class Test1Activity extends AppCompatActivity {
+
+    private TextView textView;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.test_layout);
+        textView = findViewById(R.id.tv);
+        Bundle extras = getIntent().getExtras();
+        textView.setText(extras.getString(JPushInterface.EXTRA_EXTRA));
+    }
 }
-</code></pre><h5 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h5><pre><code>RetrofitUtils.getInstance().getApiServier(FinanceApiService.class)
-                   .incomeAccounting(time,caozuoren,zhifufangshi,laiyuan,jine,fukuanfang,&quot;HY123456&quot;,beizhu)
-                   .subscribeOn(Schedulers.io())
-                   .observeOn(AndroidSchedulers.mainThread())
-                   .subscribe(new Consumer&lt;ResultBean&gt;() {
-                       @Override
-                       public void accept(ResultBean resultBean) throws Exception {
-                          //请求成功
-                       }
-                   }, new Consumer&lt;Throwable&gt;() {
-                       @Override
-                       public void accept(Throwable throwable) throws Exception {
-                           //请求失败
-                       }
-                   });
-</code></pre>
+</code></pre><h3 id="四-效果展示"><a href="#四-效果展示" class="headerlink" title="四.效果展示"></a>四.效果展示</h3><h4 id="1-添加字段"><a href="#1-添加字段" class="headerlink" title="1.添加字段"></a>1.添加字段</h4><p><img src="https://i.imgur.com/gf2XREe.png" alt=""></p>
+<p><img src="https://i.imgur.com/o0Jq5pL.gif" alt=""></p>
+<h3 id="个人技术博客：https-myml666-github-io"><a href="#个人技术博客：https-myml666-github-io" class="headerlink" title="个人技术博客：https://myml666.github.io"></a>个人技术博客：<a href="https://myml666.github.io" target="_blank" rel="noopener">https://myml666.github.io</a></h3>
       
     </div>
     
@@ -507,7 +512,7 @@ implementation &apos;com.squareup.retrofit2:adapter-rxjava2:2.4.0&apos;
       
         <div class="post-tags">
           
-            <a href="/tags/联网/" <i class="fa fa-tag"></i> 联网</a>
+            <a href="/tags/极光推送/" <i class="fa fa-tag"></i> 极光推送</a>
           
         </div>
       
@@ -520,8 +525,8 @@ implementation &apos;com.squareup.retrofit2:adapter-rxjava2:2.4.0&apos;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/27/微信小程序从零到一快速开发/" rel="next" title="微信小程序从零到一快速开发">
-                <i class="fa fa-chevron-left"></i> 微信小程序从零到一快速开发
+              <a href="/2018/07/16/分享两个学习Git的网站/" rel="next" title="分享两个学习Git的网站">
+                <i class="fa fa-chevron-left"></i> 分享两个学习Git的网站
               </a>
             
           </div>
@@ -529,10 +534,6 @@ implementation &apos;com.squareup.retrofit2:adapter-rxjava2:2.4.0&apos;
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/29/实现EditText输入金额（小数点后两位）/" rel="prev" title="实现EditText输入金额（小数点后两位）">
-                实现EditText输入金额（小数点后两位） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -689,7 +690,7 @@ implementation &apos;com.squareup.retrofit2:adapter-rxjava2:2.4.0&apos;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Retrofit-RxJava联网"><span class="nav-number">1.</span> <span class="nav-text">Retrofit+RxJava联网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#依赖"><span class="nav-number">2.</span> <span class="nav-text">依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">3.</span> <span class="nav-text">用法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#FinanceApiService-class"><span class="nav-number">3.0.1.</span> <span class="nav-text">FinanceApiService.class</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用方法"><span class="nav-number">3.0.2.</span> <span class="nav-text">使用方法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤（分为两步）"><span class="nav-number">1.</span> <span class="nav-text">步骤（分为两步）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一-设置通知栏样式（如果不设置则默认使用自带的），这里官方给了三种方式："><span class="nav-number">2.</span> <span class="nav-text">一.设置通知栏样式（如果不设置则默认使用自带的），这里官方给了三种方式：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-基础（定制声音、震动、闪灯等-Notification-样式）："><span class="nav-number">2.1.</span> <span class="nav-text">1.基础（定制声音、震动、闪灯等 Notification 样式）：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-定制带按钮的Notification样式-3-0-0及以上版本sdk才支持该样式，且该样式在某些与Android原生系统有差异的机型上无法正常显示-："><span class="nav-number">2.2.</span> <span class="nav-text">2.定制带按钮的Notification样式(3.0.0及以上版本sdk才支持该样式，且该样式在某些与Android原生系统有差异的机型上无法正常显示)：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-高级自定义："><span class="nav-number">2.3.</span> <span class="nav-text">3.高级自定义：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-如何显示你所设置的通知："><span class="nav-number">3.</span> <span class="nav-text">二.如何显示你所设置的通知：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#通过极光推送的后台发送通知你会发现你所设置的样式不起作用，那么如何让它起作用呢？这里有两种方式可以实现："><span class="nav-number">3.1.</span> <span class="nav-text">通过极光推送的后台发送通知你会发现你所设置的样式不起作用，那么如何让它起作用呢？这里有两种方式可以实现：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-通过配置后台数据："><span class="nav-number">3.2.</span> <span class="nav-text">1.通过配置后台数据：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1）-在极光推送后台发送通知时点击可选设置按钮"><span class="nav-number">3.2.1.</span> <span class="nav-text">1）.在极光推送后台发送通知时点击可选设置按钮</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2）-在通知栏样式编号那里填写上面我所强调需要注意的标记，即可显示你设置的通知栏样式"><span class="nav-number">3.2.2.</span> <span class="nav-text">2）.在通知栏样式编号那里填写上面我所强调需要注意的标记，即可显示你设置的通知栏样式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-通过代码修改默认通知栏样式："><span class="nav-number">3.3.</span> <span class="nav-text">2.通过代码修改默认通知栏样式：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-获取通知的信息"><span class="nav-number">4.</span> <span class="nav-text">三.获取通知的信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-编写接收消息的Receiver"><span class="nav-number">4.1.</span> <span class="nav-text">1.编写接收消息的Receiver</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-在AndroidManifest-xml文件中注册Receiver"><span class="nav-number">4.2.</span> <span class="nav-text">2.在AndroidManifest.xml文件中注册Receiver</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-在点击通知打开的Activity中展示信息"><span class="nav-number">4.3.</span> <span class="nav-text">3.在点击通知打开的Activity中展示信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-效果展示"><span class="nav-number">5.</span> <span class="nav-text">四.效果展示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-添加字段"><span class="nav-number">5.1.</span> <span class="nav-text">1.添加字段</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个人技术博客：https-myml666-github-io"><span class="nav-number">6.</span> <span class="nav-text">个人技术博客：https://myml666.github.io</span></a></li></ol></div>
             
 
           </div>
