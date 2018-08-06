@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "5ba30a2d"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="动画," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一.概念补间动画是指开发者无需定义动画过程中的每一帧，只需要定义动画的开始和结束两个关键帧，并指定动画变化的时间和方式等，然后交由Android系统进行计算，通过在这两个关键帧之间插入渐变值来实现平滑过渡，从而对View的内容完成一系列的图形变换来实现动画效果，主要包括四种基本效果：透明变化Alpha、大小变化Scale、位移变化Translate、以及旋转变化Route，这四种效果可以动态组合，">
+<meta name="keywords" content="动画">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android动画之补间动画详解">
+<meta property="og:url" content="http://yoursite.com/2018/08/06/Android动画之补间动画详解/index.html">
+<meta property="og:site_name" content="来世成石">
+<meta property="og:description" content="一.概念补间动画是指开发者无需定义动画过程中的每一帧，只需要定义动画的开始和结束两个关键帧，并指定动画变化的时间和方式等，然后交由Android系统进行计算，通过在这两个关键帧之间插入渐变值来实现平滑过渡，从而对View的内容完成一系列的图形变换来实现动画效果，主要包括四种基本效果：透明变化Alpha、大小变化Scale、位移变化Translate、以及旋转变化Route，这四种效果可以动态组合，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/UL13Ft2.png">
+<meta property="og:image" content="https://i.imgur.com/vtcSDgs.gif">
+<meta property="og:image" content="https://i.imgur.com/pZ3M8GG.gif">
+<meta property="og:image" content="https://i.imgur.com/FGUE3tH.gif">
+<meta property="og:image" content="https://i.imgur.com/t4L7JOT.gif">
+<meta property="og:image" content="https://i.imgur.com/X3Wj5Cz.gif">
+<meta property="og:updated_time" content="2018-08-06T02:20:02.655Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android动画之补间动画详解">
+<meta name="twitter:description" content="一.概念补间动画是指开发者无需定义动画过程中的每一帧，只需要定义动画的开始和结束两个关键帧，并指定动画变化的时间和方式等，然后交由Android系统进行计算，通过在这两个关键帧之间插入渐变值来实现平滑过渡，从而对View的内容完成一系列的图形变换来实现动画效果，主要包括四种基本效果：透明变化Alpha、大小变化Scale、位移变化Translate、以及旋转变化Route，这四种效果可以动态组合，">
+<meta name="twitter:image" content="https://i.imgur.com/UL13Ft2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/06/Android动画之补间动画详解/"/>
+
+
+
+
+
+
+  <title>Android动画之补间动画详解 | 来世成石</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+<a href="https://github.com/myml666" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">来世成石</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">你说你最爱丁香花</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/06/Android动画之补间动画详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="来世成石">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://lc-gdctdkyx.cn-n1.lcfile.com/4073a0785ac6e54b2ff8.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="来世成石">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android动画之补间动画详解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-06T10:19:04+08:00">
+                2018-08-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/06/Android动画之补间动画详解/" class="leancloud_visitors" data-flag-title="Android动画之补间动画详解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一-概念"><a href="#一-概念" class="headerlink" title="一.概念"></a>一.概念</h3><h4 id="补间动画是指开发者无需定义动画过程中的每一帧，只需要定义动画的开始和结束两个关键帧，并指定动画变化的时间和方式等，然后交由Android系统进行计算，通过在这两个关键帧之间插入渐变值来实现平滑过渡，从而对View的内容完成一系列的图形变换来实现动画效果，主要包括四种基本效果：透明变化Alpha、大小变化Scale、位移变化Translate、以及旋转变化Route，这四种效果可以动态组合，从而实现复杂灵活的动画。同样，定义补间动画也可以分为XML资源文件和代码两种方式。"><a href="#补间动画是指开发者无需定义动画过程中的每一帧，只需要定义动画的开始和结束两个关键帧，并指定动画变化的时间和方式等，然后交由Android系统进行计算，通过在这两个关键帧之间插入渐变值来实现平滑过渡，从而对View的内容完成一系列的图形变换来实现动画效果，主要包括四种基本效果：透明变化Alpha、大小变化Scale、位移变化Translate、以及旋转变化Route，这四种效果可以动态组合，从而实现复杂灵活的动画。同样，定义补间动画也可以分为XML资源文件和代码两种方式。" class="headerlink" title="补间动画是指开发者无需定义动画过程中的每一帧，只需要定义动画的开始和结束两个关键帧，并指定动画变化的时间和方式等，然后交由Android系统进行计算，通过在这两个关键帧之间插入渐变值来实现平滑过渡，从而对View的内容完成一系列的图形变换来实现动画效果，主要包括四种基本效果：透明变化Alpha、大小变化Scale、位移变化Translate、以及旋转变化Route，这四种效果可以动态组合，从而实现复杂灵活的动画。同样，定义补间动画也可以分为XML资源文件和代码两种方式。"></a>补间动画是指开发者无需定义动画过程中的每一帧，只需要定义动画的开始和结束两个关键帧，并指定动画变化的时间和方式等，然后交由Android系统进行计算，通过在这两个关键帧之间插入渐变值来实现平滑过渡，从而对View的内容完成一系列的图形变换来实现动画效果，主要包括四种基本效果：透明变化Alpha、大小变化Scale、位移变化Translate、以及旋转变化Route，这四种效果可以动态组合，从而实现复杂灵活的动画。同样，定义补间动画也可以分为XML资源文件和代码两种方式。</h4><h3 id="二-Android中动画的实现类介绍"><a href="#二-Android中动画的实现类介绍" class="headerlink" title="二.Android中动画的实现类介绍"></a>二.Android中动画的实现类介绍</h3><h4 id="Android系统中使用Animation类表示抽象的动画类，上面介绍的四种补间动画分别对应着如下几个动画类。"><a href="#Android系统中使用Animation类表示抽象的动画类，上面介绍的四种补间动画分别对应着如下几个动画类。" class="headerlink" title="Android系统中使用Animation类表示抽象的动画类，上面介绍的四种补间动画分别对应着如下几个动画类。"></a>Android系统中使用Animation类表示抽象的动画类，上面介绍的四种补间动画分别对应着如下几个动画类。</h4><p><img src="https://i.imgur.com/UL13Ft2.png" alt=""></p>
+<h3 id="三-动画的实现"><a href="#三-动画的实现" class="headerlink" title="三.动画的实现"></a>三.动画的实现</h3><h4 id="1-AlphaAnimation"><a href="#1-AlphaAnimation" class="headerlink" title="1.AlphaAnimation"></a>1.AlphaAnimation</h4><h4 id="XML资源文件方式："><a href="#XML资源文件方式：" class="headerlink" title="XML资源文件方式："></a>XML资源文件方式：</h4><h5 id="1）-在res-anim文件中创建alphaanim-xml文件（如果没有anim文件夹的话需要自己新建）"><a href="#1）-在res-anim文件中创建alphaanim-xml文件（如果没有anim文件夹的话需要自己新建）" class="headerlink" title="1）.在res/anim文件中创建alphaanim.xml文件（如果没有anim文件夹的话需要自己新建）"></a>1）.在res/anim文件中创建alphaanim.xml文件（如果没有anim文件夹的话需要自己新建）</h5><h5 id="2）-在alphaanim-xml中配置动画的属性"><a href="#2）-在alphaanim-xml中配置动画的属性" class="headerlink" title="2）.在alphaanim.xml中配置动画的属性"></a>2）.在alphaanim.xml中配置动画的属性</h5><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;alpha xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:duration=&quot;3000&quot; //一次动画的持续时间
+    android:startOffset =&quot;1000&quot; //开始动画之前的时间间隔
+    android:fillEnabled= &quot;true&quot;//是否允许动画结束之后回到开始的状态默认为true
+    android:fillBefore = &quot;true&quot; //动画结束后是否回到初始状态fillEnabled为true时此属性生效，默认为true
+    android:fillAfter = &quot;false&quot;//动画结束后是否保持结束的状态
+    android:repeatMode= &quot;restart&quot;//重复播放的模式，restart代表正序重放，reverse代表倒序回放
+    android:repeatCount = &quot;0&quot;//重复的次数为infinite或-1时无限重复
+    android:interpolator =&quot;@android:anim/linear_interpolator&quot;//插值器，改变动画速率
+    android:fromAlpha=&quot;1&quot;//开始时的透明度范围为0~1
+    android:toAlpha=&quot;0&quot; //结束时的透明度取值范围为0~1&gt;
+
+&lt;/alpha&gt;
+</code></pre><h5 id="3）-在MainActivity中"><a href="#3）-在MainActivity中" class="headerlink" title="3）.在MainActivity中"></a>3）.在MainActivity中</h5><pre><code>Animation animation = AnimationUtils.loadAnimation(this, R.anim.alphaanim);
+imageView.startAnimation(animation);
+</code></pre><h5 id="4）-运行效果"><a href="#4）-运行效果" class="headerlink" title="4）.运行效果"></a>4）.运行效果</h5><p><img src="https://i.imgur.com/vtcSDgs.gif" alt=""></p>
+<h4 id="代码方式：（运行效果与XML方式一致）"><a href="#代码方式：（运行效果与XML方式一致）" class="headerlink" title="代码方式：（运行效果与XML方式一致）"></a>代码方式：（运行效果与XML方式一致）</h4><pre><code>animation=new AlphaAnimation(1,0);//设置开始透明度和结束透明度范围0~1
+animation.setDuration(2000);//设置单次动画的重复时间
+animation.setFillAfter(false);//设置动画结束后是否保持结束时的状态，默认为false
+animation.setFillEnabled(true);//设置是否允许动画结束后保持开始时状态默认为true
+animation.setFillBefore(true);//设置动画结束时是否保持开始时的状态，默认为true
+animation.setInterpolator(new LinearInterpolator());//设置动画的插值器
+animation.setRepeatMode(Animation.RESTART);//设置动画的重复模式默认为Animation.RESTART
+animation.setRepeatCount(0);//设置动画的重复次数0为1次Animation.INFINITE为无限重复
+imageView.startAnimation(animation);//开始动画
+</code></pre><h4 id="2-ScaleAnimation"><a href="#2-ScaleAnimation" class="headerlink" title="2.ScaleAnimation"></a>2.ScaleAnimation</h4><h4 id="XML资源文件方式：-1"><a href="#XML资源文件方式：-1" class="headerlink" title="XML资源文件方式："></a>XML资源文件方式：</h4><h5 id="1）-在res-anim文件中创建scaleanim-xml文件（如果没有anim文件夹的话需要自己新建）"><a href="#1）-在res-anim文件中创建scaleanim-xml文件（如果没有anim文件夹的话需要自己新建）" class="headerlink" title="1）.在res/anim文件中创建scaleanim.xml文件（如果没有anim文件夹的话需要自己新建）"></a>1）.在res/anim文件中创建scaleanim.xml文件（如果没有anim文件夹的话需要自己新建）</h5><h5 id="2）-在scaleanim-xml中配置动画的属性"><a href="#2）-在scaleanim-xml中配置动画的属性" class="headerlink" title="2）.在scaleanim.xml中配置动画的属性"></a>2）.在scaleanim.xml中配置动画的属性</h5><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;scale xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:duration=&quot;3000&quot; //一次动画的持续时间
+    android:startOffset =&quot;1000&quot; //开始动画之前的时间间隔
+    android:fillEnabled= &quot;true&quot;//是否允许动画结束之后回到开始的状态默认为true
+    android:fillBefore = &quot;true&quot; //动画结束后是否回到初始状态fillEnabled为true时此属性生效，默认为true
+    android:fillAfter = &quot;false&quot;//动画结束后是否保持结束的状态
+    android:repeatMode= &quot;restart&quot;//重复播放的模式，restart代表正序重放，reverse代表倒序回放
+    android:repeatCount = &quot;0&quot;//重复的次数为infinite或-1时无限重复
+    android:interpolator =&quot;@android:anim/linear_interpolator&quot;//插值器，改变动画速率
+    android:fromXScale=&quot;1.0&quot; //初始的X轴缩放倍数
+    android:toXScale=&quot;2.0&quot; //结束时的X轴缩放倍数
+    android:fromYScale=&quot;1.0&quot; //初始的Y轴缩放倍数
+    android:toYScale=&quot;2.0&quot; //结束时Y轴的缩放倍数
+    android:pivotX=&quot;50%&quot; //缩放的中心点X轴坐标
+    android:pivotY=&quot;50%&quot; //缩放的中心点Y轴坐标
+    &gt;
+
+&lt;/scale&gt;
+</code></pre><h5 id="3）-在MainActivity中-1"><a href="#3）-在MainActivity中-1" class="headerlink" title="3）.在MainActivity中"></a>3）.在MainActivity中</h5><pre><code>Animation animation = AnimationUtils.loadAnimation(this, R.anim.scaleanim);
+imageView.startAnimation(animation);
+</code></pre><h5 id="4）-运行效果-1"><a href="#4）-运行效果-1" class="headerlink" title="4）.运行效果"></a>4）.运行效果</h5><p><img src="https://i.imgur.com/pZ3M8GG.gif" alt=""></p>
+<h4 id="代码方式：（运行效果与XML方式一致）-1"><a href="#代码方式：（运行效果与XML方式一致）-1" class="headerlink" title="代码方式：（运行效果与XML方式一致）"></a>代码方式：（运行效果与XML方式一致）</h4><pre><code> animation=new ScaleAnimation(1,2,1,2,Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+//                fromX：初始X轴缩放倍数
+//                toX：结束时X轴缩放倍数
+//                fromY：初始Y轴缩放倍数
+//                toY：结束时Y轴的缩放倍数
+//                Animation.RELATIVE_TO_SELF：相对于自身
+//                Animation.RELATIVE_TO_PARENT：相对于父控件
+//                Animation.ABSOLUTE：相对于窗口0
+//                pivotXValue：缩放中心X轴的坐标百分百比（float类型）
+//                pivotYValue；缩放中心Y轴的坐标百分百比（float类型）
+ animation.setDuration(2000);//设置单次动画的重复时间
+ animation.setFillAfter(false);//设置动画结束后是否保持结束时的状态，默认为false
+ animation.setFillEnabled(true);//设置是否允许动画结束后保持开始时状态默认为true
+ animation.setFillBefore(true);//设置动画结束时是否保持开始时的状态，默认为true
+ animation.setInterpolator(new LinearInterpolator());//设置动画的插值器
+ animation.setRepeatMode(Animation.RESTART);//设置动画的重复模式默认为Animation.RESTART
+ animation.setRepeatCount(0);//设置动画的重复次数0为1次Animation.INFINITE为无限重复
+ imageView.startAnimation(animation);
+</code></pre><h4 id="3-TranslateAnimation"><a href="#3-TranslateAnimation" class="headerlink" title="3.TranslateAnimation"></a>3.TranslateAnimation</h4><h4 id="XML资源文件方式：-2"><a href="#XML资源文件方式：-2" class="headerlink" title="XML资源文件方式："></a>XML资源文件方式：</h4><h5 id="1）-在res-anim文件中创建translateanim-xml文件（如果没有anim文件夹的话需要自己新建）"><a href="#1）-在res-anim文件中创建translateanim-xml文件（如果没有anim文件夹的话需要自己新建）" class="headerlink" title="1）.在res/anim文件中创建translateanim.xml文件（如果没有anim文件夹的话需要自己新建）"></a>1）.在res/anim文件中创建translateanim.xml文件（如果没有anim文件夹的话需要自己新建）</h5><h5 id="2）-在translateanim-xml中配置动画的属性"><a href="#2）-在translateanim-xml中配置动画的属性" class="headerlink" title="2）.在translateanim.xml中配置动画的属性"></a>2）.在translateanim.xml中配置动画的属性</h5><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;translate xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:duration=&quot;3000&quot; //一次动画的持续时间
+    android:startOffset =&quot;1000&quot; //开始动画之前的时间间隔
+    android:fillEnabled= &quot;true&quot;//是否允许动画结束之后回到开始的状态默认为true
+    android:fillBefore = &quot;true&quot; //动画结束后是否回到初始状态fillEnabled为true时此属性生效，默认为true
+    android:fillAfter = &quot;false&quot;//动画结束后是否保持结束的状态
+    android:repeatMode= &quot;restart&quot;//重复播放的模式，restart代表正序重放，reverse代表倒序回放
+    android:repeatCount = &quot;0&quot;//重复的次数为infinite或-1时无限重复
+    android:interpolator =&quot;@android:anim/linear_interpolator&quot;//插值器，改变动画速率
+    android:fromXDelta=&quot;0&quot; //开始时X轴的移动距离
+    android:toXDelta=&quot;500&quot; //结束时X轴的移动距离
+    android:fromYDelta=&quot;0&quot; //开始时Y轴的移动距离
+    android:toYDelta=&quot;500&quot; //结束时Y轴的移动距离
+    &gt;
+
+&lt;/translate&gt;
+</code></pre><h5 id="3）-在MainActivity中-2"><a href="#3）-在MainActivity中-2" class="headerlink" title="3）.在MainActivity中"></a>3）.在MainActivity中</h5><pre><code>Animation animation = AnimationUtils.loadAnimation(this, R.anim.translateanim);
+imageView.startAnimation(animation);
+</code></pre><h5 id="4）-运行效果-2"><a href="#4）-运行效果-2" class="headerlink" title="4）.运行效果"></a>4）.运行效果</h5><p><img src="https://i.imgur.com/FGUE3tH.gif" alt=""></p>
+<h4 id="代码方式：（运行效果与XML方式一致）-2"><a href="#代码方式：（运行效果与XML方式一致）-2" class="headerlink" title="代码方式：（运行效果与XML方式一致）"></a>代码方式：（运行效果与XML方式一致）</h4><pre><code>animation=new TranslateAnimation(0,500,0,500);
+//                fromXDelta：开始时X轴的移动距离
+//                toXDetlta：结束时X轴的移动距离
+//                fromYDelta：开始时Y轴的移动距离
+//                toYDelta：结束时Y轴的移动距离
+animation.setDuration(2000);//设置单次动画的重复时间
+animation.setFillAfter(false);//设置动画结束后是否保持结束时的状态，默认为false
+animation.setFillEnabled(true);//设置是否允许动画结束后保持开始时状态默认为true
+animation.setFillBefore(true);//设置动画结束时是否保持开始时的状态，默认为true
+animation.setInterpolator(new LinearInterpolator());//设置动画的插值器
+animation.setRepeatMode(Animation.RESTART);//设置动画的重复模式默认为Animation.RESTART
+animation.setRepeatCount(0);//设置动画的重复次数0为1次Animation.INFINITE为无限重复
+imageView.startAnimation(animation);
+</code></pre><h4 id="4-RotateAnimation"><a href="#4-RotateAnimation" class="headerlink" title="4.RotateAnimation"></a>4.RotateAnimation</h4><h4 id="XML资源文件方式：-3"><a href="#XML资源文件方式：-3" class="headerlink" title="XML资源文件方式："></a>XML资源文件方式：</h4><h5 id="1）-在res-anim文件中创建translateanim-xml文件（如果没有anim文件夹的话需要自己新建）-1"><a href="#1）-在res-anim文件中创建translateanim-xml文件（如果没有anim文件夹的话需要自己新建）-1" class="headerlink" title="1）.在res/anim文件中创建translateanim.xml文件（如果没有anim文件夹的话需要自己新建）"></a>1）.在res/anim文件中创建translateanim.xml文件（如果没有anim文件夹的话需要自己新建）</h5><h5 id="2）-在translateanim-xml中配置动画的属性-1"><a href="#2）-在translateanim-xml中配置动画的属性-1" class="headerlink" title="2）.在translateanim.xml中配置动画的属性"></a>2）.在translateanim.xml中配置动画的属性</h5><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;translate xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:duration=&quot;3000&quot; //一次动画的持续时间
+    android:startOffset =&quot;1000&quot; //开始动画之前的时间间隔
+    android:fillEnabled= &quot;true&quot;//是否允许动画结束之后回到开始的状态默认为true
+    android:fillBefore = &quot;true&quot; //动画结束后是否回到初始状态fillEnabled为true时此属性生效，默认为true
+    android:fillAfter = &quot;false&quot;//动画结束后是否保持结束的状态
+    android:repeatMode= &quot;restart&quot;//重复播放的模式，restart代表正序重放，reverse代表倒序回放
+    android:repeatCount = &quot;0&quot;//重复的次数为infinite或-1时无限重复
+    android:interpolator =&quot;@android:anim/linear_interpolator&quot;//插值器，改变动画速率
+    android:fromDegrees=&quot;0&quot; //开始状态的旋转角度
+    android:toDegrees=&quot;360&quot; //结束时的旋转角度
+    android:pivotY=&quot;50%&quot; //旋转中心的Y轴坐标，相对于自身
+    android:pivotX=&quot;50%&quot; //旋转中心的X轴坐标，相对于自身
+    &gt;
+
+
+&lt;/translate&gt;
+</code></pre><h5 id="3）-在MainActivity中-3"><a href="#3）-在MainActivity中-3" class="headerlink" title="3）.在MainActivity中"></a>3）.在MainActivity中</h5><pre><code>Animation animation = AnimationUtils.loadAnimation(this, R.anim.rotateanim);
+imageView.startAnimation(animation);
+</code></pre><h5 id="4）-运行效果-3"><a href="#4）-运行效果-3" class="headerlink" title="4）.运行效果"></a>4）.运行效果</h5><p><img src="https://i.imgur.com/t4L7JOT.gif" alt=""></p>
+<h4 id="代码方式：（运行效果与XML方式一致）-3"><a href="#代码方式：（运行效果与XML方式一致）-3" class="headerlink" title="代码方式：（运行效果与XML方式一致）"></a>代码方式：（运行效果与XML方式一致）</h4><pre><code> animation=new RotateAnimation(0,360,Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+//                fromDegrees：开始时的角度
+//                toDegress：结束时角度
+////                Animation.RELATIVE_TO_SELF：相对于自身
+////                Animation.RELATIVE_TO_PARENT：相对于父控件
+////                Animation.ABSOLUTE：相对于窗口0
+////                pivotXValue：缩放中心X轴的坐标百分百比（float类型）
+////                pivotYValue；缩放中心Y轴的坐标百分百比（float类型）
+animation.setDuration(2000);//设置单次动画的重复时间
+animation.setFillAfter(false);//设置动画结束后是否保持结束时的状态，默认为false
+animation.setFillEnabled(true);//设置是否允许动画结束后保持开始时状态默认为true
+animation.setFillBefore(true);//设置动画结束时是否保持开始时的状态，默认为true
+animation.setInterpolator(new LinearInterpolator());//设置动画的插值器
+animation.setRepeatMode(Animation.RESTART);//设置动画的重复模式默认为Animation.RESTART
+animation.setRepeatCount(0);//设置动画的重复次数0为1次Animation.INFINITE为无限重复
+imageView.startAnimation(animation);//开始动画
+</code></pre><h4 id="5-动画集合（即各种动画效果的叠加）"><a href="#5-动画集合（即各种动画效果的叠加）" class="headerlink" title="5.动画集合（即各种动画效果的叠加）"></a>5.动画集合（即各种动画效果的叠加）</h4><h4 id="XML资源文件方式：-4"><a href="#XML资源文件方式：-4" class="headerlink" title="XML资源文件方式："></a>XML资源文件方式：</h4><h5 id="1）-在res-anim文件中创建anmiset-xml文件（如果没有anim文件夹的话需要自己新建）"><a href="#1）-在res-anim文件中创建anmiset-xml文件（如果没有anim文件夹的话需要自己新建）" class="headerlink" title="1）.在res/anim文件中创建anmiset.xml文件（如果没有anim文件夹的话需要自己新建）"></a>1）.在res/anim文件中创建anmiset.xml文件（如果没有anim文件夹的话需要自己新建）</h5><h5 id="2）-在translateanim-xml中配置动画的属性-2"><a href="#2）-在translateanim-xml中配置动画的属性-2" class="headerlink" title="2）.在translateanim.xml中配置动画的属性"></a>2）.在translateanim.xml中配置动画的属性</h5><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:startOffset =&quot;1000&quot;
+    android:fillBefore = &quot;true&quot;
+    android:fillAfter = &quot;false&quot;
+    android:fillEnabled= &quot;true&quot;
+    android:repeatMode= &quot;restart&quot;
+    android:interpolator =&quot;@android:anim/linear_interpolator&quot;
+    android:repeatCount = &quot;0&quot;&gt;
+    &lt;alpha
+        android:duration=&quot;2000&quot;
+        android:fromAlpha=&quot;1&quot;
+        android:toAlpha=&quot;0&quot;&gt;
+    &lt;/alpha&gt;
+    &lt;rotate
+        android:duration=&quot;2000&quot;
+        android:fromDegrees=&quot;0&quot;
+        android:toDegrees=&quot;360&quot;
+        android:pivotY=&quot;50%&quot;
+        android:pivotX=&quot;50%&quot;
+        &gt;
+    &lt;/rotate&gt;
+    &lt;scale
+        android:duration=&quot;2000&quot;
+        android:fromXScale=&quot;1.0&quot;
+        android:toXScale=&quot;2.0&quot;
+        android:fromYScale=&quot;1.0&quot;
+        android:toYScale=&quot;2.0&quot;
+        android:pivotX=&quot;50%&quot;
+        android:pivotY=&quot;50%&quot;
+        &gt;
+    &lt;/scale&gt;
+    &lt;translate
+        android:duration=&quot;2000&quot;
+        android:fromXDelta=&quot;0&quot;
+        android:toXDelta=&quot;500&quot;
+        android:fromYDelta=&quot;0&quot;
+        android:toYDelta=&quot;500&quot;
+        &gt;
+    &lt;/translate&gt;
+&lt;/set&gt;
+</code></pre><h5 id="3）-在MainActivity中-4"><a href="#3）-在MainActivity中-4" class="headerlink" title="3）.在MainActivity中"></a>3）.在MainActivity中</h5><pre><code>animation = AnimationUtils.loadAnimation(this, R.anim.anmiset);
+imageView.startAnimation(animation);
+</code></pre><h5 id="4）-运行效果-4"><a href="#4）-运行效果-4" class="headerlink" title="4）.运行效果"></a>4）.运行效果</h5><p><img src="https://i.imgur.com/X3Wj5Cz.gif" alt=""></p>
+<h4 id="代码方式：（运行效果与XML方式一致）-4"><a href="#代码方式：（运行效果与XML方式一致）-4" class="headerlink" title="代码方式：（运行效果与XML方式一致）"></a>代码方式：（运行效果与XML方式一致）</h4><pre><code>AnimationSet animationSet=new AnimationSet(true);
+animationSet.addAnimation(new AlphaAnimation(1,0));
+animationSet.addAnimation(new RotateAnimation(0,360,Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f));
+animationSet.addAnimation(new ScaleAnimation(1,2,1,2,Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f));
+animationSet.addAnimation(new TranslateAnimation(0,500,0,500));
+animationSet.setDuration(2000);//设置单次动画的重复时间
+animationSet.setFillAfter(false);//设置动画结束后是否保持结束时的状态，默认为false
+animationSet.setFillEnabled(true);//设置是否允许动画结束后保持开始时状态默认为true
+animationSet.setFillBefore(true);//设置动画结束时是否保持开始时的状态，默认为true
+animationSet.setInterpolator(new LinearInterpolator());//设置动画的插值器
+animationSet.setRepeatMode(Animation.RESTART);//设置动画的重复模式默认为Animation.RESTART
+animationSet.setRepeatCount(0);//设置动画的重复次数0为1次Animation.INFINITE为无限重复
+imageView.startAnimation(animationSet);
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://lc-gdctdkyx.cn-n1.lcfile.com/67cdffdbd73e44cfbe32.png" alt="来世成石 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/动画/" <i class="fa fa-tag"></i> 动画</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/27/Android动画之帧动画/" rel="next" title="Android动画之帧动画详解">
+                <i class="fa fa-chevron-left"></i> Android动画之帧动画详解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjE5Ni8xMjczMQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://lc-gdctdkyx.cn-n1.lcfile.com/4073a0785ac6e54b2ff8.jpg"
+                alt="来世成石" />
+            
+              <p class="site-author-name" itemprop="name">来世成石</p>
+              <p class="site-description motion-element" itemprop="description">李萌林的个人博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/myml666" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/766a13e86f82" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-globe"></i>简书</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-概念"><span class="nav-number">1.</span> <span class="nav-text">一.概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#补间动画是指开发者无需定义动画过程中的每一帧，只需要定义动画的开始和结束两个关键帧，并指定动画变化的时间和方式等，然后交由Android系统进行计算，通过在这两个关键帧之间插入渐变值来实现平滑过渡，从而对View的内容完成一系列的图形变换来实现动画效果，主要包括四种基本效果：透明变化Alpha、大小变化Scale、位移变化Translate、以及旋转变化Route，这四种效果可以动态组合，从而实现复杂灵活的动画。同样，定义补间动画也可以分为XML资源文件和代码两种方式。"><span class="nav-number">1.1.</span> <span class="nav-text">补间动画是指开发者无需定义动画过程中的每一帧，只需要定义动画的开始和结束两个关键帧，并指定动画变化的时间和方式等，然后交由Android系统进行计算，通过在这两个关键帧之间插入渐变值来实现平滑过渡，从而对View的内容完成一系列的图形变换来实现动画效果，主要包括四种基本效果：透明变化Alpha、大小变化Scale、位移变化Translate、以及旋转变化Route，这四种效果可以动态组合，从而实现复杂灵活的动画。同样，定义补间动画也可以分为XML资源文件和代码两种方式。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-Android中动画的实现类介绍"><span class="nav-number">2.</span> <span class="nav-text">二.Android中动画的实现类介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Android系统中使用Animation类表示抽象的动画类，上面介绍的四种补间动画分别对应着如下几个动画类。"><span class="nav-number">2.1.</span> <span class="nav-text">Android系统中使用Animation类表示抽象的动画类，上面介绍的四种补间动画分别对应着如下几个动画类。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-动画的实现"><span class="nav-number">3.</span> <span class="nav-text">三.动画的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-AlphaAnimation"><span class="nav-number">3.1.</span> <span class="nav-text">1.AlphaAnimation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XML资源文件方式："><span class="nav-number">3.2.</span> <span class="nav-text">XML资源文件方式：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1）-在res-anim文件中创建alphaanim-xml文件（如果没有anim文件夹的话需要自己新建）"><span class="nav-number">3.2.1.</span> <span class="nav-text">1）.在res/anim文件中创建alphaanim.xml文件（如果没有anim文件夹的话需要自己新建）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2）-在alphaanim-xml中配置动画的属性"><span class="nav-number">3.2.2.</span> <span class="nav-text">2）.在alphaanim.xml中配置动画的属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3）-在MainActivity中"><span class="nav-number">3.2.3.</span> <span class="nav-text">3）.在MainActivity中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4）-运行效果"><span class="nav-number">3.2.4.</span> <span class="nav-text">4）.运行效果</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码方式：（运行效果与XML方式一致）"><span class="nav-number">3.3.</span> <span class="nav-text">代码方式：（运行效果与XML方式一致）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-ScaleAnimation"><span class="nav-number">3.4.</span> <span class="nav-text">2.ScaleAnimation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XML资源文件方式：-1"><span class="nav-number">3.5.</span> <span class="nav-text">XML资源文件方式：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1）-在res-anim文件中创建scaleanim-xml文件（如果没有anim文件夹的话需要自己新建）"><span class="nav-number">3.5.1.</span> <span class="nav-text">1）.在res/anim文件中创建scaleanim.xml文件（如果没有anim文件夹的话需要自己新建）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2）-在scaleanim-xml中配置动画的属性"><span class="nav-number">3.5.2.</span> <span class="nav-text">2）.在scaleanim.xml中配置动画的属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3）-在MainActivity中-1"><span class="nav-number">3.5.3.</span> <span class="nav-text">3）.在MainActivity中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4）-运行效果-1"><span class="nav-number">3.5.4.</span> <span class="nav-text">4）.运行效果</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码方式：（运行效果与XML方式一致）-1"><span class="nav-number">3.6.</span> <span class="nav-text">代码方式：（运行效果与XML方式一致）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-TranslateAnimation"><span class="nav-number">3.7.</span> <span class="nav-text">3.TranslateAnimation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XML资源文件方式：-2"><span class="nav-number">3.8.</span> <span class="nav-text">XML资源文件方式：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1）-在res-anim文件中创建translateanim-xml文件（如果没有anim文件夹的话需要自己新建）"><span class="nav-number">3.8.1.</span> <span class="nav-text">1）.在res/anim文件中创建translateanim.xml文件（如果没有anim文件夹的话需要自己新建）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2）-在translateanim-xml中配置动画的属性"><span class="nav-number">3.8.2.</span> <span class="nav-text">2）.在translateanim.xml中配置动画的属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3）-在MainActivity中-2"><span class="nav-number">3.8.3.</span> <span class="nav-text">3）.在MainActivity中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4）-运行效果-2"><span class="nav-number">3.8.4.</span> <span class="nav-text">4）.运行效果</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码方式：（运行效果与XML方式一致）-2"><span class="nav-number">3.9.</span> <span class="nav-text">代码方式：（运行效果与XML方式一致）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-RotateAnimation"><span class="nav-number">3.10.</span> <span class="nav-text">4.RotateAnimation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XML资源文件方式：-3"><span class="nav-number">3.11.</span> <span class="nav-text">XML资源文件方式：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1）-在res-anim文件中创建translateanim-xml文件（如果没有anim文件夹的话需要自己新建）-1"><span class="nav-number">3.11.1.</span> <span class="nav-text">1）.在res/anim文件中创建translateanim.xml文件（如果没有anim文件夹的话需要自己新建）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2）-在translateanim-xml中配置动画的属性-1"><span class="nav-number">3.11.2.</span> <span class="nav-text">2）.在translateanim.xml中配置动画的属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3）-在MainActivity中-3"><span class="nav-number">3.11.3.</span> <span class="nav-text">3）.在MainActivity中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4）-运行效果-3"><span class="nav-number">3.11.4.</span> <span class="nav-text">4）.运行效果</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码方式：（运行效果与XML方式一致）-3"><span class="nav-number">3.12.</span> <span class="nav-text">代码方式：（运行效果与XML方式一致）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-动画集合（即各种动画效果的叠加）"><span class="nav-number">3.13.</span> <span class="nav-text">5.动画集合（即各种动画效果的叠加）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XML资源文件方式：-4"><span class="nav-number">3.14.</span> <span class="nav-text">XML资源文件方式：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1）-在res-anim文件中创建anmiset-xml文件（如果没有anim文件夹的话需要自己新建）"><span class="nav-number">3.14.1.</span> <span class="nav-text">1）.在res/anim文件中创建anmiset.xml文件（如果没有anim文件夹的话需要自己新建）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2）-在translateanim-xml中配置动画的属性-2"><span class="nav-number">3.14.2.</span> <span class="nav-text">2）.在translateanim.xml中配置动画的属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3）-在MainActivity中-4"><span class="nav-number">3.14.3.</span> <span class="nav-text">3）.在MainActivity中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4）-运行效果-4"><span class="nav-number">3.14.4.</span> <span class="nav-text">4）.运行效果</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码方式：（运行效果与XML方式一致）-4"><span class="nav-number">3.15.</span> <span class="nav-text">代码方式：（运行效果与XML方式一致）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">来世成石</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+      本站访客数:&nbsp;<span id="busuanzi_value_site_pv"></span>
+    </span>
+  </div>
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">|&nbsp;&nbsp;<i class="fa fa-pencil"></i>&nbsp;博客全站共13.7k字</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("0n6qPSUBHMBx7iFTtBGyvsBT-gzGzoHsz", "kPf0mBTVh9GwJ8hiTwqxGh8x");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
