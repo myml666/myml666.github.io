@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "5ba30a2d"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="屏幕适配," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="为什么使用百分比布局由于Android系统的碎片化发展导致了市面上多种分辨率、多种屏幕密度共存，这对我们的屏幕适配增加了不少的难度，在布局方面我们都知道可以通过LinearLayout的layout_weight属性来进行适配，但是在某些情况下我们要向用这种方法进行适配就必须进行多层布局嵌套，而这则会导致布局文件复杂，增加渲染层次，致使性能下降。针对这种情况google为我们提供了一个百分比布局兼">
+<meta name="keywords" content="屏幕适配">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android屏幕适配之百分比布局">
+<meta property="og:url" content="http://yoursite.com/2018/08/29/Android屏幕适配之百分比布局/index.html">
+<meta property="og:site_name" content="来世成石">
+<meta property="og:description" content="为什么使用百分比布局由于Android系统的碎片化发展导致了市面上多种分辨率、多种屏幕密度共存，这对我们的屏幕适配增加了不少的难度，在布局方面我们都知道可以通过LinearLayout的layout_weight属性来进行适配，但是在某些情况下我们要向用这种方法进行适配就必须进行多层布局嵌套，而这则会导致布局文件复杂，增加渲染层次，致使性能下降。针对这种情况google为我们提供了一个百分比布局兼">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/8850933-33d44f378636019e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/8850933-be6b7a62b2ba9bd1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-08-29T09:51:18.161Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android屏幕适配之百分比布局">
+<meta name="twitter:description" content="为什么使用百分比布局由于Android系统的碎片化发展导致了市面上多种分辨率、多种屏幕密度共存，这对我们的屏幕适配增加了不少的难度，在布局方面我们都知道可以通过LinearLayout的layout_weight属性来进行适配，但是在某些情况下我们要向用这种方法进行适配就必须进行多层布局嵌套，而这则会导致布局文件复杂，增加渲染层次，致使性能下降。针对这种情况google为我们提供了一个百分比布局兼">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/8850933-33d44f378636019e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/29/Android屏幕适配之百分比布局/"/>
+
+
+
+
+
+
+  <title>Android屏幕适配之百分比布局 | 来世成石</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+<a href="https://github.com/myml666" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">来世成石</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">你说你最爱丁香花</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/29/Android屏幕适配之百分比布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="来世成石">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://lc-gdctdkyx.cn-n1.lcfile.com/4073a0785ac6e54b2ff8.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="来世成石">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android屏幕适配之百分比布局</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-29T10:19:04+08:00">
+                2018-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/29/Android屏幕适配之百分比布局/" class="leancloud_visitors" data-flag-title="Android屏幕适配之百分比布局">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="为什么使用百分比布局"><a href="#为什么使用百分比布局" class="headerlink" title="为什么使用百分比布局"></a>为什么使用百分比布局</h3><h4 id="由于Android系统的碎片化发展导致了市面上多种分辨率、多种屏幕密度共存，这对我们的屏幕适配增加了不少的难度，在布局方面我们都知道可以通过LinearLayout的layout-weight属性来进行适配，但是在某些情况下我们要向用这种方法进行适配就必须进行多层布局嵌套，而这则会导致布局文件复杂，增加渲染层次，致使性能下降。针对这种情况google为我们提供了一个百分比布局兼容库：Android-Percent-Support-Library，解决了上述的问题，目前它支持RelativeLayout和FrameLayout的百分比布局，不过已经有大牛在GitHub上面开源了LinearLayout的百分比布局支持库。"><a href="#由于Android系统的碎片化发展导致了市面上多种分辨率、多种屏幕密度共存，这对我们的屏幕适配增加了不少的难度，在布局方面我们都知道可以通过LinearLayout的layout-weight属性来进行适配，但是在某些情况下我们要向用这种方法进行适配就必须进行多层布局嵌套，而这则会导致布局文件复杂，增加渲染层次，致使性能下降。针对这种情况google为我们提供了一个百分比布局兼容库：Android-Percent-Support-Library，解决了上述的问题，目前它支持RelativeLayout和FrameLayout的百分比布局，不过已经有大牛在GitHub上面开源了LinearLayout的百分比布局支持库。" class="headerlink" title="由于Android系统的碎片化发展导致了市面上多种分辨率、多种屏幕密度共存，这对我们的屏幕适配增加了不少的难度，在布局方面我们都知道可以通过LinearLayout的layout_weight属性来进行适配，但是在某些情况下我们要向用这种方法进行适配就必须进行多层布局嵌套，而这则会导致布局文件复杂，增加渲染层次，致使性能下降。针对这种情况google为我们提供了一个百分比布局兼容库：Android Percent Support Library，解决了上述的问题，目前它支持RelativeLayout和FrameLayout的百分比布局，不过已经有大牛在GitHub上面开源了LinearLayout的百分比布局支持库。"></a>由于Android系统的碎片化发展导致了市面上多种分辨率、多种屏幕密度共存，这对我们的屏幕适配增加了不少的难度，在布局方面我们都知道可以通过LinearLayout的layout_weight属性来进行适配，但是在某些情况下我们要向用这种方法进行适配就必须进行多层布局嵌套，而这则会导致布局文件复杂，增加渲染层次，致使性能下降。针对这种情况google为我们提供了一个百分比布局兼容库：Android Percent Support Library，解决了上述的问题，目前它支持RelativeLayout和FrameLayout的百分比布局，不过已经有大牛在GitHub上面开源了LinearLayout的百分比布局支持库。</h4><h3 id="如何使用百分比布局"><a href="#如何使用百分比布局" class="headerlink" title="如何使用百分比布局"></a>如何使用百分比布局</h3><h4 id="1-添加依赖"><a href="#1-添加依赖" class="headerlink" title="1.添加依赖"></a>1.添加依赖</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    ...</span><br><span class="line">    implementation <span class="string">'com.android.support:percent:27.0.2'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-属性讲解"><a href="#2-属性讲解" class="headerlink" title="2.属性讲解"></a>2.属性讲解</h4><h5 id="在函数库里面我们主要用到两个类："><a href="#在函数库里面我们主要用到两个类：" class="headerlink" title="在函数库里面我们主要用到两个类："></a>在函数库里面我们主要用到两个类：</h5><ul>
+<li>PercentRelativeLayout</li>
+<li>PercentFrameLayout<h5 id="它们主要有以下属性"><a href="#它们主要有以下属性" class="headerlink" title="它们主要有以下属性"></a>它们主要有以下属性</h5></li>
+<li>app:layout_heightPercent：用百分比表示高度</li>
+<li>app:layout_widthPercent：用百分比表示宽度</li>
+<li>app:layout_marginPercent：用百分比表示View之间的间隔</li>
+<li>app:layout_marginLeftPercent：用百分比表示左边间隔</li>
+<li>app:layout_marginRight：用百分比表示右边间隔</li>
+<li>app:layout_marginTopPercent：用百分比表示顶部间隔</li>
+<li>app:layout_marginBottomPercent：用百分比表示底部间隔</li>
+<li>app:layout_marginStartPercent：用百分比表示距离第一个View之间的距离</li>
+<li>app:layout_marginEndPercent：用百分比表示距离最后一个View之间的距离</li>
+<li>app:layout_aspectRatio：用百分比表示View的宽高比<h4 id="3-实例演示（以PercentRelativeLayout为例）"><a href="#3-实例演示（以PercentRelativeLayout为例）" class="headerlink" title="3.实例演示（以PercentRelativeLayout为例）"></a>3.实例演示（以PercentRelativeLayout为例）</h4><h5 id="这里由于不设置layout-width和layout-height的话Android-Studio会报错所以我们把它设置成0dp。"><a href="#这里由于不设置layout-width和layout-height的话Android-Studio会报错所以我们把它设置成0dp。" class="headerlink" title="这里由于不设置layout_width和layout_height的话Android Studio会报错所以我们把它设置成0dp。"></a>这里由于不设置layout_width和layout_height的话Android Studio会报错所以我们把它设置成0dp。</h5></li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">android.support.percent.PercentRelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">tools:context</span>=<span class="string">".MainActivity"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/one"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#f0f000"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_heightPercent</span>=<span class="string">"30%"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_widthPercent</span>=<span class="string">"70%"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"Hello World!"</span></span></span><br><span class="line"><span class="tag">         /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_toRightOf</span>=<span class="string">"@id/one"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_heightPercent</span>=<span class="string">"30%"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_widthPercent</span>=<span class="string">"30%"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#ff0000"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"Hello World!"</span></span></span><br><span class="line"><span class="tag">        /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">          <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">android:layout_below</span>=<span class="string">"@id/one"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">android:layout_height</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">app:layout_heightPercent</span>=<span class="string">"70%"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">app:layout_widthPercent</span>=<span class="string">"100%"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">android:background</span>=<span class="string">"#ff00ff"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">android:text</span>=<span class="string">"Hello World!"</span></span></span><br><span class="line"><span class="tag">            /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">android.support.percent.PercentRelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h5><p><img src="https://upload-images.jianshu.io/upload_images/8850933-33d44f378636019e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="layout-aspectRatio属性演示"><a href="#layout-aspectRatio属性演示" class="headerlink" title="layout_aspectRatio属性演示"></a>layout_aspectRatio属性演示</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">android.support.percent.PercentRelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">tools:context</span>=<span class="string">".MainActivity"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"100dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_aspectRatio</span>=<span class="string">"50%"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#ff00ff"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"Hello World!"</span></span></span><br><span class="line"><span class="tag">        /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"100dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_alignParentRight</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_aspectRatio</span>=<span class="string">"200%"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#0f00ff"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"Hello World!"</span></span></span><br><span class="line"><span class="tag">        /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">android.support.percent.PercentRelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="效果图-1"><a href="#效果图-1" class="headerlink" title="效果图"></a>效果图</h5><p><img src="https://upload-images.jianshu.io/upload_images/8850933-be6b7a62b2ba9bd1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="个人技术博客：https-myml666-github-io"><a href="#个人技术博客：https-myml666-github-io" class="headerlink" title="个人技术博客：https://myml666.github.io"></a>个人技术博客：<a href="https://myml666.github.io" target="_blank" rel="noopener">https://myml666.github.io</a></h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://lc-gdctdkyx.cn-n1.lcfile.com/67cdffdbd73e44cfbe32.png" alt="来世成石 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/屏幕适配/" <i class="fa fa-tag"></i> 屏幕适配</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/29/Support Annotation Library注解使用详解/" rel="next" title="Support Annotation Library注解使用详解">
+                <i class="fa fa-chevron-left"></i> Support Annotation Library注解使用详解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/29/hellocharts之饼状图/" rel="prev" title="HelloCharts之饼状图">
+                HelloCharts之饼状图 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjE5Ni8xMjczMQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://lc-gdctdkyx.cn-n1.lcfile.com/4073a0785ac6e54b2ff8.jpg"
+                alt="来世成石" />
+            
+              <p class="site-author-name" itemprop="name">来世成石</p>
+              <p class="site-description motion-element" itemprop="description">李萌林的个人博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/myml666" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/766a13e86f82" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-globe"></i>简书</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么使用百分比布局"><span class="nav-number">1.</span> <span class="nav-text">为什么使用百分比布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#由于Android系统的碎片化发展导致了市面上多种分辨率、多种屏幕密度共存，这对我们的屏幕适配增加了不少的难度，在布局方面我们都知道可以通过LinearLayout的layout-weight属性来进行适配，但是在某些情况下我们要向用这种方法进行适配就必须进行多层布局嵌套，而这则会导致布局文件复杂，增加渲染层次，致使性能下降。针对这种情况google为我们提供了一个百分比布局兼容库：Android-Percent-Support-Library，解决了上述的问题，目前它支持RelativeLayout和FrameLayout的百分比布局，不过已经有大牛在GitHub上面开源了LinearLayout的百分比布局支持库。"><span class="nav-number">1.1.</span> <span class="nav-text">由于Android系统的碎片化发展导致了市面上多种分辨率、多种屏幕密度共存，这对我们的屏幕适配增加了不少的难度，在布局方面我们都知道可以通过LinearLayout的layout_weight属性来进行适配，但是在某些情况下我们要向用这种方法进行适配就必须进行多层布局嵌套，而这则会导致布局文件复杂，增加渲染层次，致使性能下降。针对这种情况google为我们提供了一个百分比布局兼容库：Android Percent Support Library，解决了上述的问题，目前它支持RelativeLayout和FrameLayout的百分比布局，不过已经有大牛在GitHub上面开源了LinearLayout的百分比布局支持库。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何使用百分比布局"><span class="nav-number">2.</span> <span class="nav-text">如何使用百分比布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-添加依赖"><span class="nav-number">2.1.</span> <span class="nav-text">1.添加依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-属性讲解"><span class="nav-number">2.2.</span> <span class="nav-text">2.属性讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在函数库里面我们主要用到两个类："><span class="nav-number">2.2.1.</span> <span class="nav-text">在函数库里面我们主要用到两个类：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#它们主要有以下属性"><span class="nav-number">2.2.2.</span> <span class="nav-text">它们主要有以下属性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-实例演示（以PercentRelativeLayout为例）"><span class="nav-number">2.3.</span> <span class="nav-text">3.实例演示（以PercentRelativeLayout为例）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#这里由于不设置layout-width和layout-height的话Android-Studio会报错所以我们把它设置成0dp。"><span class="nav-number">2.3.1.</span> <span class="nav-text">这里由于不设置layout_width和layout_height的话Android Studio会报错所以我们把它设置成0dp。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#效果图"><span class="nav-number">2.3.2.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#layout-aspectRatio属性演示"><span class="nav-number">2.3.3.</span> <span class="nav-text">layout_aspectRatio属性演示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#效果图-1"><span class="nav-number">2.3.4.</span> <span class="nav-text">效果图</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个人技术博客：https-myml666-github-io"><span class="nav-number">3.</span> <span class="nav-text">个人技术博客：https://myml666.github.io</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">来世成石</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+      本站访客数:&nbsp;<span id="busuanzi_value_site_pv"></span>
+    </span>
+  </div>
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">|&nbsp;&nbsp;<i class="fa fa-pencil"></i>&nbsp;博客全站共16.8k字</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("0n6qPSUBHMBx7iFTtBGyvsBT-gzGzoHsz", "kPf0mBTVh9GwJ8hiTwqxGh8x");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
