@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="自定义View," />
+  <meta name="keywords" content="Android换肤," />
 
 
 
@@ -89,20 +89,25 @@
 
 
 
-<meta name="description" content="对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改●setRotate(int axis, float degrees) 设置色调参数一（axis）：颜色编号1（红）,2（绿）,3（蓝）参数二（degrees）：修改的值（这里为角度值0~360）方法调用ColorMatrix colorMatrixS=new ColorMatrix(); colorMatrix">
-<meta name="keywords" content="自定义View">
+<meta name="description" content="目录 原理添加多套values和drawable文件，通过Android-skin-support框架动态的替换来实现切换主题的效果。 实现步骤 添加依赖 1234implementation &apos;skin.support:skin-support:3.1.0-beta1&apos;                   // skin-support 基础控件支持implementation &apos;skin.su">
+<meta name="keywords" content="Android换肤">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图像的色调、亮度、饱和度调节">
-<meta property="og:url" content="http://yoursite.com/2018/05/31/图像的色调、亮度、饱和度调节/index.html">
+<meta property="og:title" content="Android快速换肤之App内部换肤">
+<meta property="og:url" content="http://yoursite.com/2018/09/20/Android快速换肤之App内部换肤/index.html">
 <meta property="og:site_name" content="来世成石">
-<meta property="og:description" content="对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改●setRotate(int axis, float degrees) 设置色调参数一（axis）：颜色编号1（红）,2（绿）,3（蓝）参数二（degrees）：修改的值（这里为角度值0~360）方法调用ColorMatrix colorMatrixS=new ColorMatrix(); colorMatrix">
+<meta property="og:description" content="目录 原理添加多套values和drawable文件，通过Android-skin-support框架动态的替换来实现切换主题的效果。 实现步骤 添加依赖 1234implementation &apos;skin.support:skin-support:3.1.0-beta1&apos;                   // skin-support 基础控件支持implementation &apos;skin.su">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/ujrx5ti.gif">
-<meta property="og:updated_time" content="2018-05-31T06:49:01.373Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/8850933-05e9869c629d8195.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/8850933-b5d624cd9d7a16bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/8850933-5b4814a2b2ecd25d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/8850933-ab3f156e5eac8d67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/8850933-f587deb8d118a32d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/8850933-f2140f35b172c2b0.gif?imageMogr2/auto-orient/strip">
+<meta property="og:updated_time" content="2018-09-20T01:48:12.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="图像的色调、亮度、饱和度调节">
-<meta name="twitter:description" content="对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改●setRotate(int axis, float degrees) 设置色调参数一（axis）：颜色编号1（红）,2（绿）,3（蓝）参数二（degrees）：修改的值（这里为角度值0~360）方法调用ColorMatrix colorMatrixS=new ColorMatrix(); colorMatrix">
-<meta name="twitter:image" content="https://i.imgur.com/ujrx5ti.gif">
+<meta name="twitter:title" content="Android快速换肤之App内部换肤">
+<meta name="twitter:description" content="目录 原理添加多套values和drawable文件，通过Android-skin-support框架动态的替换来实现切换主题的效果。 实现步骤 添加依赖 1234implementation &apos;skin.support:skin-support:3.1.0-beta1&apos;                   // skin-support 基础控件支持implementation &apos;skin.su">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/8850933-05e9869c629d8195.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -132,14 +137,14 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/31/图像的色调、亮度、饱和度调节/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/20/Android快速换肤之App内部换肤/"/>
 
 
 
 
 
 
-  <title>图像的色调、亮度、饱和度调节 | 来世成石</title>
+  <title>Android快速换肤之App内部换肤 | 来世成石</title>
   
 
 
@@ -266,7 +271,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/31/图像的色调、亮度、饱和度调节/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/20/Android快速换肤之App内部换肤/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="来世成石">
@@ -283,7 +288,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">图像的色调、亮度、饱和度调节</h1>
+          <h1 class="post-title" itemprop="name headline">Android快速换肤之App内部换肤</h1>
         
 
         <div class="post-meta">
@@ -295,8 +300,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T14:45:11+08:00">
-                2018-05-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-20T10:19:04+08:00">
+                2018-09-20
               </time>
             
 
@@ -335,7 +340,7 @@
 
           
           
-             <span id="/2018/05/31/图像的色调、亮度、饱和度调节/" class="leancloud_visitors" data-flag-title="图像的色调、亮度、饱和度调节">
+             <span id="/2018/09/20/Android快速换肤之App内部换肤/" class="leancloud_visitors" data-flag-title="Android快速换肤之App内部换肤">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -367,129 +372,27 @@
       
 
       
-        <h3 id="对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改"><a href="#对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改" class="headerlink" title="对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改"></a>对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改</h3><h4 id="●setRotate-int-axis-float-degrees-设置色调"><a href="#●setRotate-int-axis-float-degrees-设置色调" class="headerlink" title="●setRotate(int axis, float degrees) 设置色调"></a>●setRotate(int axis, float degrees) 设置色调</h4><h4 id="参数一（axis）：颜色编号1（红）-2（绿）-3（蓝）"><a href="#参数一（axis）：颜色编号1（红）-2（绿）-3（蓝）" class="headerlink" title="参数一（axis）：颜色编号1（红）,2（绿）,3（蓝）"></a>参数一（axis）：颜色编号1（红）,2（绿）,3（蓝）</h4><h4 id="参数二（degrees）：修改的值（这里为角度值0-360）"><a href="#参数二（degrees）：修改的值（这里为角度值0-360）" class="headerlink" title="参数二（degrees）：修改的值（这里为角度值0~360）"></a>参数二（degrees）：修改的值（这里为角度值0~360）</h4><h4 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h4><pre><code>ColorMatrix colorMatrixS=new ColorMatrix();
-colorMatrixS.setRotate(0,one);//红
-colorMatrixS.setRotate(1,one);//绿
-colorMatrixS.setRotate(2,one);//蓝
-</code></pre><h4 id="●setSaturation-float-sat-设置饱和度"><a href="#●setSaturation-float-sat-设置饱和度" class="headerlink" title="●setSaturation(float sat) 设置饱和度"></a>●setSaturation(float sat) 设置饱和度</h4><h4 id="参数（sat）：值为1时是原图，大于1饱和度增加，小于1时饱和度减少，值为0时图像为灰色"><a href="#参数（sat）：值为1时是原图，大于1饱和度增加，小于1时饱和度减少，值为0时图像为灰色" class="headerlink" title="参数（sat）：值为1时是原图，大于1饱和度增加，小于1时饱和度减少，值为0时图像为灰色"></a>参数（sat）：值为1时是原图，大于1饱和度增加，小于1时饱和度减少，值为0时图像为灰色</h4><h4 id="方法调用-1"><a href="#方法调用-1" class="headerlink" title="方法调用"></a>方法调用</h4><pre><code>colorMatrixB.setSaturation(three);
-</code></pre><h4 id="●setScale-float-rScale-float-gScale-float-bScale-float-aScale-设置亮度"><a href="#●setScale-float-rScale-float-gScale-float-bScale-float-aScale-设置亮度" class="headerlink" title="●setScale(float rScale, float gScale, float bScale, float aScale)设置亮度"></a>●setScale(float rScale, float gScale, float bScale, float aScale)设置亮度</h4><h4 id="参数一（rScale）：红色"><a href="#参数一（rScale）：红色" class="headerlink" title="参数一（rScale）：红色"></a>参数一（rScale）：红色</h4><h4 id="参数二（gScale）：绿色"><a href="#参数二（gScale）：绿色" class="headerlink" title="参数二（gScale）：绿色"></a>参数二（gScale）：绿色</h4><h4 id="参数三（bScale）：蓝色"><a href="#参数三（bScale）：蓝色" class="headerlink" title="参数三（bScale）：蓝色"></a>参数三（bScale）：蓝色</h4><h4 id="参数四（aScale）：透明度"><a href="#参数四（aScale）：透明度" class="headerlink" title="参数四（aScale）：透明度"></a>参数四（aScale）：透明度</h4><h4 id="各个参数的值对应调节各个颜色的亮度，0代表全黑1代表原图，一般将透明度的值固定设置为1（原图效果），通过调节三元色的值来调节亮度。"><a href="#各个参数的值对应调节各个颜色的亮度，0代表全黑1代表原图，一般将透明度的值固定设置为1（原图效果），通过调节三元色的值来调节亮度。" class="headerlink" title="各个参数的值对应调节各个颜色的亮度，0代表全黑1代表原图，一般将透明度的值固定设置为1（原图效果），通过调节三元色的值来调节亮度。"></a>各个参数的值对应调节各个颜色的亮度，0代表全黑1代表原图，一般将透明度的值固定设置为1（原图效果），通过调节三元色的值来调节亮度。</h4><h4 id="方法调用-2"><a href="#方法调用-2" class="headerlink" title="方法调用"></a>方法调用</h4><pre><code>colorMatrixL.setScale(two,two,two,1);
-</code></pre><h3 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h3><p><img src="https://i.imgur.com/ujrx5ti.gif" alt=""></p>
-<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><h4 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h4><pre><code>public class MainActivity extends AppCompatActivity     implements SeekBar.OnSeekBarChangeListener{
-    SeekBar seekBarone,seekbartwo,seekbarthree;
-    ImageView imageView;
-    float one=1,two=1,three=1;
-    private Bitmap baseBitmap,copyBitmap;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        imageView = findViewById(R.id.img);
-        seekBarone=findViewById(R.id.one);
-        seekbartwo=findViewById(R.id.two);
-        seekbarthree=findViewById(R.id.three);
-        seekBarone.setOnSeekBarChangeListener(this);
-        seekbartwo.setOnSeekBarChangeListener(this);
-        seekbarthree.setOnSeekBarChangeListener(this);
-        baseBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.aaa);
-        //既然是复制一张与原图一模一样的图片那么这张复制图片的画纸的宽度和高度以及分辨率都要与原图一样,copyBitmap就为一张与原图相同尺寸分辨率的空白画纸
-        copyBitmap=Bitmap.createBitmap(baseBitmap.getWidth(), baseBitmap.getHeight(), baseBitmap.getConfig());
-    }
-    @Override
-    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        switch (seekBar.getId()){
-            case R.id.one:
-                one=progress*1.0f/seekBar.getMax()*360;
-                break;
-            case R.id.two:
-                two=progress*1.0f/(seekBar.getMax()-50);
-                break;
-            case R.id.three:
-                three=progress*1.0f/(seekBar.getMax()-50);
-                break;
-        }
-        Paint paint=new Paint();
-        Canvas canvas=new Canvas(copyBitmap);
-        ColorMatrix colorMatrixS=new ColorMatrix();
-        colorMatrixS.setRotate(0,one);
-        colorMatrixS.setRotate(1,one);
-        colorMatrixS.setRotate(2,one);
-        ColorMatrix colorMatrixL=new ColorMatrix();
-        colorMatrixL.setScale(two,two,two,1);
-        ColorMatrix colorMatrixB=new ColorMatrix();
-        colorMatrixB.setSaturation(three);
-        ColorMatrix colorMatriximg=new ColorMatrix();
-    //        通过postConcat()方法可以将以上效果叠加到一起
-        colorMatriximg.postConcat(colorMatrixB);
-        colorMatriximg.postConcat(colorMatrixL);
-        colorMatriximg.postConcat(colorMatrixS);
-        ColorMatrixColorFilter colorMatrixColorFilter=new ColorMatrixColorFilter(colorMatriximg);
-        paint.setColorFilter(colorMatrixColorFilter);
-        canvas.drawBitmap(baseBitmap,new Matrix(),paint);
-        imageView.setImageBitmap(copyBitmap);
-    }
+        <h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><p><img src="https://upload-images.jianshu.io/upload_images/8850933-05e9869c629d8195.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p><img src="https://upload-images.jianshu.io/upload_images/8850933-b5d624cd9d7a16bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>添加多套values和drawable文件，通过<a href="https://github.com/ximsfei/Android-skin-support" target="_blank" rel="noopener">Android-skin-support</a>框架动态的替换来实现切换主题的效果。</p>
+<h4 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h4><ul>
+<li><p>添加依赖</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">implementation <span class="string">'skin.support:skin-support:3.1.0-beta1'</span>                   <span class="comment">// skin-support 基础控件支持</span></span><br><span class="line">implementation <span class="string">'skin.support:skin-support-design:3.1.0-beta1'</span>            <span class="comment">// skin-support-design material design 控件支持[可选]</span></span><br><span class="line">implementation <span class="string">'skin.support:skin-support-cardview:3.1.0-beta1'</span>          <span class="comment">// skin-support-cardview CardView 控件支持[可选]</span></span><br><span class="line">implementation <span class="string">'skin.support:skin-support-constraint-layout:3.1.0-beta1'</span> <span class="comment">// skin-support-constraint-layout ConstraintLayout 控件支持[可选]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建MyApplication类在onCreate方法中进行初始化</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate();</span><br><span class="line">        SkinCompatManager.withoutActivity(<span class="keyword">this</span>)                         <span class="comment">// 基础控件换肤初始化</span></span><br><span class="line">                .addInflater(<span class="keyword">new</span> SkinMaterialViewInflater())            <span class="comment">// material design 控件换肤初始化[可选]</span></span><br><span class="line">                .addInflater(<span class="keyword">new</span> SkinCardViewInflater())                <span class="comment">// CardView v7 控件换肤初始化[可选]</span></span><br><span class="line">                .setSkinStatusBarColorEnable(<span class="keyword">true</span>)                      <span class="comment">//切换状态栏颜色</span></span><br><span class="line"><span class="comment">//                .setSkinStatusBarColorEnable(false)                     // 关闭状态栏换肤，默认打开[可选]</span></span><br><span class="line"><span class="comment">//                .setSkinWindowBackgroundEnable(false)                   // 关闭windowBackground换肤，默认打开[可选]</span></span><br><span class="line">                .loadSkin();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加皮肤（例如皮肤名为night则需要创建res-night文件夹来存放对应的资源文件，然后需要在app的gradle文件中添加如下代码）</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">sourceSets</span> &#123;main &#123;res.srcDirs = [<span class="string">'src/main/res'</span>, <span class="string">'src/main/res-night'</span>]&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>同时需要将对应的资源文件加上_night后缀<br><img src="https://upload-images.jianshu.io/upload_images/8850933-5b4814a2b2ecd25d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/8850933-ab3f156e5eac8d67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>然后将控件的属性设置为引用资源的方式<br><img src="https://upload-images.jianshu.io/upload_images/8850933-f587deb8d118a32d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>然后在代码中只需要执行一行代码即可实现换肤<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SkinCompatManager.getInstance().restoreDefaultTheme();<span class="comment">//恢复默认皮肤</span></span><br><span class="line">SkinCompatManager.getInstance().loadSkin(<span class="string">"night"</span>, <span class="keyword">null</span>, SkinCompatManager.SKIN_LOADER_STRATEGY_BUILD_IN);<span class="comment">//切换皮肤名为night的皮肤</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="实例演示"><a href="#实例演示" class="headerlink" title="实例演示"></a>实例演示</h4><p>这是我在学习换皮肤时做的一个案例，在这将它分享出来<a href="https://github.com/myml666/AndroidSkinDemo" target="_blank" rel="noopener">https://github.com/myml666/AndroidSkinDemo</a>。<br><img src="https://upload-images.jianshu.io/upload_images/8850933-f2140f35b172c2b0.gif?imageMogr2/auto-orient/strip" alt=""></p>
 
-    @Override
-    public void onStartTrackingTouch(SeekBar seekBar) {
-
-    }
-
-    @Override
-    public void onStopTrackingTouch(SeekBar seekBar) {
-
-    }
-}
-</code></pre><h4 id="布局代码"><a href="#布局代码" class="headerlink" title="布局代码"></a>布局代码</h4><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-    &lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-        xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-        xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot;
-        android:orientation=&quot;vertical&quot;
-        tools:context=&quot;com.yuyigufen.customview.MainActivity&quot;&gt;
-
-        &lt;ImageView
-            android:layout_width=&quot;match_parent&quot;
-            android:src=&quot;@mipmap/aaa&quot;
-            android:id=&quot;@+id/img&quot;
-            android:layout_height=&quot;200dp&quot; /&gt;
-        &lt;TextView
-            android:layout_width=&quot;wrap_content&quot;
-            android:text=&quot;色调&quot;
-            android:layout_marginTop=&quot;20dp&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;android.support.v7.widget.AppCompatSeekBar
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_marginLeft=&quot;10dp&quot;
-            android:id=&quot;@+id/one&quot;
-            android:layout_marginRight=&quot;10dp&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;TextView
-            android:layout_width=&quot;wrap_content&quot;
-            android:text=&quot;亮度&quot;
-            android:layout_marginTop=&quot;20dp&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;android.support.v7.widget.AppCompatSeekBar
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_marginLeft=&quot;10dp&quot;
-            android:id=&quot;@+id/two&quot;
-            android:progress=&quot;50&quot;
-            android:layout_marginRight=&quot;10dp&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;TextView
-            android:layout_width=&quot;wrap_content&quot;
-            android:text=&quot;饱和度&quot;
-            android:layout_marginTop=&quot;20dp&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;android.support.v7.widget.AppCompatSeekBar
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_marginLeft=&quot;10dp&quot;
-            android:id=&quot;@+id/three&quot;
-            android:progress=&quot;50&quot;
-            android:layout_marginRight=&quot;10dp&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-
-&lt;/LinearLayout&gt;
-</code></pre>
       
     </div>
     
@@ -540,7 +443,7 @@ colorMatrixS.setRotate(2,one);//蓝
       
         <div class="post-tags">
           
-            <a href="/tags/自定义View/" <i class="fa fa-tag"></i> 自定义View</a>
+            <a href="/tags/Android换肤/" <i class="fa fa-tag"></i> Android换肤</a>
           
         </div>
       
@@ -553,8 +456,8 @@ colorMatrixS.setRotate(2,one);//蓝
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/10/vue如何编写组件可以通过Vue-use-使用/" rel="next" title="vue如何编写组件可以通过Vue.use()使用">
-                <i class="fa fa-chevron-left"></i> vue如何编写组件可以通过Vue.use()使用
+              <a href="/2018/09/17/Android Material Design：RecyclerView + SnapHelper实现炫酷ViewPager效果/" rel="next" title="Android Material Design：RecyclerView + SnapHelper实现炫酷ViewPager效果">
+                <i class="fa fa-chevron-left"></i> Android Material Design：RecyclerView + SnapHelper实现炫酷ViewPager效果
               </a>
             
           </div>
@@ -562,10 +465,6 @@ colorMatrixS.setRotate(2,one);//蓝
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/01/利用PorterDuffXfermode绘制图片文字/" rel="prev" title="利用PorterDuffXfermode绘制图片文字">
-                利用PorterDuffXfermode绘制图片文字 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -722,7 +621,7 @@ colorMatrixS.setRotate(2,one);//蓝
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改"><span class="nav-number">1.</span> <span class="nav-text">对于图像的色调、亮度、饱和度Android提供了ColorMatrix来供我们进行修改</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#●setRotate-int-axis-float-degrees-设置色调"><span class="nav-number">1.1.</span> <span class="nav-text">●setRotate(int axis, float degrees) 设置色调</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数一（axis）：颜色编号1（红）-2（绿）-3（蓝）"><span class="nav-number">1.2.</span> <span class="nav-text">参数一（axis）：颜色编号1（红）,2（绿）,3（蓝）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数二（degrees）：修改的值（这里为角度值0-360）"><span class="nav-number">1.3.</span> <span class="nav-text">参数二（degrees）：修改的值（这里为角度值0~360）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法调用"><span class="nav-number">1.4.</span> <span class="nav-text">方法调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#●setSaturation-float-sat-设置饱和度"><span class="nav-number">1.5.</span> <span class="nav-text">●setSaturation(float sat) 设置饱和度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数（sat）：值为1时是原图，大于1饱和度增加，小于1时饱和度减少，值为0时图像为灰色"><span class="nav-number">1.6.</span> <span class="nav-text">参数（sat）：值为1时是原图，大于1饱和度增加，小于1时饱和度减少，值为0时图像为灰色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法调用-1"><span class="nav-number">1.7.</span> <span class="nav-text">方法调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#●setScale-float-rScale-float-gScale-float-bScale-float-aScale-设置亮度"><span class="nav-number">1.8.</span> <span class="nav-text">●setScale(float rScale, float gScale, float bScale, float aScale)设置亮度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数一（rScale）：红色"><span class="nav-number">1.9.</span> <span class="nav-text">参数一（rScale）：红色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数二（gScale）：绿色"><span class="nav-number">1.10.</span> <span class="nav-text">参数二（gScale）：绿色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数三（bScale）：蓝色"><span class="nav-number">1.11.</span> <span class="nav-text">参数三（bScale）：蓝色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数四（aScale）：透明度"><span class="nav-number">1.12.</span> <span class="nav-text">参数四（aScale）：透明度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各个参数的值对应调节各个颜色的亮度，0代表全黑1代表原图，一般将透明度的值固定设置为1（原图效果），通过调节三元色的值来调节亮度。"><span class="nav-number">1.13.</span> <span class="nav-text">各个参数的值对应调节各个颜色的亮度，0代表全黑1代表原图，一般将透明度的值固定设置为1（原图效果），通过调节三元色的值来调节亮度。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法调用-2"><span class="nav-number">1.14.</span> <span class="nav-text">方法调用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果展示"><span class="nav-number">2.</span> <span class="nav-text">效果展示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整代码"><span class="nav-number">3.</span> <span class="nav-text">完整代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Activity"><span class="nav-number">3.1.</span> <span class="nav-text">Activity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#布局代码"><span class="nav-number">3.2.</span> <span class="nav-text">布局代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现步骤"><span class="nav-number">3.</span> <span class="nav-text">实现步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例演示"><span class="nav-number">4.</span> <span class="nav-text">实例演示</span></a></li></ol></div>
             
 
           </div>
