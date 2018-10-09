@@ -89,21 +89,22 @@
 
 
 
-<meta name="description" content="最终效果预览 这次实现的是第一步效果 原理解析：通过对控件添加动画来实现仿抖音底部导航的效果 一.首先编写布局文件（这里是用TextView作为底部的指示横线）&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt; &amp;lt;RelativeLayout     xmlns:android=&amp;quot;http://schem">
+<meta name="description" content="目录 前言最近公司的项目需要实现类似于支付宝输入支付密码的功能，本来打算上网找一个别人写好的直接用，又怕直接用别人的出了问题不能够快速解决，索性就写了一个支付密码控件（GitHub传送门），在这里分享出来。 效果图 设计思路这个控件整体可以分为两层：  下层使用EditText来存储输入的密码以及监听密码是否输入完毕，另外注意这里的EditText字体大小一定要设置为0，否则会出现密码和密文重合的">
 <meta name="keywords" content="自定义View">
 <meta property="og:type" content="article">
-<meta property="og:title" content="仿抖音底部导航（（一）">
-<meta property="og:url" content="http://yoursite.com/2018/05/08/仿抖音底部导航（一）/index.html">
+<meta property="og:title" content="仿支付宝微信支付密码输入控件">
+<meta property="og:url" content="http://yoursite.com/2018/10/09/仿支付宝微信支付密码输入控件/index.html">
 <meta property="og:site_name" content="来世成石">
-<meta property="og:description" content="最终效果预览 这次实现的是第一步效果 原理解析：通过对控件添加动画来实现仿抖音底部导航的效果 一.首先编写布局文件（这里是用TextView作为底部的指示横线）&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt; &amp;lt;RelativeLayout     xmlns:android=&amp;quot;http://schem">
+<meta property="og:description" content="目录 前言最近公司的项目需要实现类似于支付宝输入支付密码的功能，本来打算上网找一个别人写好的直接用，又怕直接用别人的出了问题不能够快速解决，索性就写了一个支付密码控件（GitHub传送门），在这里分享出来。 效果图 设计思路这个控件整体可以分为两层：  下层使用EditText来存储输入的密码以及监听密码是否输入完毕，另外注意这里的EditText字体大小一定要设置为0，否则会出现密码和密文重合的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/FN1Vch2.gif">
-<meta property="og:image" content="https://i.imgur.com/PUf8TjP.gif">
-<meta property="og:updated_time" content="2018-05-08T09:29:20.471Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/8850933-845ff4bbfadcac22.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/8850933-28d60bccbf1333d9.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/8850933-011b10ea4b9f9a5c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-10-09T08:55:17.831Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="仿抖音底部导航（（一）">
-<meta name="twitter:description" content="最终效果预览 这次实现的是第一步效果 原理解析：通过对控件添加动画来实现仿抖音底部导航的效果 一.首先编写布局文件（这里是用TextView作为底部的指示横线）&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt; &amp;lt;RelativeLayout     xmlns:android=&amp;quot;http://schem">
-<meta name="twitter:image" content="https://i.imgur.com/FN1Vch2.gif">
+<meta name="twitter:title" content="仿支付宝微信支付密码输入控件">
+<meta name="twitter:description" content="目录 前言最近公司的项目需要实现类似于支付宝输入支付密码的功能，本来打算上网找一个别人写好的直接用，又怕直接用别人的出了问题不能够快速解决，索性就写了一个支付密码控件（GitHub传送门），在这里分享出来。 效果图 设计思路这个控件整体可以分为两层：  下层使用EditText来存储输入的密码以及监听密码是否输入完毕，另外注意这里的EditText字体大小一定要设置为0，否则会出现密码和密文重合的">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/8850933-845ff4bbfadcac22.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -133,14 +134,14 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/08/仿抖音底部导航（一）/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/09/仿支付宝微信支付密码输入控件/"/>
 
 
 
 
 
 
-  <title>仿抖音底部导航（（一） | 来世成石</title>
+  <title>仿支付宝微信支付密码输入控件 | 来世成石</title>
   
 
 
@@ -267,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/08/仿抖音底部导航（一）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/09/仿支付宝微信支付密码输入控件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="来世成石">
@@ -284,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">仿抖音底部导航（（一）</h1>
+          <h1 class="post-title" itemprop="name headline">仿支付宝微信支付密码输入控件</h1>
         
 
         <div class="post-meta">
@@ -296,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T17:24:35+08:00">
-                2018-05-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-09T17:36:47+08:00">
+                2018-10-09
               </time>
             
 
@@ -336,7 +337,7 @@
 
           
           
-             <span id="/2018/05/08/仿抖音底部导航（一）/" class="leancloud_visitors" data-flag-title="仿抖音底部导航（（一）">
+             <span id="/2018/10/09/仿支付宝微信支付密码输入控件/" class="leancloud_visitors" data-flag-title="仿支付宝微信支付密码输入控件">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -368,168 +369,26 @@
       
 
       
-        <h3 id="最终效果预览"><a href="#最终效果预览" class="headerlink" title="最终效果预览"></a>最终效果预览</h3><p><img src="https://i.imgur.com/FN1Vch2.gif" alt="最终效果"></p>
-<h3 id="这次实现的是第一步效果"><a href="#这次实现的是第一步效果" class="headerlink" title="这次实现的是第一步效果"></a>这次实现的是第一步效果</h3><p><img src="https://i.imgur.com/PUf8TjP.gif" alt=""></p>
-<p></p><h3 style="color:blue">原理解析：通过对控件添加动画来实现仿抖音底部导航的效果</h3><p></p>
-<h3 id="一-首先编写布局文件（这里是用TextView作为底部的指示横线）"><a href="#一-首先编写布局文件（这里是用TextView作为底部的指示横线）" class="headerlink" title="一.首先编写布局文件（这里是用TextView作为底部的指示横线）"></a>一.首先编写布局文件（这里是用TextView作为底部的指示横线）</h3><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;RelativeLayout
-    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;&gt;
-    &lt;LinearLayout
-        android:layout_width=&quot;wrap_content&quot;
-        android:orientation=&quot;vertical&quot;
-        android:id=&quot;@+id/nav_top&quot;
-        android:layout_centerInParent=&quot;true&quot;
-        android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;TextView
-            android:layout_width=&quot;wrap_content&quot;
-            android:text=&quot;标题&quot;
-            android:id=&quot;@+id/nav_item_tv_title&quot;
-            android:textColor=&quot;#F1F1F1&quot;
-            android:textSize=&quot;16sp&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-    &lt;/LinearLayout&gt;
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:id=&quot;@+id/nav_item_tv_line&quot;
-        android:layout_below=&quot;@id/nav_top&quot;
-        android:layout_marginTop=&quot;2dp&quot;
-        android:layout_alignRight=&quot;@id/nav_top&quot;
-        android:layout_alignLeft=&quot;@id/nav_top&quot;
-        android:background=&quot;#fff&quot;
-        android:alpha=&quot;0&quot;
-        android:layout_centerInParent=&quot;true&quot;
-        android:layout_height=&quot;2dp&quot; /&gt;
-&lt;/RelativeLayout&gt;
-</code></pre><h3 id="二-创建NavItemView类继承RelativeLayout（这是最终代码展示，接下来讲解各种方法的效果【除了自定义属性】）"><a href="#二-创建NavItemView类继承RelativeLayout（这是最终代码展示，接下来讲解各种方法的效果【除了自定义属性】）" class="headerlink" title="二.创建NavItemView类继承RelativeLayout（这是最终代码展示，接下来讲解各种方法的效果【除了自定义属性】）"></a>二.创建NavItemView类继承RelativeLayout（这是最终代码展示，接下来讲解各种方法的效果【除了自定义属性】）</h3><pre><code>public class NavItemView extends RelativeLayout {
-    TextView textView_title;
-    TextView textView_line;
-    private View mView;
-    public NavItemView(Context context) {
-        this(context,null);
-    }
-    public NavItemView(Context context, AttributeSet attrs) {
-        this(context, attrs,0);
-    }
-    @SuppressLint(&quot;ResourceType&quot;)
-    public NavItemView(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        mView = View.inflate(context, R.layout.view_navitem, this);
-        textView_line=mView.findViewById(R.id.nav_item_tv_line);
-        textView_title=mView.findViewById(R.id.nav_item_tv_title);
-//        获取自定义属性
-        TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.NavItem);
-        if(ta!=null){
-            String navtext = ta.getString(R.styleable.NavItem_navtext);
-            textView_title.setText(navtext);
-        }
-    }
-//    选中状态
-    public void startActive(){
-        textView_title.setTextColor(Color.WHITE);
-        textView_title.setTextSize(18);
-        textView_line.animate().alpha(1).setDuration(200).start();
-    }
-//    取消选中
-    public void cancelActive(){
-        textView_title.setTextColor(Color.parseColor(&quot;#F1F1F1&quot;));
-        textView_title.setTextSize(16);
-        textView_line.animate().alpha(0).setDuration(200).start();
-    }
-}
-</code></pre><h3 id="三-startActive-方法作用：设置TextView的颜色为白色，并通过动画的方式显示底部指示线，达到选中状态。"><a href="#三-startActive-方法作用：设置TextView的颜色为白色，并通过动画的方式显示底部指示线，达到选中状态。" class="headerlink" title="三.startActive()方法作用：设置TextView的颜色为白色，并通过动画的方式显示底部指示线，达到选中状态。"></a>三.startActive()方法作用：设置TextView的颜色为白色，并通过动画的方式显示底部指示线，达到选中状态。</h3><h3 id="四-cancelActive-方法作用-与startActive-方法的作用相反。"><a href="#四-cancelActive-方法作用-与startActive-方法的作用相反。" class="headerlink" title="四.cancelActive()方法作用:与startActive()方法的作用相反。"></a>四.cancelActive()方法作用:与startActive()方法的作用相反。</h3><h3 id="五-Activity调用"><a href="#五-Activity调用" class="headerlink" title="五.Activity调用"></a>五.Activity调用</h3><pre><code>public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    NavItemView navItemView1,navItemView2,navItemView3,navItemView4,navItemView_Temp;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        navItemView1=findViewById(R.id.one);
-        navItemView2=findViewById(R.id.two);
-        navItemView3=findViewById(R.id.three);
-        navItemView4=findViewById(R.id.four);
-        navItemView1.setOnClickListener(this);
-        navItemView2.setOnClickListener(this);
-        navItemView3.setOnClickListener(this);
-        navItemView4.setOnClickListener(this);
-    }
-    @Override
-    public void onClick(View v) {
-        if(navItemView_Temp!=null){
-            navItemView_Temp.cancelActive();
-        }
-        switch (v.getId()){
-            case R.id.one:
-                navItemView1.startActive();
-                navItemView_Temp=navItemView1;
-                break;
-            case R.id.two:
-                navItemView2.startActive();
-                navItemView_Temp=navItemView2;
-                break;
-            case R.id.three:
-                navItemView3.startActive();
-                navItemView_Temp=navItemView3;
-                break;
-            case R.id.four:
-                navItemView4.startActive();
-                navItemView_Temp=navItemView4;
-                break;
-        }
-    }
-}
-</code></pre><h3 id="六-自定义属性文件展示"><a href="#六-自定义属性文件展示" class="headerlink" title="六.自定义属性文件展示"></a>六.自定义属性文件展示</h3><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;resources&gt;
-    &lt;declare-styleable name=&quot;NavItem&quot;&gt;
-        &lt;attr name=&quot;navtext&quot; format=&quot;string&quot;/&gt;
-    &lt;/declare-styleable&gt;
-&lt;/resources&gt;
-</code></pre><h3 id="七-Activity布局文件展示"><a href="#七-Activity布局文件展示" class="headerlink" title="七.Activity布局文件展示"></a>七.Activity布局文件展示</h3><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-android:layout_width=&quot;match_parent&quot;
-android:layout_height=&quot;match_parent&quot;
-android:background=&quot;#000&quot;
-tools:context=&quot;com.example.douyin.MainActivity&quot;&gt;
+        <h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><p><img src="https://upload-images.jianshu.io/upload_images/8850933-845ff4bbfadcac22.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="目录"></p>
+<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>最近公司的项目需要实现类似于支付宝输入支付密码的功能，本来打算上网找一个别人写好的直接用，又怕直接用别人的出了问题不能够快速解决，索性就写了一个支付密码控件（<a href="https://github.com/myml666/PayPasswordView" target="_blank" rel="noopener">GitHub传送门</a>），在这里分享出来。</p>
+<h4 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h4><p><img src="https://upload-images.jianshu.io/upload_images/8850933-28d60bccbf1333d9.gif?imageMogr2/auto-orient/strip" alt="效果图"></p>
+<h4 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h4><p>这个控件整体可以分为两层：</p>
+<ul>
+<li>下层使用EditText来存储输入的密码以及监听密码是否输入完毕，另外注意这里的EditText字体大小一定要设置为0，否则会出现密码和密文重合的现象。</li>
+<li><p>上层根据设置的密码长度来动态的添加TextView，并用TextView显示密文。<br><img src="https://upload-images.jianshu.io/upload_images/8850933-011b10ea4b9f9a5c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="设计思路"></p>
+<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><p>这个控件我增加了自定义属性和输入完毕的监听事件所以使用起来非常简单。</p>
+</li>
+<li><p>首先在布局文件中添加控件（默认是6位密码，颜色为colorAccent）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">com.itfitness.paypasswordview.widget.PayPasswordView</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/dialog_pay_ppv"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"40dp"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">com.itfitness.paypasswordview.widget.PayPasswordView</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自定义属性</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">app:borderWidth="1.5dp"//边框及分割线宽度</span><br><span class="line">app:passTextColor="@android:color/darker_gray"//密文颜色</span><br><span class="line">app:borderColor="@android:color/darker_gray"//边框颜色</span><br><span class="line">app:radius="2dp"//边框圆角大小</span><br><span class="line">app:passLength="8"//密码长度</span><br><span class="line">app:passText="◆"//密文字符</span><br><span class="line">app:passTextSize="16sp"//密文字体大小</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加监听事件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PayPasswordView myModuleDialogPayPv= (PayPasswordView) paydialogView.findViewById(R.id.dialog_pay_ppv);</span><br><span class="line">myModuleDialogPayPv.addInputPassWordFinshListener(<span class="keyword">new</span> InputPassWordFinshListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onInputPassWordFinsh</span><span class="params">(String password)</span> </span>&#123;</span><br><span class="line">                Toast.makeText(MainActivity.<span class="keyword">this</span>, password, Toast.LENGTH_SHORT).show();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
-    &lt;LinearLayout
-        android:layout_width=&quot;match_parent&quot;
-        android:orientation=&quot;horizontal&quot;
-        android:layout_alignParentBottom=&quot;true&quot;
-        android:layout_height=&quot;40dp&quot;&gt;
-        &lt;com.example.douyin.NavItemView
-            android:layout_width=&quot;0dp&quot;
-            android:id=&quot;@+id/one&quot;
-            app:navtext=&quot;首页&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;/com.example.douyin.NavItemView&gt;
-        &lt;com.example.douyin.NavItemView
-            android:layout_width=&quot;0dp&quot;
-            android:id=&quot;@+id/two&quot;
-            app:navtext=&quot;关注&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;/com.example.douyin.NavItemView&gt;
-        &lt;com.example.douyin.NavItemView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:id=&quot;@+id/three&quot;
-            app:navtext=&quot;消息&quot;
-            android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;/com.example.douyin.NavItemView&gt;
-        &lt;com.example.douyin.NavItemView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:id=&quot;@+id/four&quot;
-            app:navtext=&quot;我&quot;
-            android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;/com.example.douyin.NavItemView&gt;
-    &lt;/LinearLayout&gt;
-
-&lt;/RelativeLayout&gt;
-</code></pre>
       
     </div>
     
@@ -593,8 +452,8 @@ tools:context=&quot;com.example.douyin.MainActivity&quot;&gt;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/04/Gllide缓存配置/" rel="next" title="Gllide缓存配置">
-                <i class="fa fa-chevron-left"></i> Gllide缓存配置
+              <a href="/2018/09/21/AlertDialog添加动画/" rel="next" title="AlertDialog添加动画">
+                <i class="fa fa-chevron-left"></i> AlertDialog添加动画
               </a>
             
           </div>
@@ -602,10 +461,6 @@ tools:context=&quot;com.example.douyin.MainActivity&quot;&gt;
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/08/热搜View/" rel="prev" title="热搜View">
-                热搜View <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -762,7 +617,7 @@ tools:context=&quot;com.example.douyin.MainActivity&quot;&gt;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#最终效果预览"><span class="nav-number">1.</span> <span class="nav-text">最终效果预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这次实现的是第一步效果"><span class="nav-number">2.</span> <span class="nav-text">这次实现的是第一步效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">原理解析：通过对控件添加动画来实现仿抖音底部导航的效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一-首先编写布局文件（这里是用TextView作为底部的指示横线）"><span class="nav-number">4.</span> <span class="nav-text">一.首先编写布局文件（这里是用TextView作为底部的指示横线）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-创建NavItemView类继承RelativeLayout（这是最终代码展示，接下来讲解各种方法的效果【除了自定义属性】）"><span class="nav-number">5.</span> <span class="nav-text">二.创建NavItemView类继承RelativeLayout（这是最终代码展示，接下来讲解各种方法的效果【除了自定义属性】）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-startActive-方法作用：设置TextView的颜色为白色，并通过动画的方式显示底部指示线，达到选中状态。"><span class="nav-number">6.</span> <span class="nav-text">三.startActive()方法作用：设置TextView的颜色为白色，并通过动画的方式显示底部指示线，达到选中状态。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-cancelActive-方法作用-与startActive-方法的作用相反。"><span class="nav-number">7.</span> <span class="nav-text">四.cancelActive()方法作用:与startActive()方法的作用相反。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五-Activity调用"><span class="nav-number">8.</span> <span class="nav-text">五.Activity调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六-自定义属性文件展示"><span class="nav-number">9.</span> <span class="nav-text">六.自定义属性文件展示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七-Activity布局文件展示"><span class="nav-number">10.</span> <span class="nav-text">七.Activity布局文件展示</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#效果图"><span class="nav-number">3.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设计思路"><span class="nav-number">4.</span> <span class="nav-text">设计思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用方法"><span class="nav-number">5.</span> <span class="nav-text">使用方法</span></a></li></ol></div>
             
 
           </div>
